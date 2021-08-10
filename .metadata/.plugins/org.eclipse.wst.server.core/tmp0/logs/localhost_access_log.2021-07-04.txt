@@ -1,0 +1,15 @@
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:15:36:27 +0000] "GET /com.school.mgt.system.Front.End/general/homePage HTTP/1.1" 200 3370
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:15:36:27 +0000] "GET /com.school.mgt.system.Front.End/resources/index.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:15:36:30 +0000] "GET /com.school.mgt.system.Front.End/general/logIn HTTP/1.1" 200 2238
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:15:36:31 +0000] "GET /com.school.mgt.system.Front.End/resources/java.css HTTP/1.1" 200 1529
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:15:36:34 +0000] "POST /com.school.mgt.system.Front.End/general/home HTTP/1.1" 200 5983
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:15:36:37 +0000] "GET /com.school.mgt.system.Front.End/general/homePage HTTP/1.1" 200 3370
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:15:36:40 +0000] "GET /com.school.mgt.system.Front.End/general/parentLogin HTTP/1.1" 200 2152
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:15:36:40 +0000] "GET /com.school.mgt.system.Front.End/resources/main.css HTTP/1.1" 200 1048
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:15:36:44 +0000] "POST /com.school.mgt.system.Front.End/general/validate HTTP/1.1" 200 139
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:15:36:55 +0000] "GET /com.school.mgt.system.Front.End/general/homePage HTTP/1.1" 200 3370
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:16:07:34 +0000] "GET /com.school.mgt.system.Front.End/general/teacherLogin HTTP/1.1" 200 2213
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:16:12:20 +0000] "GET /com.school.mgt.system.Front.End/ HTTP/1.1" 200 3370
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:16:12:22 +0000] "GET /com.school.mgt.system.Front.End/general/parentLogin HTTP/1.1" 200 2152
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:16:12:43 +0000] "GET /com.school.mgt.system.Front.End/general/homePage HTTP/1.1" 200 3370
+0:0:0:0:0:0:0:1 - - [04/Jul/2021:16:12:45 +0000] "GET /com.school.mgt.system.Front.End/general/logIn HTTP/1.1" 200 2238

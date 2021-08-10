@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 elements to &apos;views&apos;&#x0D;&#x0A;- Original project: &apos;springbootproductAppFrontEnd&apos;&#x0D;&#x0A;- Destination element: &apos;views&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     showProduct.jsp&#x0D;&#x0A;     addProduct.jsp&#x0D;&#x0A;     confirmation.jsp&#x0D;&#x0A;     displayProductDetail.jsp" description="Copy files" element1="src/main/webapp/WEB-INF/views/showProduct.jsp" element2="src/main/webapp/WEB-INF/views/addProduct.jsp" element3="src/main/webapp/WEB-INF/views/confirmation.jsp" element4="src/main/webapp/WEB-INF/views/displayProductDetail.jsp" files="4" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1617003282880" target="/com.ecommerce.business.FrontEnd/src/main/webapp/WEB-INF/views" units="0" version="1.0"/>
+</session>

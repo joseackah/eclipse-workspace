@@ -1,0 +1,73 @@
+1619631160738	Copy compilation unit
+1619631980193	Copy compilation unit
+1619632001790	Copy compilation unit
+1619632022138	Copy compilation unit
+1619632042583	Copy compilation unit
+1619645310675	Copy compilation unit
+1619645330483	Copy compilation unit
+1619645352885	Copy compilation unit
+1619645383420	Copy compilation unit
+1619645473996	Rename field 'student'
+1619645529121	Rename local variable 'students'
+1619645817601	Rename local variable 'students'
+1619646408247	Rename local variable 'students'
+1619646457974	Rename field 'student'
+1619646766354	Rename local variable 'updateStudent'
+1619646816112	Rename local variable 'updateStudentAddress'
+1619647029724	Rename local variable 'students'
+1619647682426	Rename local variable 'students'
+1619647734738	Delete element
+1619647760708	Copy compilation unit
+1619647862977	Rename local variable 'studentAddress'
+1619647882171	Rename field 'studentAddresses'
+1619648066836	Rename local variable 'studentAddress'
+1619648124233	Rename local variable 'updateStudentAddres'
+1619716355698	Rename field 'student'
+1619716402595	Rename local variable 'students'
+1619716718320	Rename local variable 'students'
+1619716762080	Rename local variable 'updateStudent'
+1619716851042	Rename local variable 'student'
+1619716913396	Rename local variable 'student'
+1619717856557	Delete element
+1619717907096	Rename type 'EcommerceController'
+1619717997149	Rename field 'eproductRestClient'
+1619718188112	Rename local variable 'ecomProduct'
+1619718277093	Rename local variable 'ecomProduct'
+1619718338419	Rename local variable 'ecomProduct'
+1619718513566	Rename local variable 'ecomProduct'
+1619718691084	Rename local variable 'ecommerceProduct'
+1619718864000	Rename local variable 'ecProduct'
+1619718971278	Rename local variable 'ecProduct'
+1619734294520	Copy compilation unit
+1619734393480	Rename field 'studentAddressRestClient'
+1619734461582	Rename local variable 'studentAddress'
+1619734512168	Rename local variable 'studentAddress'
+1619734633665	Rename local variable 'studentAddress'
+1619734738151	Rename local variable 'studentAddress'
+1619734771800	Rename local variable 'studentAddresses'
+1619734845946	Rename local variable 'studentAdd'
+1619734907893	Rename local variable 'studentAddres'
+1619791789432	Copy compilation unit
+1619791838691	Rename field 'studentAddressRestClient'
+1619792003763	Rename local variable 'studentAddress'
+1619792040025	Rename local variable 'studentAddress'
+1619792084845	Rename local variable 'studentAddress'
+1619792154281	Rename local variable 'studentAddress'
+1619792179074	Rename local variable 'studentAddresses'
+1619792723897	Rename local variable 'studentAdd'
+1619792777856	Rename local variable 'studentAddres'
+1619792860829	Delete element
+1619792896089	Copy compilation unit
+1619792971521	Rename field 'parentsRestClient'
+1619793057531	Rename local variable 'parents'
+1619793095888	Rename local variable 'parents'
+1619793128634	Rename local variable 'parents'
+1619793229352	Rename local variable 'parent'
+1619793261584	Rename local variable 'parents'
+1619793322891	Rename local variable 'parents'
+1619793380202	Rename local variable 'parents'
+1619793431341	Copy compilation unit
+1619793483016	Rename field 'parentsRestClient'
+1619793967367	Rename local variable 'parents'
+1619794021792	Rename local variable 'parents'
+1619795399648	Rename resource 'addMoreProduct.jsp'

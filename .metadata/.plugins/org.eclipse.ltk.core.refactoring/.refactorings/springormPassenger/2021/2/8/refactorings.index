@@ -1,0 +1,8 @@
+1613755265160	Rename package 'com.aiti.spring.springorm.product.dao'
+1613755282861	Rename package 'com.aiti.spring.springorm.product.dao.impl'
+1613755303539	Rename package 'com.aiti.spring.springorm.product.dao.test'
+1613755323170	Rename package 'com.aiti.spring.springorm.product.entity'
+1613755560646	Rename type 'ProductDAO'
+1613755576181	Rename type 'ProductDAOImpl'
+1613755592386	Rename type 'Product'
+1613818220988	Rename local variable 'product'

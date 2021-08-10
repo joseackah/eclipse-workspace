@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>certificate</title>
+</head>
+<body>
+
+<div style="text-align: center;">
+<div style="justify: center;">
+
+<h1> BERNICE'S INTERNATIONAL PREPARATORY SCHOOL</h1>
+ <h2> <span>BI</span>PS</h2>
+ <p> this is to certify </p>
+ <h1> NAME</h1>
+ <hr style="width: 80%;">
+ <p>having passed the prescribed Examination has on the</p>
+  <div style="display:flex-end; float:flex-end;"> <div style="width: 30%;"> <hr> </div> <div> <p> day of </p></div><div style="width: 30%;"> <hr> </div></div>
+  <p> having been admitted to Diploma in Nursing</p>
+  <div style="display:flex; align-content: center;"> <div style="text-align: center;"> <p>with </p></div > <div style="width: 30%;"> <hr> </div></div>
+  
+  <p></p> <p></p> <p></p>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

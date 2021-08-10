@@ -1,0 +1,6 @@
+com\aiti\springmvc\springmvchibernate\user\dao\impl\UserDaoImpl.class
+com\aiti\springmvc\springmvchibernate\user\services\UserServiceImpl.class
+com\aiti\springmvc\springmvchibernate\user\controller\UserController.class
+com\aiti\springmvc\springmvchibernate\user\dao\UserDao.class
+com\aiti\springmvc\springmvchibernate\user\entity\User.class
+com\aiti\springmvc\springmvchibernate\user\services\UserService.class

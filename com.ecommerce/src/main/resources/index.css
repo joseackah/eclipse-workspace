@@ -1,0 +1,204 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.body{
+	
+	background-color:brown;
+}
+
+nav {
+    /*display: flex;*/
+    /*display: inline-block;*/
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    border: 4px;
+    background-color: blue;
+}
+
+nav li {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    /*align-content: center;*/
+    text-align: center;
+}
+
+#searchForm {
+    float: right;
+    height: 50px;
+    width: 20%;
+}
+
+#input {
+    align-content: flex-end;
+    float: right;
+    height: 40px;
+    width: 70%;
+    padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 16px;
+    margin: 5px;
+}
+
+#navsub {
+    float: right;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 0px;
+    padding: 10px;
+}
+
+#firstHeader {
+    /*display: flex;*/
+    /*float: left;*/
+    background-color: yellow;
+    height: 500%;
+}
+
+#logo {
+    float: left;
+    background-size: contain;
+    height: 100px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+#log {
+    padding-top: px;
+    /*display: ;*/
+    float: right;
+    padding-left: 50px;
+    padding: 5px;
+}
+
+#sect1 {
+    /*display: flex;*/
+    background-color: blue;
+    padding: 5px;
+    display: inline-flex;
+    /*align-content: space-between;*/
+    margin: 5px;
+    clear: both;
+}
+
+#history1 {
+    /*display: flex;*/
+    float: left;
+    width: 49%;
+    text-align: justify;
+    border: 1px;
+    margin: 5px solid black;
+    background-color: tomato;
+    height: 100%;
+}
+
+#his {
+    /*display: flex;*/
+    text-align: center;
+    padding-top: 20px;
+}
+
+#p1 {
+    padding: 20px;
+    margin: 5px;
+}
+
+#brief {
+    /*display: ;*/
+    float: right;
+    width: 50%;
+    border: 2px;
+    padding: 3px;
+    padding-left: 3px;
+    text-align: center;
+    margin: 5px solid black;
+    height: 99%;
+    background-color: greenyellow;
+    /*clear: both;*/
+}
+
+#table1 {
+    text-align: left;
+    align-content: left;
+    padding-left: 10px;
+    margin: 55px;
+}
+
+#pastor {
+    /*display: flex;*/
+    margin: 2px;
+    border: 2px;
+    background-color: blueviolet;
+}
+
+#executives {
+    /*display: flex;*/
+    margin: 2px;
+    background-color: whitesmoke;
+    padding: 5px;
+    padding-left: 50px;
+}
+
+#assemblies {
+    margin: 2px;
+    background-color: rgb(139, 50, 50);
+    padding: 5px;
+    padding-left: 50px;
+}
+
+#mainFooter {
+    margin: 2px solid black;
+    background-color: red;
+    height: 90px;
+    margin-top: 5px;
+    width:50%;
+    text-align: center;
+    padding:10px;
+}
+
+.collapsible {
+    background-color: rgb(145, 125, 157);
+    color: rgb(201, 181, 152);
+    cursor: pointer;
+    padding: 2px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 12px;
+}
+
+.active,
+.collapsible:hover {
+    background-color: rgb(47, 47, 167);
+}
+
+.content {
+    padding: 18px;
+    display: none;
+    overflow: hidden;
+    background-color: whitesmoke;
+}
+.aside, .article{
+	padding: 10px;
+}
+
+.article:hover{
+	background-color: blue;
+	color: white;
+}
+
+.td{
+	padding: .5em 2em;
+	border-radius: 5em;
+}
+nav li:hover{
+	background-color:red;
+	
+}

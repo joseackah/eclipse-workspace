@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;userDetails&apos; from expression &apos;new UserDetails()&apos;&#x0D;&#x0A;- Original project: &apos;springdatamappingg&apos;&#x0D;&#x0A;- Variable name: &apos;userDetails&apos;&#x0D;&#x0A;- Destination method: &apos;com.aiti.spring.data.SpringdatamappinggApplicationTests.testUserDetails()&apos;&#x0D;&#x0A;- Variable expression: &apos;new UserDetails()&apos;" description="Extract local variable &apos;userDetails&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;com.aiti.spring.data{SpringdatamappinggApplicationTests.java" name="userDetails" replace="false" selection="530 17" stamp="1615417826042" varType="false" version="1.0"/>
+</session>

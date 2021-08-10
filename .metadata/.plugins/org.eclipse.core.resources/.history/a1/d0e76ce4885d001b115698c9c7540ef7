@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Page</title>
+</head>
+<body>
+<form action="info.jsp">
+<table>
+<tr>username </tr>
+<tr>password </tr>
+<tr>confirm password </tr>
+<tr>email </tr>
+<tr>address </tr>
+<tr>gender </tr>
+<tr>education </tr>
+
+
+</table>
+
+
+
+
+</form>
+
+</body>
+</html>

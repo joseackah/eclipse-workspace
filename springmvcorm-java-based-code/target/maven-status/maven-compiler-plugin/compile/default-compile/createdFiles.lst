@@ -1,0 +1,9 @@
+com\aiti\springmvc\user\services\UserService.class
+com\aiti\springmvc\user\dao\impl\UserDaoImpl.class
+com\aiti\springmvc\user\config\WebMvcConfig.class
+com\aiti\springmvc\user\services\UserServiceImpl.class
+com\aiti\springmvc\user\dao\UserDao.class
+com\aiti\springmvc\user\config\AppInitializer.class
+com\aiti\springmvc\user\config\AppContext.class
+com\aiti\springmvc\user\controller\UserController.class
+com\aiti\springmvc\user\entity\User.class

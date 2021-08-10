@@ -1,0 +1,15 @@
+1614713628131	Rename package 'product.config'
+1614716318387	Delete element
+1614723975783	Copy files
+1614723989442	Delete elements
+1614724726445	Copy file
+1614724734747	Delete element
+1614724744071	Delete element
+1614789298215	Rename type 'Dao'
+1614789366440	Rename field 'dao'
+1614789469647	Rename type 'DaoImpl'
+1614791221564	Rename local variable 'services'
+1614791288227	Rename type 'ProductServices'
+1614791590750	Rename local variable 'dao'
+1614794033944	Rename type 'ProductServicesImpl'
+1614794954331	Move compilation unit
