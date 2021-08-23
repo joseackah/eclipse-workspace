@@ -13,6 +13,25 @@ public class GeneralController {
 	 */
 	
 	
+	
+	@RequestMapping("/card")
+	public String card(ModelMap model) {
+
+		return "indexTry";
+	}
+	
+	
+	
+	
+	
+	
+	@RequestMapping("/adminHomePageExample2")
+	public String adminHomePageExample2(ModelMap model) {
+
+		return "adminHomePageExample2";
+	}
+	
+	
 	@RequestMapping("/image")
 	public String image(ModelMap model) {
 

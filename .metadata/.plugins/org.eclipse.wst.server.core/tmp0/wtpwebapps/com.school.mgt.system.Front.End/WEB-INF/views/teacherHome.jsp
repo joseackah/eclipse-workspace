@@ -52,6 +52,14 @@ to {background-color: rgb(145,74,152);}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  .footer {
+background-color: rgb(23, 24, 26);
+height: 100px;
+padding: 10px;
+padding-top: 4em;
+color: white;
+align-content: center;</style>
 <title>TEACHER HOME</title>
 </head>
 <body style="background-color:gold;">
@@ -69,7 +77,8 @@ to {background-color: rgb(145,74,152);}
            
             <li><a href="${pageContext.request.contextPath}/schoolTeachers/displayTeachers">All Teachers</a></li>
            
-           <li>  <div class="dropdown" style="background-color:blue;">
+           <li>  
+           <div class="dropdown" style="background-color:blue;">
            
   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" >
     Add Results
@@ -90,20 +99,13 @@ to {background-color: rgb(145,74,152);}
            
         </ul> 
         
-        <div class="container">
+        <div class="">
         <div>
         <button type="button" class="btn btn-primary" style="margin-right: em; height: 50px">Message <span class="badge badge-light">4</span></button>
-        <button type="button" class="btn btn-danger" style="margin-right: em; height: 50px">Notifications <span class="badge badge-light">5</span></button>
+        <button type="button" class="btn btn-danger" style="margin-right: em; height: 50px">Notifications <span class="badge badge-light">8</span></button>
         </div>
         
-				<div  style="display: flex-end; justify-content:flex-end; margin-right:3em">
-				<div>
-				<form class="form-inline" action="/action_page.php">
-    			<input class="form-control mr-sm-2" type="text" placeholder="Search" style="margin-top: 0.7em; height: 2.6em; border-radius: 0.8em;">
-    			<button class="btn btn-success" type="submit" style="height: 2.8em; padding: 0.5em; margin-top:0.5em; width:10em; border-radius:0.8em;">Search</button>
-  			</form> 
-  			</div>
-  			</div>
+			
 	</div>
     </nav>
 
@@ -123,17 +125,18 @@ to {background-color: rgb(145,74,152);}
 <article >
 
 <header> <h2> <ins> Our Mission</ins></h2></header>
-<h2><p>We are dedicated to a continuing tradition of excellence in an ever-changing world. Within a safe and supportive environment, we provide a relevant, high-quality education and prepare our diverse student body for future endeavors. We honor achievement and promote pride in ourselves, in our school, and in our community. </p></h2>
+<h2><p> We are dedicated to a continuing tradition of excellence in an ever-changing world. Within a safe and supportive environment, we provide a relevant, high-quality education and prepare our diverse student body for future endeavors. We honor achievement and promote pride in ourselves, in our school, and in our community. </p></h2>
 </article>
 </aside>
 </section>
 <br /> <br/> <br/>
-<aside id="mainFooter" style="background-color:red;">
-<footer id="mainFooter"  style="text-align:center; align-content:center;">
-<h3 style="display:bottom; ">Contact Us: 0207173313</h3>
+
+ <br> <hr>
+
+<footer class="footer"  >
+<h3 style="text-align: center;">Contact Us: 0207173313</h3>
 
 </footer>
-</aside>
-
+${count}
 </body>
 </html>

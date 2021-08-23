@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +19,16 @@ public class StudentsController {
 
 	@Autowired
 	StudentsRestClient studentsRestClient;
+	
+	
+	
+	@RequestMapping("/adminHome")
+	public String adminHomePage(ModelMap model) {
+		return "adminHomePageExample2";
+	}
+	
+	
+	
 
 	@RequestMapping("/index")
 	public String showIndex(ModelMap model) {
@@ -172,5 +183,10 @@ public class StudentsController {
 			model.addAttribute("student", student);
 			return "search";
 		}
+	  
+	  @ModelAttribute("count")
+	  public String countStudent() {
+		  return studentsRestClient.count();
+	  }
 
 }

@@ -69,7 +69,7 @@ to {background-color: rgb(145,74,152);}
             <li><a href="${pageContext.request.contextPath}/schoolStudents/displayStudents">Display Student</a></li>
             <li><a href="${pageContext.request.contextPath}/schoolParents/displayParents">Display Parent</a></li>
             <li><a href="${pageContext.request.contextPath}/studentAddress/displayStudentAddress">Student Address</a></li>
-            <li><a href="${pageContext.request.contextPath}/schoolStudents/showStudentsForm">Add Teacher</a></li>
+            <li><a href="${pageContext.request.contextPath}/schoolTeachers/showTeacherForm">Add Teacher</a></li>
             <li><a href="${pageContext.request.contextPath}/schoolTeachers/displayTeachers">All Teachers</a></li>
             <li><a href="${pageContext.request.contextPath}/general/lowerResults">getLowerResults</a></li>
             <%-- <li><a href="${pageContext.request.contextPath}/lowerPrimary/saveResults">Add Results</a></li> --%>

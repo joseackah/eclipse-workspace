@@ -17,5 +17,8 @@ public interface StudentsRepository extends JpaRepository<Students, Integer> {
 	
 	@Query(value = "SELECT * FROM students where student_id LIKE '%%' OR first_name LIKE '%ao%' OR last_name LIKE '%?1%'", nativeQuery = true)
 	List<Students> search(String name);
+	
+	@Query(value = "select count(*) from students;", nativeQuery = true)
+	public String countStudent();
 
 }

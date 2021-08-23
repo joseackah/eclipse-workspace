@@ -19,9 +19,14 @@ public class TeachersRestClientImpl implements TeachersRestClient {
 	public void saveTeacher(Teachers teachers) {
 		teacher.setFirstName(teachers.getFirstName());
 		teacher.setLastName(teachers.getLastName());
+		teacher.setDateOfBirth(teachers.getDateOfBirth());
 		teacher.setQualification(teachers.getQualification());
+		teacher.setEmail(teachers.getEmail());
+		teacher.setPhoneNumber(teachers.getPhoneNumber());
+		teacher.setGender(teachers.getGender());
+		teacher.setAddress(teachers.getAddress());
 		teacher.setSalary(teachers.getSalary());
-		teacher.setStartDate(teachers.getStartDate());
+		teacher.setAppointmentDate(teachers.getAppointmentDate());
 		rest.postForObject("http://localhost:9095/teachers/saveTeacher", teacher, Teachers.class);
 
 	}

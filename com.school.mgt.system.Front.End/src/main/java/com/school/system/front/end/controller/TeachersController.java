@@ -55,7 +55,7 @@ public class TeachersController {
 	@RequestMapping("/saveTeachers")
 	public String saveTeachers(Teachers teachers) {
 		teachersRestClient.saveTeacher(teachers);
-		return "redirect:/displayTeachers";
+		return "redirect:displayTeachers";
 	}
 	
 	@RequestMapping("/moreTeachers")

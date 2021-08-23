@@ -74,5 +74,11 @@ public class StudentsRestClientImpl implements StudentsRestClient {
 		return student;
 	}
 
+	@Override
+	public String count() {
+		
+		return rest.getForObject("http://localhost:9095/students/count/", String.class);
+	}
+
 	
 }

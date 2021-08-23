@@ -8,7 +8,7 @@
 <link href="${pageContext.request.contextPath}/resources/main.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/java.css" rel="stylesheet">
 <meta charset="ISO-8859-1">
-<title>Enroll Student Form</title>
+<title>Add Teacher Form</title>
 </head>
 <body>
 <div id='firstHeader' class='firstHeader' name='firstHeader'>
@@ -18,17 +18,14 @@
     </div>
     <nav>
         <ul>
-            <li><a href="${pageContext.request.contextPath}/index">HOME</a></li>
-            <li><a href="">Add product</a></li>
+            <li><a href="${pageContext.request.contextPath}/general/home">HOME</a></li>
+        <%--     <li><a href="">Add product</a></li>
             <li><a href="${pageContext.request.contextPath}/">Add Cate</a></li>
             <li><a href="${pageContext.request.contextPath}/">Display</a></li>
             <li><a href="${pageContext.request.contextPath}/">Display Cate</a></li>
             <li><a href="${pageContext.request.contextPath}/">Add More Product</a></li>
             <li><a href="">to assign</a></li>
-            <form action="${pageContext.request.contextPath}/" method="post" id="searchForm">
-            	<input type="text" name="id" id="input" />
-                <input type="submit" id="input" class="form-control" value="Search" />
-            </form>
+             --%>
             
         </ul>
 

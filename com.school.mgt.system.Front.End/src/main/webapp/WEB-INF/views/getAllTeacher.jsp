@@ -35,16 +35,13 @@ transition: 5s;
     <nav>
         <ul>
             <li><a href="${pageContext.request.contextPath}/schoolStudents/index">HOME</a></li>
-            <li><a href="${pageContext.request.contextPath}/ecommerce/showForm">Add product</a></li>
-            <li><a href="${pageContext.request.contextPath}/category/showCate">Add Cate</a></li>
+            <li><a href="${pageContext.request.contextPath}/ecommerce/showForm">LOG OUT</a></li>
+            <%-- <li><a href="${pageContext.request.contextPath}/category/showCate">Add Cate</a></li>
             <li><a href="${pageContext.request.contextPath}/schoolStudents/displayStudents">Display</a></li>
             <li><a href="${pageContext.request.contextPath}/category/displaycate">Display Cate</a></li>
             <li><a href="${pageContext.request.contextPath}/ecommerce/moreProductForm">Add More Product</a></li>
             <li><a href="">to assign</a></li>
-            <form action="${pageContext.request.contextPath}/users/find" method="post" id="searchForm">
-            	<input type="text" name="id" id="input" />
-                <input type="submit" id="input" class="form-control" value="Search" />
-            </form>
+             --%>
             
         </ul>
 
@@ -62,15 +59,20 @@ transition: 5s;
 <div> <h2> <ins>Add Teacher</ins></h2></div>
 <div  ><input type="button" value="Enroll New Student" style='padding:.5em 2em; border-radius:5em; cursor:pointer;' onclick="window.location.href='${pageContext.request.contextPath}/schoolStudents/moreStudentsForm'" /></div>
 	</div>	 
-		<table border="1" id="name">
+		<table border="1" id="name" style="width: 100%;">
 			<thead>
 				<tr>
 					<th> ID</th>
 					<th>FIRST NAME</th>
 					<th>LAST NAME</th>
+					<th>DATE OF BIRTH</th>
 					<th>QUALIFICATION</th>
+					<th>EMAIL</th>
+					<th>PHONE NUMBER</th>
+					<th>GENDER</th>
+					<th>ADDRESS</th>
 					<th>SALARY</th>
-					<th>START DATE</th>
+					<th>APPOINTMENT DATE</th>
 					
 					<th>ACTION </th>
 				</tr>
@@ -81,9 +83,14 @@ transition: 5s;
 						<c:param value="${teacher.teacherId}" name="teacherId"></c:param>
 					 	<c:param value="${teacher.firstName}" name="firstName"></c:param>
 						<c:param value="${teacher.lastName}" name="lastName"></c:param>
+						<c:param value="${teacher.dateOfBirth}" name="dateOfBirth"></c:param>
 						<c:param value="${teacher.qualification}" name="qualification"></c:param>
+						<c:param value="${teacher.email}" name="email"></c:param>
+						<c:param value="${teacher.phoneNumber}" name="lastName"></c:param>
+						<c:param value="${teacher.gender}" name="lastName"></c:param>
+						<c:param value="${teacher.address}" name="lastName"></c:param>
 						<c:param value="${teacher.salary}" name="salary"></c:param>
-						<c:param value="${teacher.startDate}" name="startDate"></c:param>
+						<c:param value="${teacher.appointmentDate}" name="startDate"></c:param>
 						 
 						
 					</c:url>
@@ -96,9 +103,14 @@ transition: 5s;
 						<td>${teacher.teacherId}</td>
 						<td>${teacher.firstName}</td>
 						<td>${teacher.lastName}</td>
+						<td>${teacher.dateOfBirth}</td>
 						<td>${teacher.qualification}</td>
+						<td>${teacher.email}</td>
+						<td>${teacher.phoneNumber}</td>
+						<td>${teacher.gender}</td>
+						<td>${teacher.address}</td>
 						<td>${teacher.salary} </td>
-						<td>${teacher.startDate} </td>
+						<td>${teacher.appointmentDate} </td>
 						
 						<td><a href="${updateURL }">Update</a> | <a
 							href="${removeURL }"

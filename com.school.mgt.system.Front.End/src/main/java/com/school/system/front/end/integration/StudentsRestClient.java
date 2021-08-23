@@ -13,5 +13,7 @@ public interface StudentsRestClient {
 	public String lookLastId(String student_id);
 	public Students findLastId(Students students);
 	
+	public String count();
+	
 
 }

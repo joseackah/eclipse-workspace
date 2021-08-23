@@ -33,6 +33,25 @@ public class Students {
 	public void setParent(Parents parent) {
 		this.parent = parent;
 	}*/
+	
+	public Students() {
+		
+	}
+	
+	
+	
+	public Students(Integer studentId, String firstName, String lastName, String sex, double age, String classLevel) {
+		super();
+		this.studentId = studentId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.sex = sex;
+		this.age = age;
+		this.classLevel = classLevel;
+	}
+
+
+
 	public Integer getStudentId() {
 		return studentId;
 	}

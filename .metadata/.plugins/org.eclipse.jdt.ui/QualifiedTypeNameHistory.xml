@@ -34,7 +34,6 @@
     <fullyQualifiedTypeName name="com.school.system.front.end.integration.dto.Students"/>
     <fullyQualifiedTypeName name="com.school.system.front.end.integration.TeachersRestClient"/>
     <fullyQualifiedTypeName name="com.school.system.front.end.integration.dto.Teachers"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
     <fullyQualifiedTypeName name="javax.persistence.Id"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="javax.annotation.Generated"/>
     <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
     <fullyQualifiedTypeName name="org.graalvm.compiler.loop.InductionVariable.Direction"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
 </qualifiedTypeNameHistroy>

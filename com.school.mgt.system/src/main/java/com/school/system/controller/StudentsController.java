@@ -80,5 +80,10 @@ public class StudentsController {
 		return studentRepo.search(students);
 	}
 	
+	@GetMapping("/count")
+	public String count() {
+		return studentRepo.countStudent();
+	}
+	
 	
 	}
