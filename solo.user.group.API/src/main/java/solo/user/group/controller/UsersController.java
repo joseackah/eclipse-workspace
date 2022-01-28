@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import solo.user.group.repos.UsersTableRepository;
 import solo.user.group.users.UsersTable;
@@ -23,11 +26,15 @@ public class UsersController {
 	@Autowired
 	UsersTableRepository repo;
 	 
-
-	@RequestMapping("/form")
+	 
+	  
+	
+	
+	
+	@RequestMapping( "/form")
 	public String form() {
 
-		return "addUser";
+		return "form.html";
 	}
 
 	@PostMapping("/save")

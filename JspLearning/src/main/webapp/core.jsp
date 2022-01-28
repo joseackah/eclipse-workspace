@@ -30,6 +30,7 @@ ${param.name }
 
 <div ng-app="">
 <p> Name: <input type="text" ng-model="name"> </p>
+
 <p>{{name}}</p>
 </div>
 

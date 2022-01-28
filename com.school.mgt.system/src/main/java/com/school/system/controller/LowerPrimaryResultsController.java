@@ -10,12 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.school.system.entities.PrimaryOneResults;
-import com.school.system.entities.PrimaryThreeResults;
-import com.school.system.entities.PrimaryTwoResults;
-import com.school.system.repos.PrimaryOneResultsRepo;
-import com.school.system.repos.PrimaryThreeResultsRepo;
-import com.school.system.repos.PrimaryTwoResultsRepo;
+import com.school.system.entities.LowerPrimaryResults;
+import com.school.system.repos.LowerPrimaryResultsRepo;
 
 
 @RestController
@@ -23,63 +19,62 @@ import com.school.system.repos.PrimaryTwoResultsRepo;
 public class LowerPrimaryResultsController {
 	//Injecting the repository of the lower primary results
 	@Autowired
-	PrimaryOneResultsRepo primaryOne;
+	LowerPrimaryResultsRepo LowerPrimary;
 	
-	@Autowired
-	PrimaryTwoResultsRepo primaryTwo;
+	/*
+	 * @Autowired PrimaryTwoResultsRepo primaryTwo;
+	 * 
+	 * @Autowired PrimaryThreeResultsRepo primaryThree;
+	 */
 	
-	@Autowired
-	PrimaryThreeResultsRepo primaryThree;
-	
-	
-	@PostMapping("/savePrimaryOne")
-	public PrimaryOneResults save(@RequestBody PrimaryOneResults oneResults) {
+	@PostMapping("/saveLowerPrimary")
+	public LowerPrimaryResults save(@RequestBody LowerPrimaryResults lowerResults) {
 		
-		return primaryOne.save(oneResults);
+		return LowerPrimary.save(lowerResults);
 	}
 	
 	
 	
-	@PostMapping("/savePrimaryTwo")
-	public PrimaryTwoResults save(@RequestBody PrimaryTwoResults twoResults) {
-		
-		return primaryTwo.save(twoResults);
-	}
-	
-	
-	
-	@PostMapping("/savePrimaryThree")
-	public PrimaryThreeResults save(@RequestBody PrimaryThreeResults threeResults) {
-		
-		return primaryThree.save(threeResults);
-	}
+	/*
+	 * @PostMapping("/savePrimaryTwo") public PrimaryTwoResults save(@RequestBody
+	 * PrimaryTwoResults twoResults) {
+	 * 
+	 * return primaryTwo.save(twoResults); }
+	 * 
+	 * 
+	 * 
+	 * @PostMapping("/savePrimaryThree") public PrimaryThreeResults
+	 * save(@RequestBody PrimaryThreeResults threeResults) {
+	 * 
+	 * return primaryThree.save(threeResults); }
+	 */
 	
 	
 	
 	
 	//updating lower primary results methods
 	
-	@PutMapping("/updatePrimaryOne")
-	public PrimaryOneResults update(@RequestBody PrimaryOneResults oneResults) {
+	@PutMapping("/updateLowerPrimary")
+	public LowerPrimaryResults update(@RequestBody LowerPrimaryResults lowerResults) {
 		
-		return primaryOne.save(oneResults);
+		return LowerPrimary.save(lowerResults);
 	}
 	
 	
 	
-	@PutMapping("/updatePrimaryTwo")
-	public PrimaryTwoResults update(@RequestBody PrimaryTwoResults twoResults) {
-		
-		return primaryTwo.save(twoResults);
-	}
-	
-	
-	
-	@PutMapping("/updatePrimaryThree")
-	public PrimaryThreeResults update(@RequestBody PrimaryThreeResults threeResults) {
-		
-		return primaryThree.save(threeResults);
-	}
+	/*
+	 * @PutMapping("/updatePrimaryTwo") public PrimaryTwoResults update(@RequestBody
+	 * PrimaryTwoResults twoResults) {
+	 * 
+	 * return primaryTwo.save(twoResults); }
+	 * 
+	 * 
+	 * 
+	 * @PutMapping("/updatePrimaryThree") public PrimaryThreeResults
+	 * update(@RequestBody PrimaryThreeResults threeResults) {
+	 * 
+	 * return primaryThree.save(threeResults); }
+	 */
 	
 	
 	
@@ -87,27 +82,26 @@ public class LowerPrimaryResultsController {
 	
 	//retrieving all lower primary results methods
 	
-	@GetMapping("/getPrimaryOne")
-	public List<PrimaryOneResults> getResults1() {
+	@GetMapping("/getLowerPrimary")
+	public List<LowerPrimaryResults> getResults1() {
 		
-		return primaryOne.findAll();
+		return LowerPrimary.findAll();
 	}
 	
 	
 	
-	@GetMapping("/getPrimaryTwo")
-	public List<PrimaryTwoResults> getResults2() {
-		
-		return primaryTwo.findAll();
-	}
-	
-	
-	
-	@GetMapping("/getPrimaryThree")
-	public List<PrimaryThreeResults> getResults3() {
-		
-		return primaryThree.findAll();
-	}
+	/*
+	 * @GetMapping("/getPrimaryTwo") public List<PrimaryTwoResults> getResults2() {
+	 * 
+	 * return primaryTwo.findAll(); }
+	 * 
+	 * 
+	 * 
+	 * @GetMapping("/getPrimaryThree") public List<PrimaryThreeResults>
+	 * getResults3() {
+	 * 
+	 * return primaryThree.findAll(); }
+	 */
 	
 	
 	

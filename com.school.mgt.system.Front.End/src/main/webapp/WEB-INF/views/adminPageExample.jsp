@@ -7,6 +7,7 @@
 <title>Home Page</title>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -67,7 +68,9 @@
     <div class="col-sm-4">
       <h2>Administrator</h2>
       <h5>Photo of me:</h5>
-      <div class="fakeimg"> <img alt="our mision" src="${pageContext.request.contextPath}/resources/png/mission.png" style="width:100%; height:100%;"/>  </div>
+      <div class="w3-circle" style="width:200px; height:200px;">
+      <div class="fakeimg"> <img  class="w3-circle"   alt="our mision" src="${pageContext.request.contextPath}/resources/png/mission.png" style="width:100%; height:100%;"/>  </div>
+      </div>
       <p>Administrator of BIPS..</p>
       
     <!--   academic record start here -->

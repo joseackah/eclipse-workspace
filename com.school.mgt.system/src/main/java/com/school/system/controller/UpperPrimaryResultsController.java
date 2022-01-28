@@ -10,49 +10,44 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.school.system.entities.PrimaryFiveResults;
-import com.school.system.entities.PrimaryFourResults;
-import com.school.system.entities.PrimarySixResults;
-import com.school.system.repos.PrimaryFiveResultsRepo;
-import com.school.system.repos.PrimaryFourResultsRepo;
-import com.school.system.repos.PrimarySixResultsRepo;
+import com.school.system.entities.UpperPrimaryResults;
+import com.school.system.repos.UpperPrimaryResultsRepo;
 
 
 @RestController
 @RequestMapping("/upperPrimary")
 public class UpperPrimaryResultsController {
 	//Injecting the repository of the upper primary results
-	@Autowired
-	PrimaryFourResultsRepo primaryFour;
+	/*
+	 * @Autowired PrimaryFourResultsRepo primaryFour;
+	 * 
+	 * @Autowired PrimaryFiveResultsRepo primaryFive;
+	 */
 	
 	@Autowired
-	PrimaryFiveResultsRepo primaryFive;
+	UpperPrimaryResultsRepo upperPrimary;
 	
 	
-	@Autowired
-	PrimarySixResultsRepo primarySix;
+	/*
+	 * @PostMapping("/savePrimaryFour") public PrimaryFourResults save(@RequestBody
+	 * PrimaryFourResults fourResults) {
+	 * 
+	 * return primaryFour.save(fourResults); }
+	 * 
+	 * 
+	 * 
+	 * @PostMapping("/savePrimaryFive") public PrimaryFiveResults save(@RequestBody
+	 * PrimaryFiveResults fiveResults) {
+	 * 
+	 * return primaryFive.save(fiveResults); }
+	 */
 	
 	
-	@PostMapping("/savePrimaryFour")
-	public PrimaryFourResults save(@RequestBody PrimaryFourResults fourResults) {
+	
+	@PostMapping("/saveUpperPrimary")
+	public UpperPrimaryResults save(@RequestBody UpperPrimaryResults sixResults) {
 		
-		return primaryFour.save(fourResults);
-	}
-	
-	
-	
-	@PostMapping("/savePrimaryFive")
-	public PrimaryFiveResults save(@RequestBody PrimaryFiveResults fiveResults) {
-		
-		return primaryFive.save(fiveResults);
-	}
-	
-	
-	
-	@PostMapping("/savePrimarySix")
-	public PrimarySixResults save(@RequestBody PrimarySixResults sixResults) {
-		
-		return primarySix.save(sixResults);
+		return upperPrimary.save(sixResults);
 	}
 	
 	
@@ -60,26 +55,25 @@ public class UpperPrimaryResultsController {
 	
 	//updating upper primary results methods
 	
-	@PutMapping("/updatePrimaryFour")
-	public PrimaryFourResults update(@RequestBody PrimaryFourResults fourResults) {
+	/*
+	 * @PutMapping("/updatePrimaryFour") public PrimaryFourResults
+	 * update(@RequestBody PrimaryFourResults fourResults) {
+	 * 
+	 * return primaryFour.save(fourResults); }
+	 * 
+	 * 
+	 * 
+	 * @PutMapping("/updatePrimaryFive") public PrimaryFiveResults
+	 * update(@RequestBody PrimaryFiveResults fiveResults) {
+	 * 
+	 * return primaryFive.save(fiveResults); }
+	 */
+	
+	
+	@PutMapping("/updateUpperPrimary")
+	public UpperPrimaryResults update(@RequestBody UpperPrimaryResults sixResults) {
 		
-		return primaryFour.save(fourResults);
-	}
-	
-	
-	
-	@PutMapping("/updatePrimaryFive")
-	public PrimaryFiveResults update(@RequestBody PrimaryFiveResults fiveResults) {
-		
-		return primaryFive.save(fiveResults);
-	}
-	
-	
-	
-	@PutMapping("/updatePrimarySix")
-	public PrimarySixResults update(@RequestBody PrimarySixResults sixResults) {
-		
-		return primarySix.save(sixResults);
+		return upperPrimary.save(sixResults);
 	}
 	
 	
@@ -88,26 +82,26 @@ public class UpperPrimaryResultsController {
 	
 	//retrieving all lower primary results methods
 	
-	@GetMapping("/getPrimaryFour")
-	public List<PrimaryFourResults> getResults4() {
+	/*
+	 * @GetMapping("/getPrimaryFour") public List<PrimaryFourResults> getResults4()
+	 * {
+	 * 
+	 * return primaryFour.findAll(); }
+	 * 
+	 * 
+	 * 
+	 * @GetMapping("/getPrimaryFive") public List<PrimaryFiveResults> getResults5()
+	 * {
+	 * 
+	 * return primaryFive.findAll(); }
+	 */
+	
+	
+	
+	@GetMapping("/getUpperPrimary")
+	public List<UpperPrimaryResults> getResults6() {
 		
-		return primaryFour.findAll();
-	}
-	
-	
-	
-	@GetMapping("/getPrimaryFive")
-	public List<PrimaryFiveResults> getResults5() {
-		
-		return primaryFive.findAll();
-	}
-	
-	
-	
-	@GetMapping("/getPrimarySix")
-	public List<PrimarySixResults> getResults6() {
-		
-		return primarySix.findAll();
+		return upperPrimary.findAll();
 	}
 	
 	

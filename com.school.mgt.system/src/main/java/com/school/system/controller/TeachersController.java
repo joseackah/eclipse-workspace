@@ -60,5 +60,34 @@ public class TeachersController {
 	}
 	
 	
+	@GetMapping("/find/{id}")
+	public Teachers find(@PathVariable("id") Integer id) {
+		
+		return teacherRepo.findById(id).get();
+	}
+	
+	
+	/* teachers counting methods */
+	
+	@GetMapping("/countTeachers")
+	public String countTeachers() {
+		return teacherRepo.countTeachers();
+	}
+	
+	
+	@GetMapping("/countTeacherMale")
+	public String countTeacherMale() {
+		return teacherRepo.countTeacherMale();
+	}
+	
+	
+	
+	@GetMapping("/countTeacherFemale")
+	public String countTeacherFemale() {
+		return teacherRepo.countTeacherFemale();
+	}
+	
+	
+	
 
 }

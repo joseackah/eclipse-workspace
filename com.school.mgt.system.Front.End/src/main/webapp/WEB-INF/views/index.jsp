@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style type="text/css">
 
 a:link{
@@ -11,11 +14,11 @@ color: red;
 a:visited{
 color: green;
 }
-li:hover{
+/* li:hover{
 background-color: green;
 transition: 5s;
 color: red;
-}
+} */
 .card{
 padding: 2em;
 color: white;
@@ -47,7 +50,7 @@ to {background-color: rgb(145,74,152);}
 background-color: rgb(23, 24, 26);
 height: 100px;
 padding: 10px;
-padding-top: 4em;
+/* padding-top: 4em; */
 color: white;
 align-content: center;
 
@@ -55,9 +58,13 @@ align-content: center;
 }
 </style>
 
-<link href="${pageContext.request.contextPath}/resources/index.css"
+<link href="${pageContext.request.contextPath}/resources/css/index.css"
 	rel="stylesheet">
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/w3.css">
+<!-- https://www.w3schools.com/w3css/4/w3.css -->
+
 <title>HOME</title>
 </head>
 <body class="body" style="background-color:gold;">
@@ -79,6 +86,9 @@ align-content: center;
         <li class="nav-item"><a href="${pageContext.request.contextPath}/general/image">register</a></li>
         <li class="nav-item"><a href="${pageContext.request.contextPath}/general/card">card</a></li>
         <li class="nav-item"><a href="${pageContext.request.contextPath}/general/adminHomePageExample2">Admin Home</a></li>
+         <li class="nav-item"><a href="${pageContext.request.contextPath}/schoolStudents/profiles">Profile</a></li>       
+        <li class="nav-item"><a href="${pageContext.request.contextPath}/general/module">module</a></li>
+        <li class="nav-item"><a href="${pageContext.request.contextPath}/schoolStudents/profilesTry">ProfileTry</a></li>
         </ul>
 </div>
     </nav>
@@ -88,6 +98,45 @@ align-content: center;
 <h1 style='text-align: center; font-size: 70px;'>Welcome to Bernice's Preparatory School Website</h1>
 <br/> <br/>
  <p style="text-align:center"> <h2 style="text-align:center" >  </h2></p> <br /> <br />
+ 
+ <!-- carousal begins here -->
+ <div style="width: 80%; height: 50%; position: relative; left:10%;">
+ <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="${pageContext.request.contextPath}/resources/jpg/school1.jpg" alt="Los Angeles" width="2028" height="">
+    </div>
+
+    <div class="item">
+      <img src="${pageContext.request.contextPath}/resources/jpg/school.jpg" alt="Chicago" width="2028" height="">
+    </div>
+
+    <div class="item">
+      <img src="${pageContext.request.contextPath}/resources/jpg/school2.jpg" alt="New York" width="2028" height="0">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+ </div>
+<!--  carousal ends here -->
+<hr>
  
  <div class="container" style="display:flex-center; width:100%; text-align:center;">
  <div class="card" style="display:;display:inline-block; width:40%; border: 1px solid green; background-color:red;">
@@ -105,10 +154,68 @@ align-content: center;
 </div>
 <br /> <br/> <br/>
 
-<footer class="footer"  >
+<footer class="footer"  style="text-align: center;">
 <h3 style="text-align: center;">Contact Us: 0207173313</h3>
 
 </footer>
+
+
+<!-- register form start here -->
+
+<!-- <div class="container">
+		<button type="button" class="btn btn-info float-left"
+			data-toggle="modal" data-target="#myModal">Register</button>
+
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+<button type="button" class="btn btn-info float-left"
+			data-toggle="modal" data-target="#myModal"> Register</button>
+					<div class="modal-header">
+
+						<h4 class="modal-title text-primary">REGISTER</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<h2 style="text-align: center;">
+						<span style="color: blue;">BI</span>PS
+					</h2>
+					<div class="modal-body">
+						<form action="imageUpload">
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<input type="text" name="username" placeholder="username">
+										<br>
+									</div>
+									<div class="form-group">
+										<input type="text" name="password" placeholder="password"><br>
+									</div>
+									<div class="form-group">
+										<input type="text" name="email" placeholder="email"> <br>
+									</div>
+									<div class="form-group">
+										<input type="file" name="file" accept="image/jpg"> <br>
+									</div>
+								</div>
+							</div>
+							<input type="submit" value="submit">
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-primary"
+									onclick="return validate()" id="alert">Register</button>
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Close</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+ -->
+<!-- register form ends here -->
+
+
 
 
 </body>

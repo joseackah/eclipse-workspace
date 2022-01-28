@@ -19,12 +19,12 @@
     <nav>
         <ul>
             <li><a href="${pageContext.request.contextPath}/index">HOME</a></li>
-            <li><a href="">Add product</a></li>
-            <li><a href="${pageContext.request.contextPath}/">Add Cate</a></li>
-            <li><a href="${pageContext.request.contextPath}/">Display</a></li>
-            <li><a href="${pageContext.request.contextPath}/">Display Cate</a></li>
-            <li><a href="${pageContext.request.contextPath}/">Add More Product</a></li>
-            <li><a href="">to assign</a></li>
+     <%--        <li><a href="">Add product</a></li>
+            <li><a href="${pageContext.request.contextPath}/"></a></li>
+            <li><a href="${pageContext.request.contextPath}/"></a></li>
+            <li><a href="${pageContext.request.contextPath}/"></a></li>
+            <li><a href="${pageContext.request.contextPath}/"></a></li>
+            <li><a href=""></a></li> --%>
            
             
         </ul>
@@ -33,11 +33,11 @@
     <br />
     <br />
     
-    <h1 style='text-align: center;'>Welcome to Ecommerce Product Services</h1>
+    <h1 style='text-align: center;'>BIPS STUDENT ENROLLMENT</h1>
      <br />
     <br />
 	<div class="wrapper">
-		<h2>Enroll Student</h2>
+		<h2>Enroll Student</h2> <button type="button">&times;</button>
 		<form action="moreStudents" method="post" id="main_form"
 			class="main_form">
 			<div class="form">

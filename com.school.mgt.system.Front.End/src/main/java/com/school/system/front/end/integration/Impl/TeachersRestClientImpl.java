@@ -17,8 +17,8 @@ public class TeachersRestClientImpl implements TeachersRestClient {
 
 	@Override
 	public void saveTeacher(Teachers teachers) {
-		teacher.setFirstName(teachers.getFirstName());
-		teacher.setLastName(teachers.getLastName());
+		teacher.setfName(teachers.getfName());
+		teacher.setlName(teachers.getlName());
 		teacher.setDateOfBirth(teachers.getDateOfBirth());
 		teacher.setQualification(teachers.getQualification());
 		teacher.setEmail(teachers.getEmail());
@@ -61,6 +61,34 @@ public class TeachersRestClientImpl implements TeachersRestClient {
 	@Override
 	public Teachers findById(Integer id) {
 		Teachers teacher = rest.getForObject("http://localhost:9095/teachers/findById/" + id, Teachers.class);
+		return teacher;
+	}
+	
+	
+	/* counting teachers methods */
+
+	@Override
+	public String countTeachers() {
+		
+		return rest.getForObject("http://localhost:9095/teachers/countTeachers/", String.class);
+	}
+
+	@Override
+	public String countTeacherMale() {
+		
+		return rest.getForObject("http://localhost:9095/teachers/countTeacherMale/", String.class);
+	}
+
+	@Override
+	public String countTeacherFemale() {
+		
+		return rest.getForObject("http://localhost:9095/teachers/countTeacherFemale/", String.class);
+	}
+
+	@Override
+	public Teachers findTeacher(Integer id) {
+		RestTemplate rests = new RestTemplate();
+		Teachers teacher = rests.getForObject("http://localhost:9095/teachers/find/"+id, Teachers.class);
 		return teacher;
 	}
 

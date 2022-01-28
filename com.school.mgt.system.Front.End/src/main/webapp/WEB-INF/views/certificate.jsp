@@ -14,7 +14,8 @@
 <h1> BERNICE'S INTERNATIONAL PREPARATORY SCHOOL</h1>
  <h2 style="font-size:2em;"> <span style="color: blue;">BI</span>PS</h2>
  <p> this is to certify </p>
- <h1 style="margin-bottom: -15px;"> NAME</h1>
+ 
+ <h1 style="margin-bottom: -15px;"> ${student.lastName}    ${student.firstName}</h1>
  <hr style="width: 80%;">
  <p style="margin-top: 2em; margin-bottom: 2em; text-align: center;">having passed the prescribed Examination has on the</p>
  <div style="display: inline-block; margin-bottom: -1.5em;"> <div> <p style="position: absolute; left:32%;"> 1st</p></div>
@@ -27,6 +28,8 @@
   <div style="display:flex; position: relative; left: 27%;"> <div style="text-align: center;"> <p style="position: relative; bottom:20%; margin-right: 3em;">with </p></div > <div style="width: 40%; float: bottom; position: relative; bottom: 20%; margin-bottom: 60px;"> <hr> </div></div>
   
  <div style="display:flex; position: relative; left: 10%;"> <div><p style="margin: 2em 2em;">Academic sign</p></div> <div><p style="margin: 2em 2em;">Principal sign</p></div>  <div><p style="margin: 2em 2em 0em 0em;">seal</p></div>
+
+
 </div>
 
 

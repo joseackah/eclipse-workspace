@@ -16,9 +16,9 @@ transition: 5s;
 }
 
 </style>
-<link href="${pageContext.request.contextPath}/resources/index.css"
+<link href="${pageContext.request.contextPath}/resources/css/index.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/main.css"
+<link href="${pageContext.request.contextPath}/resources/css/main.css"
 	rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/resources/datatables.min.css"
 	rel="stylesheet">
@@ -79,30 +79,30 @@ transition: 5s;
 			</thead>
 			<tbody>
 				<c:forEach items="${teacher}" var="teacher">
-					<c:url value="update1" var="updateURL">
+					<c:url value="teacherUpdate" var="updateURL">
 						<c:param value="${teacher.teacherId}" name="teacherId"></c:param>
-					 	<c:param value="${teacher.firstName}" name="firstName"></c:param>
-						<c:param value="${teacher.lastName}" name="lastName"></c:param>
+					 	<%-- <c:param value="${teacher.fName}" name="fName"></c:param>
+						<c:param value="${teacher.lName}" name="lName"></c:param>
 						<c:param value="${teacher.dateOfBirth}" name="dateOfBirth"></c:param>
 						<c:param value="${teacher.qualification}" name="qualification"></c:param>
 						<c:param value="${teacher.email}" name="email"></c:param>
-						<c:param value="${teacher.phoneNumber}" name="lastName"></c:param>
-						<c:param value="${teacher.gender}" name="lastName"></c:param>
-						<c:param value="${teacher.address}" name="lastName"></c:param>
+						<c:param value="${teacher.phoneNumber}" name="phoneNumber"></c:param>
+						<c:param value="${teacher.gender}" name="gender"></c:param>
+						<c:param value="${teacher.address}" name="address"></c:param>
 						<c:param value="${teacher.salary}" name="salary"></c:param>
-						<c:param value="${teacher.appointmentDate}" name="startDate"></c:param>
+						<c:param value="${teacher.appointmentDate}" name="appointmentDate"></c:param> --%>
 						 
 						
 					</c:url>
 
-					<c:url value="deleteStudents/${student.studentId}" var="removeURL">
+					<c:url value="deleteTeachers/${teacher.teacherId}" var="removeURL">
 				<!-- <c:param value="" name="id"></c:param> -->	
 					</c:url>
 
 					<tr>
 						<td>${teacher.teacherId}</td>
-						<td>${teacher.firstName}</td>
-						<td>${teacher.lastName}</td>
+						<td>${teacher.fName}</td>
+						<td>${teacher.lName}</td>
 						<td>${teacher.dateOfBirth}</td>
 						<td>${teacher.qualification}</td>
 						<td>${teacher.email}</td>

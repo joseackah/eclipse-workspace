@@ -10,107 +10,99 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.school.system.entities.JHSOneResults;
-import com.school.system.entities.JHSThreeResults;
-import com.school.system.entities.JHSTwoResults;
-import com.school.system.repos.JHSOneResultsRepo;
-import com.school.system.repos.JHSThreeResultsRepo;
-import com.school.system.repos.JHSTwoResultsRepo;
+import com.school.system.entities.JHSResults;
+import com.school.system.repos.JHSResultsRepo;
 
 
 @RestController
 @RequestMapping("/jhs")
 public class JHSResultsController {
 	//Injecting the repository of the lower primary results
-	@Autowired
-	JHSOneResultsRepo jhsOne;
+	//@Autowired
+	//JHSResultsRepo jhsOne;
 	
 	
 	@Autowired
-	JHSTwoResultsRepo jhsTwo;
+	JHSResultsRepo jhs;
 	
-	@Autowired
-	JHSThreeResultsRepo jhsThree;
+	//@Autowired
+	//JHSThreeResultsRepo jhsThree;
 	
 	
 	//SAVING JHS RESULTS METHODS
 	
-	@PostMapping("/saveJHSOne")
-	public JHSOneResults save(@RequestBody JHSOneResults oneResults) {
+	@PostMapping("/saveJHS")
+	public JHSResults save(@RequestBody JHSResults jhsResults) {
 		
-		return jhsOne.save(oneResults);
+		return jhs.save(jhsResults);
 	}
 	
 	
 	
-	@PostMapping("/saveJHSTwo")
-	public JHSTwoResults save(@RequestBody JHSTwoResults twoResults) {
-		
-		return jhsTwo.save(twoResults);
-	}
-	
-	
-	
-	@PostMapping("/saveJHSThree")
-	public JHSThreeResults save(@RequestBody JHSThreeResults threeResults) {
-		
-		return jhsThree.save(threeResults);
-	}
-	
+	/*
+	 * @PostMapping("/saveJHSTwo") public JHSTwoResults save(@RequestBody
+	 * JHSTwoResults twoResults) {
+	 * 
+	 * return jhsTwo.save(twoResults); }
+	 * 
+	 * 
+	 * 
+	 * @PostMapping("/saveJHSThree") public JHSThreeResults save(@RequestBody
+	 * JHSThreeResults threeResults) {
+	 * 
+	 * return jhsThree.save(threeResults); }
+	 */
 	
 	
 	
 	//updating JHS results methods
 	
-	@PutMapping("/updateJHSOne")
-	public JHSOneResults update(@RequestBody JHSOneResults oneResults) {
+	@PutMapping("/updateJHS")
+	public JHSResults update(@RequestBody JHSResults jhsResults) {
 		
-		return jhsOne.save(oneResults);
+		return jhs.save(jhsResults);
 	}
 	
 	
 	
-	@PutMapping("/updateJHSTwo")
-	public JHSTwoResults update(@RequestBody JHSTwoResults twoResults) {
-		
-		return jhsTwo.save(twoResults);
-	}
-	
-	
-	
-	@PutMapping("/updateJHSThree")
-	public JHSThreeResults update(@RequestBody JHSThreeResults threeResults) {
-		
-		return jhsThree.save(threeResults);
-	}
-	
+	/*
+	 * @PutMapping("/updateJHSTwo") public JHSTwoResults update(@RequestBody
+	 * JHSTwoResults twoResults) {
+	 * 
+	 * return jhsTwo.save(twoResults); }
+	 * 
+	 * 
+	 * 
+	 * @PutMapping("/updateJHSThree") public JHSThreeResults update(@RequestBody
+	 * JHSThreeResults threeResults) {
+	 * 
+	 * return jhsThree.save(threeResults); }
+	 */
 	
 	
 	
 	
 	//retrieving all JHS results methods
 	
-	@GetMapping("/getJHSOne")
-	public List<JHSOneResults> getResults1() {
+	@GetMapping("/getJHS")
+	public List<JHSResults> getResults1() {
 		
-		return jhsOne.findAll();
+		return jhs.findAll();
 	}
 	
 	
 	
-	@GetMapping("/getJHSTwo")
-	public List<JHSTwoResults> getResults2() {
-		
-		return jhsTwo.findAll();
-	}
-	
-	
-	
-	@GetMapping("/getPrimaryThree")
-	public List<JHSThreeResults> getResults3() {
-		
-		return jhsThree.findAll();
-	}
+	/*
+	 * @GetMapping("/getJHSTwo") public List<JHSTwoResults> getResults2() {
+	 * 
+	 * return jhsTwo.findAll(); }
+	 * 
+	 * 
+	 * 
+	 * @GetMapping("/getPrimaryThree") public List<JHSThreeResults> getResults3() {
+	 * 
+	 * return jhsThree.findAll(); }
+	 */
 	
 	
 	

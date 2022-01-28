@@ -1,10 +1,13 @@
 package com.school.system.front.end.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@CrossOrigin(origins = "http://localhost:8082")
 @RequestMapping("/general")
 public class GeneralController {
 
@@ -12,17 +15,70 @@ public class GeneralController {
 	 * @Autowired StudentsRestClient studentsRestClient;
 	 */
 	
+	@Autowired
+	StudentsController studentCont;
 	
 	
-	@RequestMapping("/card")
-	public String card(ModelMap model) {
-
-		return "indexTry";
+	
+	
+	/*
+	 * @RequestMapping("/accounts") public String accounts(ModelMap model) {
+	 * 
+	 * return "addAccounts";
+	 * 
+	 * }
+	 */
+	
+	
+	
+	
+	@RequestMapping("/module")
+	public String moduleTry(ModelMap model) {
+	
+		return "moduleTry";
+	
 	}
 	
 	
 	
 	
+	
+	
+	@RequestMapping("/card")
+	public String card(ModelMap model) {
+	
+		return "indexTry";
+	}
+	
+	
+	/*
+	 * @RequestMapping("/profiles") public String profiles(ModelMap model) {
+	 * studentCont.countStudent(); studentCont.countStudentFemale();
+	 * studentCont.countStudentMale();
+	 * 
+	 * return "profiles";
+	 * 
+	 * 
+	 * }
+	 */
+	
+	@RequestMapping("/certificateForm")
+	public String certificateForm(ModelMap model) {
+
+		return "certificate-form";
+	}
+	
+	@RequestMapping("/certificate")
+	public String certificate(ModelMap model) {
+
+		return "certificate";
+	}
+	
+	@RequestMapping("/transcript")
+	public String transcript(ModelMap model) {
+
+		return "transcript";
+	}
 	
 	
 	@RequestMapping("/adminHomePageExample2")

@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="${pageContext.request.contextPath}/resources/index.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/main.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/java.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/index.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/java.css" rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>Add Teacher Form</title>
 </head>

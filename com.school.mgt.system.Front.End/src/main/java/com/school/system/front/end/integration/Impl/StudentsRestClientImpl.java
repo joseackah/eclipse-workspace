@@ -30,7 +30,7 @@ public class StudentsRestClientImpl implements StudentsRestClient {
 	public void updateStudent(Students students) {
 		Map<String, Integer> updateStudent = new HashMap<String, Integer>();
 		updateStudent.put("id", students.getStudentId());
-		rest.put("http://localhost:9095/students/updateStudent/{id}", students, updateStudent);
+		rest.put("http://localhost:9095/students/updateStudent", students, updateStudent);
 
 	}
 
@@ -73,11 +73,87 @@ public class StudentsRestClientImpl implements StudentsRestClient {
 		Students student =  rest.getForObject("http://localhost:9095/students/lastId/", Students.class);
 		return student;
 	}
+	
+	/* counting methods starts here */
 
 	@Override
 	public String count() {
 		
 		return rest.getForObject("http://localhost:9095/students/count/", String.class);
+	}
+	
+	
+	@Override
+	public String countMale() {
+		
+		return rest.getForObject("http://localhost:9095/students/countMale/", String.class);
+	}
+	
+	
+	@Override
+	public String countFemale() {
+		
+		return rest.getForObject("http://localhost:9095/students/countFemale/", String.class);
+	}
+	
+	/* year 1 counting methods */ 
+
+	@Override
+	public String countYear1() {
+		
+		return rest.getForObject("http://localhost:9095/students/countYear1/", String.class);
+	}
+
+	@Override
+	public String countYear1Male() {
+		
+		return rest.getForObject("http://localhost:9095/students/countYear1Male/", String.class);
+	}
+
+	@Override
+	public String countYear1Female() {
+		
+		return rest.getForObject("http://localhost:9095/students/countYear1Female/", String.class);
+	}
+	
+	/* year 2 counting methods */
+
+	@Override
+	public String countYear2() {
+		
+		return rest.getForObject("http://localhost:9095/students/countYear2/", String.class);
+	}
+
+	@Override
+	public String countYear2Male() {
+		
+		return rest.getForObject("http://localhost:9095/students/countYear2Male/", String.class);
+	}
+
+	@Override
+	public String countYear2Female() {
+		
+		return rest.getForObject("http://localhost:9095/students/countYear2Female/", String.class);
+	}
+	
+	/* year 3 counting methods */
+
+	@Override
+	public String countYear3() {
+	
+		return rest.getForObject("http://localhost:9095/students/countYear3/", String.class);
+	}
+
+	@Override
+	public String countYear3Male() {
+		
+		return rest.getForObject("http://localhost:9095/students/countYear3Male/", String.class);
+	}
+
+	@Override
+	public String countYear3Female() {
+		
+		return rest.getForObject("http://localhost:9095/students/countYear3Female/", String.class);
 	}
 
 	

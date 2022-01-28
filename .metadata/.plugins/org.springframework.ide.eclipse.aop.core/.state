@@ -10,6 +10,7 @@
 <aop-project name="com.ecommerce"/>
 <aop-project name="springdatajpa"/>
 <aop-project name="springdatamappingCustomerAddress"/>
+<aop-project name="org.nurses.staff.management.back.end"/>
 <aop-project name="springJDBC"/>
 <aop-project name="springdatamappinghospitalbunglaw"/>
 <aop-project name="com.ecommerce.FRONT.END"/>
@@ -17,20 +18,22 @@
 <aop-project name="springbootweb"/>
 <aop-project name="ManyToManyspringdata"/>
 <aop-project name="springboot"/>
+<aop-project name="org.nurses.management.back.end"/>
 <aop-project name="springmvchibernatePassenger"/>
 <aop-project name="SpringCoreDemo"/>
+<aop-project name="automatedStudentResultsProjectBackend"/>
 <aop-project name="securitywithspringboot"/>
-<aop-project name="springmvchibernate"/>
 <aop-project name="springbootproductAppFrontEnd"/>
+<aop-project name="springmvchibernate"/>
 <aop-project name="com.spring.security.withdatabase"/>
 <aop-project name="com.ecommerce.business.REST"/>
-<aop-project name="springsecurity.assignment"/>
 <aop-project name="oneToManyspringdata"/>
+<aop-project name="springsecurity.assignment"/>
 <aop-project name="com.school.system.Front"/>
 <aop-project name="student.enrollment.java.code"/>
 <aop-project name="springdatamappingg"/>
-<aop-project name="spring.security.sample.database"/>
 <aop-project name="com.school.mgt.system.Front.End"/>
+<aop-project name="spring.security.sample.database"/>
 <aop-project name="product.java.based.code"/>
 <aop-project name="solo.user.group.API"/>
 </aop-reference-model>

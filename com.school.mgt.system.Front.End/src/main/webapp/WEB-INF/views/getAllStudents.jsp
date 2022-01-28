@@ -16,9 +16,9 @@ transition: 5s;
 }
 
 </style>
-<link href="${pageContext.request.contextPath}/resources/index.css"
+<link href="${pageContext.request.contextPath}/resources/css/index.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/main.css"
+<link href="${pageContext.request.contextPath}/resources/css/main.css"
 	rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/resources/datatables.min.css"
 	rel="stylesheet">
@@ -97,6 +97,16 @@ transition: 5s;
 						<c:param value="${student.age}" name="age"></c:param>
 						<c:param value="${student.classLevel}" name="classLevel"></c:param>
 					</c:url>
+					
+					
+					<c:url value="accountEntry/${student.studentId}" var="accounts">
+					<%-- <c:param value="${account.studentId}" name="studentId"></c:param>
+					 	<c:param value="${account.firstName}" name="firstName"></c:param>
+						<c:param value="${account.lastName}" name="lastName"></c:param>
+						<c:param value="${account.sex}" name="sex"></c:param>
+						<c:param value="${account.age}" name="age"></c:param>
+						<c:param value="${account.classLevel}" name="classLevel"></c:param> --%>
+					</c:url> 
 
 					<tr>
 						<td>${student.studentId}</td>
@@ -109,7 +119,8 @@ transition: 5s;
 						<td><a href="${updateURL }">Update</a> | <a
 							href="${removeURL }"
 							onclick="if (!confirm('Are you sure you want to delete this record?')) return false">Delete</a> | 
-							<a href="${results}">Results</a>
+							<a href="${results}">Results</a> |
+							<a href="${accounts}">Accounts</a>
 							
 						</td>
 					</tr>
@@ -122,7 +133,7 @@ transition: 5s;
 
 ${student}
 
-	
+<span Style="color:red;">${count}</span>	
 <script>
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {

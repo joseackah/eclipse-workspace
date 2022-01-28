@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="${pageContext.request.contextPath}/resources/index.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/main.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/java.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/index.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/java.css" rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>Add Results Form</title>
 </head>
@@ -19,12 +19,12 @@
     <nav>
         <ul>
             <li><a href="${pageContext.request.contextPath}/general/homePage">HOME</a></li>
-            <li><a href="">Add product</a></li>
-            <li><a href="${pageContext.request.contextPath}/">Add Cate</a></li>
-            <li><a href="${pageContext.request.contextPath}/">Display</a></li>
-            <li><a href="${pageContext.request.contextPath}/">Display Cate</a></li>
-            <li><a href="${pageContext.request.contextPath}/">Add More Product</a></li>
-            <li><a href="">to assign</a></li>
+          <%--   <li><a href=""></a></li>
+            <li><a href="${pageContext.request.contextPath}/"></a></li>
+            <li><a href="${pageContext.request.contextPath}/"></a></li>
+            <li><a href="${pageContext.request.contextPath}/"></a></li>
+            <li><a href="${pageContext.request.contextPath}/"></a></li>
+            <li><a href=""></a></li> --%>
            
             
         </ul>

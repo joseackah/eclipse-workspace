@@ -3,6 +3,8 @@ package com.school.system.front.end.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +14,7 @@ import com.school.system.front.end.integration.TeachersRestClient;
 import com.school.system.front.end.integration.dto.Teachers;
 
 @Controller
+@CrossOrigin(origins = "http://localhost:8082")
 @RequestMapping("/schoolTeachers")
 public class TeachersController {
 	
@@ -52,6 +55,15 @@ public class TeachersController {
 		return "redirect:displayTeachers";
 	}
 	
+	
+	@RequestMapping(value ="teacherUpdate", method=RequestMethod.GET)
+	public String searchTea(@RequestParam("teacherId") Integer teacherId, ModelMap model) {
+		Teachers teacher = teachersRestClient.findTeacher(teacherId);
+		model.addAttribute("teacher", teacher);
+		return "showTeacherSearch";
+	}
+	
+	
 	@RequestMapping("/saveTeachers")
 	public String saveTeachers(Teachers teachers) {
 		teachersRestClient.saveTeacher(teachers);
@@ -71,7 +83,7 @@ public class TeachersController {
 	public String deleteTeachers(@PathVariable("id") Integer id) {
 		teachersRestClient.deleteTeacher(id);
 		
-		return "redirect:/displayTeachers";
+		return "redirect:/schoolTeachers/displayTeachers";
 	}
 	
 	@RequestMapping(value="/displayTeachers", method=RequestMethod.GET)
@@ -96,7 +108,7 @@ public class TeachersController {
 	public String searchTeachers(@RequestParam("teacherId")Integer id, ModelMap model) {
 		Teachers teachers = teachersRestClient.findById(id);
 		model.addAttribute("teachers", teachers);
-		return "showProduct";
+		return "showTeacherSearch";
 	}
 	
 	/*
@@ -112,5 +124,28 @@ public class TeachersController {
 	 * }
 	 */
 	
+	
+	/* counting teachers methods */
 
+	@ModelAttribute("countTeachers")
+	public String countTeachers() {
+		return teachersRestClient.countTeachers();
+	}
+	
+	
+	@ModelAttribute("countTeacherMale")
+	public String countYear3Male() {
+		return teachersRestClient.countTeacherMale();
+	}
+	
+	
+	
+	@ModelAttribute("countTeacherFemale")
+	public String countTeacherFemale() {
+		return teachersRestClient.countTeacherFemale();
+	}
+  
+	
+	
+	
 }

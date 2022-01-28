@@ -86,4 +86,80 @@ public class StudentsController {
 	}
 	
 	
+	@GetMapping("/countMale")
+	public String countMale() {
+		return studentRepo.countStudentMale();
+	}
+	
+	
+	
+	@GetMapping("/countFemale")
+	public String countFemale() {
+		return studentRepo.countStudentFemale();
+	}
+	
+	
+	/* counting year 1 methods */
+	
+	@GetMapping("/countYear1")
+	public String countYear1() {
+		return studentRepo.countYear1();
+	}
+	
+	
+	@GetMapping("/countYear1Male")
+	public String countYear1Male() {
+		return studentRepo.countYear1Male();
+	}
+	
+	
+	
+	@GetMapping("/countYear1Female")
+	public String countYear1Female() {
+		return studentRepo.countYear1Female();
+	}
+	
+	
+	/* counting year 2 methods */
+	
+	@GetMapping("/countYear2")
+	public String countYear2() {
+		return studentRepo.countYear2();
+	}
+	
+	
+	@GetMapping("/countYear2Male")
+	public String countYear2Male() {
+		return studentRepo.countYear2Male();
+	}
+	
+	
+	
+	@GetMapping("/countYear2Female")
+	public String countYear2Female() {
+		return studentRepo.countYear2Female();
+	}
+	
+	
+	/* counting year 3 methods */
+	
+	@GetMapping("/countYear3")
+	public String countYear3() {
+		return studentRepo.countYear3();
+	}
+	
+	
+	@GetMapping("/countYear3Male")
+	public String countYear3Male() {
+		return studentRepo.countYear3Male();
+	}
+	
+	
+	
+	@GetMapping("/countYear3Female")
+	public String countYear3Female() {
+		return studentRepo.countYear3Female();
+	}
+	
+	
 	}
