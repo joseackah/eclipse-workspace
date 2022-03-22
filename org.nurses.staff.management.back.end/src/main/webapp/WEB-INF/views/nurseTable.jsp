@@ -63,8 +63,8 @@
     <button id="b1" style="float: left; border-radius: 5em; " class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/leaveFront/profile'">back</button>
         <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print"></i> </button>
 
-       
-<div style=" display:flex; flex-direction:row-reverse;"> <input class="form-control" id="myInput" type="text" placeholder="Search.." style="padding: .5em 2em; border-radius: 5em; width:20%; display:flex; flex-direction: flex-end;"> </div>
+   <div style=" display:flex; flex-direction:row-reverse;">    <button onclick="window.location.href='${pageContext.request.contextPath}/nurseFront/addStaff'" class="btn btn-primary" id="myInput" type="button"  style="padding: .5em 2em; border-radius: 5em; width:20%; display:; flex-direction: flex-end;">Add Staff </button>
+ <input class="form-control" id="myInput" type="text" placeholder="Search.." style="padding: .5em 2em; border-radius: 5em; width:20%; display:flex; flex-direction: flex-end;"> </div>
         <table class="table table-bordered table-hover" style="background-color: aliceblue;">
             <thead class="table-success">
                 <tr>

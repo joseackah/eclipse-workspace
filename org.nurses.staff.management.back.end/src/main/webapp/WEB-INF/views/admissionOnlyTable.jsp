@@ -89,7 +89,7 @@
                     <th>INSURED</th>
                     <th>NUMBER</th>
                   
-                    <th id="actio">ACTION</th>
+                    <th id="actio" hidden="true">ACTION</th>
                 </tr>
             </thead>
             <tbody id="myTable">
@@ -123,7 +123,7 @@
                     <td>${admissionOnly.insured}</td>
                     <td>${admissionOnly.insurance_number}</td>
                     
-                    <td id="action1">
+                    <td id="action1" hidden="true">
                     
                     <a id="action"  href="${delete}" onclick="if (!confirm('Are you sure you want to delete this record?')) return false"> <i  class="fa fa-trash" id="action2"></i> </a> |-|
                     <a  id="action" href="${update}"> <i id="action" class="fa fa-pen" id="action3" > </i></a>
@@ -144,7 +144,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                   
                     
                     
                 

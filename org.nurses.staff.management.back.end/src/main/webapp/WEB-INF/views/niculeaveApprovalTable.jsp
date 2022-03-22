@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -80,7 +80,7 @@
         <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:100" id="name">
             <thead class="table-danger">
                 <tr>
-                    <th>ID</th>
+                    <th hidden=true>ID</th>
                     <th>WARD NAME</th>	
                     <th>STAFF ID</th>
                     <th>NAME</th>
@@ -118,7 +118,7 @@
             
                 <tr>
                 
-                    <td>${leave.id}</td>
+                    <td hidden=true>${leave.id}</td>
                     <td>${leave.ward_name}</td>
                     <td>${leave.staff_id}</td>
                     <td>${leave.name}</td>
@@ -146,7 +146,7 @@
                 </tr>
 </c:forEach>
                 <tr>
-                    <td></td>
+                    <td hidden=true></td>
                     <td></td>
                     <td></td>
                     <td></td>

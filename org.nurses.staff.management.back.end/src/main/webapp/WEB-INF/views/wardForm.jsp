@@ -29,7 +29,7 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="wardName">Ward Name</label>
-                                    <input type="text" class="form-control" ame="" id="">
+                                    <input type="text" class="form-control" name="" id="">
                                 </div>
                             </div>
                             <div class="col">

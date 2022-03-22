@@ -9,12 +9,15 @@ import org.nurses.management.system.integration.dto.Ward_schedule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@CrossOrigin(origins = "http://localhost:8084")
 @RequestMapping("/scheduleFront")
 public class WardSecheduleController {
 	
@@ -306,8 +309,65 @@ public class WardSecheduleController {
 	  
 		/*<<<<<<<<<<<<<<<<<<<<=========================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/	
 
+		/* counting nurse in particular ward */
 	  
-	  
-	  
+	  @ModelAttribute("nurseInMaleMedical")
+		public String  countNurseInMaleMedical() {
+			return scheduleRest.countNurseInMaleMedical();
+			
+		}
+		
+		@ModelAttribute("nurseInMaleSurgical")
+		public String  countNurseInMaleSurgical() {
+			return scheduleRest.countNurseInMaleSurgical();
+			
+		}
+		
+		@ModelAttribute("nurseInFemaleMedical")
+		public String  countNurseInFemaleMedical() {
+			return scheduleRest.countNurseInFemaleMedical();
+			
+		}
+		
+		@ModelAttribute("nurseInFemaleSurgical")
+		public String  countNurseInFemaleSurgical() {
+			return scheduleRest.countNurseInFemaleSurgical();
+			
+		}
+		
+		@ModelAttribute("nurseInMaternity")
+		public String  countNurseInMaternity() {
+			return scheduleRest.countNurseInMaternity();
+			
+		}
+		@ModelAttribute("nurseInNICU")
+		public String  countNurseInNICU() {
+			return scheduleRest.countNurseInNICU();
+			
+		}
+		
+		@ModelAttribute("nurseInReligiousWard")
+		public String  countNurseInReligiousWard() {
+			return scheduleRest.countNurseInReligiousWard();
+			
+		}
+		
+		@ModelAttribute("nurseInGeneralWard")
+		public String  countNurseInGeneralWard() {
+			return scheduleRest.countNurseInGeneralWard();
+			
+		}
+		
+		@ModelAttribute("nurseInOpd")
+		public String  countNurseInOpd() {
+			return scheduleRest.countNurseInOpd();
+			
+		}
+		
+		@ModelAttribute("nurseInAccidentEmergency")
+		public String  countNurseInAccidentEmergency() {
+			return scheduleRest.countNurseInAccidentEmergency();
+			
+		}
 
 }

@@ -33,14 +33,14 @@
 </head>
 <body>
 
-	<div style="margin-left: 3em">
+	<div class="container mt-3" style="margin-left:">
 		<h2>Ward Schedule Checker</h2>
 	</div>
-
-	<table border="1" width="40%" style="margin-left: 3em">
-		<thead>
+<div class="container mt-3">
+	<table class="table table-bordered table-hover" style="background-color: beige;">
+		<thead class="table-success">
 			<tr>
-				<th>Id</th>
+				<th hidden=true>Id</th>
 				<th>Staff Id</th>
 				<th>Ward Name</th>
 				<th>Category</th>
@@ -114,7 +114,7 @@
 			<%-- <c:url value="${pageContext.request.contextPath}/generalFront/disApproval/<%=rs.getInt(3)%>"
 				var="checkLeave"></c:url> --%>
 			<tr>
-				<td><%=rs.getInt(1)%></td>
+				<td hidden=true><%=rs.getInt(1)%></td>
 				<td><%=rs.getString(2)%></td>
 				<td><%=rs.getString(3)%></td>
 				<td><%=rs.getString(4)%></td>
@@ -134,5 +134,6 @@
 			%>
 		</tbody>
 	</table>
+	</div>
 </body>
 </html>

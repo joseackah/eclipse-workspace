@@ -71,7 +71,7 @@
         <!-- </div> -->
        <!-- <hr>  -->
        <div> </div> <br> <br>
-        <button id="b1" style="float: left; border-radius: 5em; " class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/leaveFront/profile'">back</button>
+        <button id="b1" style="float: left; border-radius: 5em; " class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/generalFront/femaleSurgical'">back</button>
         
         <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print"></i> </button>
         
@@ -79,7 +79,7 @@
         <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:auto" id="name">
             <thead class="table-danger">
                 <tr>
-                    <th>ID</th>
+                    <th style="display:none;">ID</th>
                     <th>WARD NAME</th>	
                     <th>STAFF ID</th>
                     <th>NAME</th>
@@ -117,7 +117,7 @@
             
                 <tr>
                 
-                    <td>${leave.id}</td>
+                    <td style="display:none;">${leave.id}</td>
                     <td>${leave.ward_name}</td>
                     <td>${leave.staff_id}</td>
                     <td>${leave.name}</td>
@@ -145,7 +145,7 @@
                 </tr>
 </c:forEach>
                 <tr>
-                    <td></td>
+                    <!-- <td></td> -->
                     <td></td>
                     <td></td>
                     <td></td>

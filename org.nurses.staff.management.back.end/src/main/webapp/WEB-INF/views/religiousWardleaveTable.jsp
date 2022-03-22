@@ -80,7 +80,7 @@
         <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:100" id="name">
             <thead class="table-danger">
                 <tr>
-                    <th>ID</th>
+                    <th style="display:none;">ID</th>
                     <th>WARD NAME</th>
                     <th>STAFF ID</th>
                     <th>NAME</th>
@@ -118,7 +118,7 @@
             
                 <tr>
                 
-                    <td>${leave.id}</td>
+                    <td style="display:none;">${leave.id}</td>
                     <td>${leave.ward_name}</td>
                     <td>${leave.staff_id}</td>
                     <td>${leave.name}</td>
@@ -146,7 +146,7 @@
                 </tr>
 </c:forEach>
                 <tr>
-                    <td></td>
+                    <td style="display:none;"></td>
                     <td></td>
                     <td></td>
                     <td></td>

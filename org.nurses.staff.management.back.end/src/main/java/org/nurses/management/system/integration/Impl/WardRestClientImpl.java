@@ -56,7 +56,7 @@ public class WardRestClientImpl implements WardRestClient {
 
 	@Override
 	public Ward findById(Integer id) {
-		Ward ward = rest.getForObject("http://localhost:8084/ward/findById"+id, Ward.class);
+		Ward ward = rest.getForObject("http://localhost:8084/ward/findWardById/"+id, Ward.class);
 		return ward;
 	}
 

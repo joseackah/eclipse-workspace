@@ -26,7 +26,12 @@ public class Admission_DischargeController {
 	
 	
 	
+	@GetMapping("wardSummary/{wardName}")
+	public Admission_Discharge wardSummary(@PathVariable("wardName") String ward_name) {
+		
+		return admission.wardSummary(ward_name);
 	
+	}
 	
 	@PostMapping("/saveAdmission_Discharge")
 	public Admission_Discharge saveAdmission_Discharge(@RequestBody Admission_Discharge discharge) {
@@ -67,6 +72,12 @@ public class Admission_DischargeController {
 	@GetMapping("/dischargeOnly")
 	public List<Admission_Discharge> dischargeOnly() {
 		return admission.dischargeOnly();
+	}
+	
+	
+	@GetMapping("/deathOnly")
+	public List<Admission_Discharge> deathOnly() {
+		return admission.deathOnly();
 	}
 	
 	@GetMapping("/findByWardName")

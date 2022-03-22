@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+    <%@ page import="java.sql.PreparedStatement"%>
+<%@ page import="java.sql.DriverManager"%>
+<%@ page import="java.sql.Connection"%>
+<%@ page import="java.util.*,java.sql.*"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,8 +18,8 @@
 <title>Leave Application Form</title>
 </head>
 <body>
- 	<a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Leave Application</a>
-    <div class="modal fade" id="modal-id">
+ 	<!-- <a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Leave Application</a> -->
+    <div class="mod fa" id="modal-id">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -48,7 +54,37 @@
 										<select
 											name="ward_name" class="form-control" id="lets"
 											onclick="myDisplay()">
-											<option value="">Select</option>
+											
+											
+						 
+						 <option>select</option>
+						 
+						 <%
+									try {
+
+										Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root", "Physics1//,");
+										//Statement statement = connection.createStatement();
+
+										PreparedStatement ps = conn.prepareStatement(
+										"select ward_name from ward;");
+
+										ResultSet resultSet = ps.executeQuery();
+
+										while (resultSet.next()) {
+											resultSet.getString(1);
+											//resultSet.getString(2);
+									%>
+									
+									<option value="<%=resultSet.getString(1)%>"> <%=resultSet.getString(1)%></option>
+									<%
+									}
+									} catch (Exception e) {
+
+									}
+									%>
+						 						
+						 
+											<!-- <option value="">Select</option>
 											<option value="Male Medical">Male Medical</option>
 											<option value="Female Medical">Female Medical</option>
 											<option value="Female Surgical">Female Surgical</option>
@@ -58,7 +94,7 @@
 											<option value="General Ward">General Ward</option>
 											<option value="NICU">NICU</option>
 											<option value="Religious Ward">Religious Ward</option>
-											<option value="Accident/Emergency">Accident/Emergency</option>
+											<option value="Accident/Emergency">Accident/Emergency</option> -->
 										</select>
 									</div>
 

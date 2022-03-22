@@ -1,16 +1,28 @@
 package org.nurses.management.system.controller;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.nurses.management.system.integration.Admission_DischargeRestClient;
 import org.nurses.management.system.integration.Delivery_tableRestClient;
+import org.nurses.management.system.integration.EventsRestClient;
 import org.nurses.management.system.integration.LeaveRestClient;
 import org.nurses.management.system.integration.Newborn_tableRestClient;
 import org.nurses.management.system.integration.Nurses_staff_RestClient;
 import org.nurses.management.system.integration.WardRestClient;
 import org.nurses.management.system.integration.Ward_Bed_StateRestClient;
+import org.nurses.management.system.integration.dto.Events;
 import org.nurses.management.system.integration.dto.Leave;
+import org.nurses.management.system.integration.dto.Ward;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +30,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@CrossOrigin(origins = "http://localhost:8084")
 @RequestMapping("/leaveFront")
 public class LeaveController {
 
 	@Autowired
 	LeaveRestClient leaveRest;
+	
+	@Autowired
+	EventsRestClient eventsRest;
 	
 	@Autowired
 	Delivery_tableRestClient deliveryRest;
@@ -41,6 +57,18 @@ public class LeaveController {
 
 	@Autowired
 	Ward_Bed_StateRestClient bedRest;
+	
+	
+	
+	
+	@RequestMapping(value = "/displayAllWard", method = RequestMethod.GET)
+	public String displayLeave(Ward leaves, ModelMap model) {
+		Ward[] wardD = wardRest.getAllWard(leaves);
+		model.addAttribute("wardD", wardD);
+
+		return "wardTable";
+
+	}
 
 	@ModelAttribute("bedOccupancy")
 	public String bedOccupant() {
@@ -3867,5 +3895,122 @@ public class LeaveController {
 	public String countDeliveryDecember() {
 		return deliveryRest.countDeliveryDecember();
 	}
+	
+	
+	@RequestMapping(value ="/displayAllEvents", method = RequestMethod.GET)
+	public String displayEvents(Events events, ModelMap model) {
+		Events[] eventsD = eventsRest.getAllEvents(events);
+		model.addAttribute("eventsD", eventsD);
+
+		return "eventsTable";
+	}
+	
+	/*
+	 * >>>>>>>>>>>>>>>>>>=========================================<<<<<<<<<<<<<<<<<<
+	 * <<<<<<<<
+	 */
+/* Counting Newborn death from january to december */
+	
+	@ModelAttribute("countNewbornDeathJanuary")
+	public String countNewbornDeathJanuary() {
+		return newbornRest.countNewbornDeathJanuary();
+	}
+	
+	
+	
+	@ModelAttribute("countNewbornDeathFebruary")
+	public String countNewbornDeathFebruary() {
+		return newbornRest.countNewbornDeathFebruary();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathMarch")
+	public String countNewbornDeathMarch() {
+		return newbornRest.countNewbornDeathMarch();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathApril")
+	public String countNewbornDeathApril() {
+		return newbornRest.countNewbornDeathApril();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathMay")
+	public String countNewbornDeathMay() {
+		return newbornRest.countNewbornDeathMay();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathJune")
+	public String countNewbornDeathJune() {
+		return newbornRest.countNewbornDeathJune();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathJuly")
+	public String countNewbornDeathJuly() {
+		return newbornRest.countNewbornDeathJuly();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathAugust")
+	public String countNewbornDeathAugust() {
+		return newbornRest.countNewbornDeathAugust();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathSeptember")
+	public String countNewbornDeathSeptember() {
+		return newbornRest.countNewbornDeathSeptember();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathOctober")
+	public String countNewbornDeathOctober() {
+		return newbornRest.countNewbornDeathOctober();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathNovember")
+	public String countNewbornDeathNovember() {
+		return newbornRest.countNewbornDeathNovember();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathDecember")
+	public String countNewbornDeathDecember() {
+		return newbornRest.countNewbornDeathDecember();
+	}
+	
+	
+	 //@RequestMapping("/eventTry")
+	  @ModelAttribute("eventsT") 
+	  public List<Events> eventTry(ModelMap model) throws  SQLException {
+	  
+	  List<Events> events = new ArrayList<>();
+	  
+	  Connection conn =
+	  DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root",
+	  "Physics1//,"); PreparedStatement ps = conn.prepareStatement(
+	  "select event_id, event_name, venue, event_date, participant from events order by event_date desc limit 3 ");
+	  
+	  
+	  ResultSet rs = ps.executeQuery();
+	  
+	  while (rs.next()) { Events event = new Events();
+	  event.setEvent_id(rs.getLong(1)); event.setEvent_name(rs.getString(2));
+	  event.setVenue(rs.getString(3)); event.setEvent_date(rs.getDate(4));
+	  event.setParticipant(rs.getString(5));
+	  
+	  events.add(event);
+	  
+	  //model.addAttribute("eventsT", events);
+	  
+	  }
+	  
+	  return events;
+	  
+	  }
 
 }

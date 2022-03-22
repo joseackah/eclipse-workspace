@@ -47,6 +47,7 @@
   
   visibility:hidden;
   
+  
   }
   
   #myInput , #action , #action1 , #action2 , #action3 , s1  {
@@ -70,7 +71,7 @@
     <div class="container mt-3 ml-3" style="float:; with:auto;" id="print">
     
        <div> </div> <br> <br>
-        <button id="b1" style="float: left; border-radius: 5em; " class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/generalFront/maleMedical'">back</button>
+        <button id="b1" style="float: left; border-radius: 5em; " class="btn btn-primary" onclick="history.back()">back</button>
         
         <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print"></i> </button>
         
@@ -160,8 +161,8 @@
                 </tr>
             </tbody>
             
-            <thead>
-             <th  style="display: none">ID</th>
+            <thead >
+             <th id="b1" style="display: none">ID</th>
                     <th>WARD NAME</th>
                     <th>PATIENT NUMBER</th>
                     <th>PATIENT NAME</th>

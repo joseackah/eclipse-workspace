@@ -107,14 +107,14 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="leave_date">Leave Date</label>
-                                        <input type="date" class="form-control" name="leave_date" id="" value="${leave.leave_date}" readonly>
+                                        <input type="date" class="form-control"  name="leave_date" id="" value="${leave.leave_date}" readonly>
                                     </div>
                                 </div>
                                 
-                                 <div class="col">
+                                 <div class="col"  >
                                     <div class="form-group">
                                         <label for="incharge_recom">Incharge Recommendation</label>
-                                       <select name="incharge_recom" class="form-control" id="">
+                                       <select name="incharge_recom" onchange="displayH(this.value)" class="form-control" id="">
                                         <option value="select">select</option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
@@ -128,7 +128,7 @@
                             </div>
 
 <div class="row">
-                                <div class="col">
+                                <div class="col" style="display: none;" id="hid">
                                     <div class="form-group">
                                         <label for="incharge_name">Incharge Name</label>
                                        <input type="text" class="form-control" name="incharge_name">
@@ -137,7 +137,7 @@
                                 
                             </div>
 
-                            <div class="row">
+                            <div class="row" hidden="true">
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="leave_end_date">Leave End Date</label>
@@ -161,8 +161,8 @@
 
 
 
-                        <div class="thirdContainer">
-                            <div class="row">
+                        <div class="thirdContainer" hidden="true">
+                            <div class="row" >
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="approved_by">Approved By</label>
@@ -182,7 +182,7 @@
                     
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.href='${pageContext.request.contextPath}/leaveFront/displayAllRecom'">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="history.back()">Close</button>
                     <button type="submit" class="btn btn-primary">Recommend</button>
                 </div>
                 
@@ -192,6 +192,25 @@
             
         </div>
     </div>
+    
+    
+    <script>
+		function displayH(val) {
+			var hd = document.getElementById("hid");
+
+			if (val == "") {
+				hd.style.display = "none"
+			} else if (val == "Yes") {
+				hid.style.display = "block"
+			} else {
+				hd.style.display = "none"
+			}
+		}
+
+		function hidden() {
+			document.getElementById("hid").style.display = "none";
+		}
+	</script>
 
 </body>
 </html>

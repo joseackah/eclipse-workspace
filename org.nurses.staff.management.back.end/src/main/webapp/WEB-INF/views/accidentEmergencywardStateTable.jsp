@@ -80,7 +80,7 @@
         <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:auto" id="name">
             <thead class="table-danger">
                 <tr>
-                    <th>ID</th>
+                    <th hidden=true>ID</th>
                     <th>DATE</th>
                     <th>WARD NAME</th>                    
                     <th>ADMISSIONS</th>
@@ -117,7 +117,7 @@
             
                 <tr>
                 
-                    <td>${bedState.id}</td>
+                    <td hidden=true>${bedState.id}</td>
                     <td>${bedState.date}</td>
                     <td>${bedState.ward_name}</td>
                     <td>${bedState.total_admission}</td>
@@ -144,7 +144,7 @@
                 </tr>
 </c:forEach>
                 <tr>
-                    <td></td>
+                    <td hidden=true></td>
                     <td></td>
                     <td></td>
                     <td></td>

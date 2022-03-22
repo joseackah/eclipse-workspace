@@ -115,7 +115,7 @@
 					href="${pageContext.request.contextPath}/scheduleFront/displayAllCheckNicuSchedule">Check
 						Ward Schedule</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
-					href='#modal-id1'>Admission</a></li>
+					href='#modal-id4'>Admission</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id2'>Ward/Bed State</a></li>
 				<%-- <li class="nav-item"><a class="nav-link"
@@ -142,7 +142,7 @@
 							style="width: 100%; height: 100%;" />
 					</div>
 				</div>
-				<p>Administrator of BIPS..</p>
+				<p>Administrator</p>
 <%=(new java.util.Date()).toLocaleString() %>
 				<!--   academic record start here -->
 <div class="dropdown">
@@ -176,60 +176,47 @@
 				
 </div>
 <hr class="d-sm">
-				<!-- academic record ends here -->
 
-				<!-- student starts here -->
-			<%-- 	<h3 style="background-color: gold;">Students enrollment</h3>
-				<p>students here.</p>
-				<ul class="nav nav-pills flex-column">
-					<li class="nav-item"><a class="nav-link active">Admissions</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/maleMedical">Male Medical</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Year Two</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Year
-							Three</a></li>
-					<li class="nav-item">
-						<!-- <a class="nav-link disabled" href="#">Disabled</a> -->
-						<button type="button" class="btn btn-info float-left"
-							data-toggle="modal" data-target="#myModal">Add Student</button>
-					</li>
-				</ul> --%>
+<div class="nav-item nav nav-pills" >
+									<button onclick="document.getElementById('id01').style.display='block'" class="nav-link active">Discharge Summary</button>
+								</div>
+								
 				
 				
-					<div class="try">
+				
+				<hr class="d-sm">
 
-							<!-- <button class="nav-item">Results Entry</button> -->
-							<div class="dropdown">
-								<div class="nav-item nav nav-pills flex-colmn">
-									<div class="nav-link active">Ward Admissions</div>
-								</div>
-								<div class="dropdown-content">
+				<div class="nav-item nav nav-pills">
+					<form
+						action="${pageContext.request.contextPath}/generalFront/wardSummary"
+						method="post">
+						<input type="text" value="NICU" name="wardName"
+							hidden="true">
 
-									<ul class="nav nav-pills flex-column">
+						<button type="submit" onclick="'" class="nav-link active">Discharge
+							Summary</button>
+					</form>
 
-
-										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/maleMedical">Male Medical</a></li>
-										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/femaleMedical">Female Medical</a></li>
-										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/maleSurgical">Male Surgical</a></li>
-										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/femaleSurgical">Female Surgical</a></li>
-										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/maternity">Maternity</a></li>
-										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/childrensWard">Children's Ward</a></li>
-										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/generalWard">General Ward</a></li>
-										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/religiousWard">Religious Ward</a></li>
-										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/nicu">NICU</a></li>
-										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/accidentEmergency">Accident/Emergency</a></li>
-									</ul>
-								</div>
-							</div>
-							<hr class="d-sm-none">
-						</div>
+				</div>	
+					
+					
+			<hr class="d-sm" style="width: 50%">							
+				
+		<div class="nav-item nav nav-pills" >
+		<form action="${pageContext.request.contextPath}/generalFront/wardTopTen" method="post">
+		<input type="text" value="NICU" name="wardName" hidden="true">
+		
+		<button type="submit" onclick="" class="nav-link active">Top Ten</button>
+		</form>
+									
+								</div>			
+					
+					
 				<hr class="d-sm-none">
-				<!--   students ends here -->
+				
 			</div>
 
-			<!-- mission start here -->
+			
 			<div class="col-xl">
 				<!-- card starts here -->
 			<div class="w3-container w3-padding w3-center"
@@ -239,7 +226,7 @@
 					<div class="w3-card-2 w3-yellow w3-margin"
 						style="height: 12em; width: 20%">
 						<strong> <ins> Total Nurses </ins></strong>
-						<p style="text-align: left;">total Nurses: ${countNurses}</p>
+						<p style="text-align: left;">total Nurses: ${nursesInNICU}</p>
 						<p style="text-align: left;">total males: ${countMale}</p>
 						<p style="text-align: left;">total females: ${countFemale}</p>
 
@@ -382,7 +369,7 @@
 									
 									
 									PreparedStatement ps1 = conn1
-									.prepareStatement("select count(*) as a from admission_discharge where year(date_admitted) = year(curdate())  and ward_name = ',nicu' and outcome_of_admission is null or outcome_of_admission='';"); 
+									.prepareStatement("select count(*) as a from admission_discharge where year(date_admitted) = year(curdate())  and ward_name = 'nicu' and outcome_of_admission is null or outcome_of_admission='';"); 
 
 									ResultSet resultSet1 = ps1.executeQuery();
 
@@ -460,7 +447,10 @@
 
 					</div>
 					<div class="w3-card-2 w3-green w3-margin"
-						style="height: 12em; width: 20%">Year pass students:</div>
+						style="height: 12em; width: 20%">Year:</div>
+						
+						
+						
 					<div class="w3-card-2 w3-teal w3-margin w3-round-large"
 						style="height: 12em; width: 20%; text-align:;">
 						<strong> <ins> Total Yesterday's
@@ -577,7 +567,36 @@
 									<div class="form-group">
 										<label for="ward_name">Ward Name</label> <select
 											name="ward_name" class="form-control" id="lets">
-											<option value="">Select</option>
+											
+						 
+						 <option>select</option>
+						 
+						 <%
+									try {
+
+										Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root", "Physics1//,");
+										//Statement statement = connection.createStatement();
+
+										PreparedStatement ps = conn.prepareStatement(
+										"select ward_name from ward;");
+
+										ResultSet resultSet = ps.executeQuery();
+
+										while (resultSet.next()) {
+											resultSet.getString(1);
+											//resultSet.getString(2);
+									%>
+									
+									<option value="<%=resultSet.getString(1)%>"> <%=resultSet.getString(1)%></option>
+									<%
+									}
+									} catch (Exception e) {
+
+									}
+									%>
+						 						
+						 
+											<!-- <option value="">Select</option>
 											<option value="Male Medical">Male Medical</option>
 											<option value="Female Medical">Female Medical</option>
 											<option value="Female Surgical">Female Surgical</option>
@@ -587,7 +606,7 @@
 											<option value="General Ward">General Ward</option>
 											<option value="NICU">NICU</option>
 											<option value="Religious Ward">Religious Ward</option>
-											<option value="Accident/Emergency">Accident/Emergency</option>
+											<option value="Accident/Emergency">Accident/Emergency</option> -->
 										</select>
 									</div>
 
@@ -668,7 +687,7 @@
 								</div>
 
 
-								<div class="col">
+								<div class="col" hidden=true>
 									<div class="form-group">
 										<label for="incharge_recom">Incharge Recommendation</label> <select
 											name="incharge_recom" class="form-control" id="" readonly>
@@ -685,7 +704,7 @@
 
 
 							<div class="row">
-								<div class="col">
+								<div class="col" hidden=true>
 									<div class="form-group">
 										<label for="incharge_name">Incharge Name</label> <input
 											type="text" class="form-control" name="incharge_name"
@@ -704,7 +723,7 @@
 
 
 
-							<div class="row">
+							<div class="row" hidden=true>
 								<div class="col">
 									<div class="form-group">
 										<label for="leave_end_date">Leave End Date</label> <input
@@ -731,7 +750,7 @@
 
 
 						<div class="thirdContainer">
-							<div class="row">
+							<div class="row" hidden=true>
 								<div class="col">
 									<div class="form-group">
 										<label for="approved_by">Approved By</label> <input
@@ -771,7 +790,261 @@
 
 	<!-- <a class="btn btn-primary" data-toggle="modal" href='#modal-id1'>Trigger
 		modal</a> -->
-	<div class="modal fade" id="modal-id1">
+		
+		<div class="modal fade" id="modal-id4">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Admission Form2</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+
+				</div>
+				<form
+					action="${pageContext.request.contextPath}/admissionFront/saveAdmission_Discharge">
+					<div class="modal-body">
+
+
+
+						<div class="firstContainer">
+
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label for="patient_number">Patient Number/Id</label> <input type="text"
+											class="form-control" name="patient_number" id="">
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group">
+										<label for="patient_name">Patient Name</label> <input type="text"
+											class="form-control" name="patient_name" id="">
+									</div>
+								</div>
+							</div>
+
+
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label for="sex">Sex/Gender</label> <select
+											name="sex" class="form-control" id="lets">
+											<option value="">Select</option>
+											<option value="Male">Male</option>
+											<option value="Female ">Female</option>
+										</select>
+									</div>
+
+								</div >
+								
+								<div class="col">
+								<div class="form-group">
+								<label for="age">Age</label>
+								<input type="number" class="form-control" name="age">
+								</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label for="address">Address</label> 
+
+										<input type="text" class="form-control" name="address">
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group">
+										<label for="phone_number">Phone Number</label> 
+
+										<input type="text" class="form-control" name="phone_number">
+									</div>
+								</div>
+							</div>
+
+
+							<div class="row">
+
+								<div class="col">
+									<div class="form-group">
+										<label for="date_admitted">Date Admitted</label> <input
+											type="date" class="form-control" name="date_admitted"
+											id="">
+									</div>
+								</div>
+
+								<div class="col">
+									<div class="form-group">
+										<label for="diagnosis">Provisional Diagnosis</label> <input
+											type="text" class="form-control" name="diagnosis"
+											id="">
+									</div>
+								</div>
+
+
+							</div>
+
+
+
+
+						</div>
+
+
+						<div class="secondContainer">
+							<div class="row">
+
+
+
+								<div class="col">
+									<div class="form-group">
+										<label for="next_of_kin">Next Of Kin</label> <input type="text"
+											class="form-control" name="next_of_kin" id="">
+									</div>
+								</div>
+
+
+								<div class="col">
+									<div class="form-group">
+										<label for="next_of_kin_number">Next Of Kin Number</label> 
+										<input type="number" class="form-control" name="next_of_kin_number">
+									</div>
+								</div>
+
+							</div>
+
+
+							<div class="row" hidden="true">
+								<div class="col">
+									<div class="form-group">
+										<label for="final_diagnosis">Final Diagnosis</label> <input
+											type="text" class="form-control" name="final_diagnosis"
+											readonly>
+									</div>
+								</div>
+								<div class="col" >
+									<div class="form-group">
+										<label for="outcome_of_admission">Outcome of Admission</label> 
+										<select class="form-control" name="outcome_of_admission">
+										
+										<option value="">Select</option>
+										<option value="Discharge">Discharge</option>
+										<option value="Death">Death</option>
+										<option value="Abscond">Abscond</option>
+										<option value="Referred">Referred</option>
+										<option value="Trans-out">Trans-out</option>
+										<option value="Discharge(against Medical Advice)">Discharge(against Medical Advice)</option>
+										
+										</select>
+
+									</div>
+								</div>
+								
+							</div>
+
+
+
+
+
+							<div class="row">
+							<div class="col">
+									<div class="form-group">
+										<label for="insured">Insured</label> 
+										<select class="form-control" name="insured" onchange="displayH(this.value)">
+										<option>select</option>
+										<option value="Yes">Yes</option>
+										<option value="No">No</option>
+										
+										</select>
+
+									</div>
+
+
+								</div>
+								<div class="col" id="hid" style="display:none;">
+                                    <div class="form-group">
+                                        <label for="insurance_number">Insurance Number</label>
+                                        <input type="number" class="form-control" name="insurance_number" id="">
+                                    </div>
+                                </div>
+
+								
+							</div>
+
+						</div>
+
+
+
+						<div class="thirdContainer">
+							<div class="row">
+								<div class="col" hidden="true">
+									<div class="form-group">
+										<label for="date_discharge">Date Discharge</label> <input
+											type="date" class="form-control" name="date_discharge" id=""
+											disabled>
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group">
+										<label for="ward_name">Ward Name</label> 
+										<select
+											name="ward_name" class="form-control" id="lets">
+											 <option>select</option>
+						 
+						 <%
+									try {
+
+										Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root", "Physics1//,");
+										//Statement statement = connection.createStatement();
+
+										PreparedStatement ps = conn.prepareStatement(
+										"select ward_name from ward;");
+
+										ResultSet resultSet = ps.executeQuery();
+
+										while (resultSet.next()) {
+											resultSet.getString(1);
+											//resultSet.getString(2);
+									%>
+									
+									<option value="<%=resultSet.getString(1)%>"> <%=resultSet.getString(1)%></option>
+									<%
+									}
+									} catch (Exception e) {
+
+									}
+									%>
+											<!-- <option value="">Select</option>
+											<option value="Male Medical">Male Medical</option>
+											<option value="Female Medical">Female Medical</option>
+											<option value="Female Surgical">Female Surgical</option>
+											<option value="Male Surgical">Male Surgical</option>
+											<option value="Children Ward">Children's Ward</option>
+											<option value="Maternity">Maternity</option>
+											<option value="General Ward">General Ward</option>
+											<option value="NICU">NICU</option>
+											<option value="Religious Ward">Religious Ward</option>
+											<option value="Accident/Emergency">Accident/Emergency</option>
+											<option value="Outpatient Department">Outpatient Department</option> -->
+										</select>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Admit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+		
+	<%-- <div class="modal fade" id="modal-id1">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -882,12 +1155,12 @@
 
 
 						<div class="thirdContainer">
-							<div class="row">
+							<div class="row" hidden=true>
 								<div class="col">
 									<div class="form-group">
 										<label for="final_diagnosis">Final Diagnosis</label> <input
 											type="text" class="form-control" name="final_diagnosis" id=""
-											readonly>
+											disabled>
 									</div>
 								</div>
 
@@ -918,11 +1191,11 @@
 								<div class="col">
 									<div class="form-group">
 										<label for="next_of_kin">Next of Kin</label> <input
-											type="text" class="form-control" name="next_of_kin" id="">
+											type="text" oninput="nextOfKin()" class="form-control" name="next_of_kin" id="next">
 									</div>
 								</div>
 
-								<div class="col">
+								<div class="col" id="nextNumber" style="display:none;">
 									<div class="form-group">
 										<label for="next_of_kin_number">Next of Kin Number</label> <input
 											type="text" class="form-control" name="next_of_kin_number"
@@ -938,7 +1211,7 @@
 								<div class="col">
 									<div class="form-group">
 										<label for="insured">Insured</label> <select name="insured"
-											class="form-control" id="" >
+											class="form-control" id="" onchange="displayH(this.value)">
 											<option value="">Select</option>
 											<option value="Yes" id="yes" >Yes</option>
 											<option value="No" id="no" >No</option>
@@ -946,12 +1219,12 @@
 									</div>
 								</div>
 
-								<div class="col" id="insurance_number">
+								<div class="col" id="hid" style="display:none;">
 
 									<div class="form-group" id="">
 										<label for="insurance_number">Insurance Number</label> <input
 											type="number" name="insurance_number" class="form-control"
-											min="0" onKeyPress="if(this.value.length==10) return false;">
+											min="0" onKeyPress="if(this.value.length==8) return false;">
 									</div>
 								</div>
 
@@ -960,11 +1233,11 @@
 							</div>
 
 							<div class="row">
-								<div class="col">
+								<div class="col" hidden=true>
 									<div class="form-group">
 										<label for="date_discharge">Date Discharge</label> <input
 											type="date" class="form-control" name="ward_name" id=""
-											readonly>
+											disabled>
 									</div>
 								</div>
 								<div class="col">
@@ -974,7 +1247,37 @@
 										
 										<select
 											name="ward_name" class="form-control">
-											<option value="">Select</option>
+											
+										
+						 
+						 <option>select</option>
+						 
+						 <%
+									try {
+
+										Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root", "Physics1//,");
+										//Statement statement = connection.createStatement();
+
+										PreparedStatement ps = conn.prepareStatement(
+										"select ward_name from ward;");
+
+										ResultSet resultSet = ps.executeQuery();
+
+										while (resultSet.next()) {
+											resultSet.getString(1);
+											//resultSet.getString(2);
+									%>
+									
+									<option value="<%=resultSet.getString(1)%>"> <%=resultSet.getString(1)%></option>
+									<%
+									}
+									} catch (Exception e) {
+
+									}
+									%>
+						 						
+						 
+											<!-- <option value="">Select</option>
 											<option value="Male Medical">Male Medical</option>
 											<option value="Female Medical">Female Medical</option>
 											<option value="Female Surgical">Female Surgical</option>
@@ -984,7 +1287,7 @@
 											<option value="General Ward">General Ward</option>
 											<option value="NICU">NICU</option>
 											<option value="Religious Ward">Religious Ward</option>
-											<option value="Accident/Emergency">Accident/Emergency</option>
+											<option value="Accident/Emergency">Accident/Emergency</option> -->
 										</select>
 									</div>
 								</div>
@@ -1003,7 +1306,7 @@
 		</div>
 	</div>
 
-
+ --%>
 
 	
 
@@ -1042,8 +1345,39 @@
 								</div>
 								<div class="col">
 									<div class="form-group">
-										<label for="ward_name">Ward Name</label> <input type="text"
-											class="form-control" name="ward_name" id="">
+										<label for="ward_name">Ward Name</label> 
+										<!-- <input type="text"
+											class="form-control" name="ward_name" id=""> -->
+											
+											<select class="form-control" name="ward_name" >
+						 
+						 <option>select</option>
+						 
+						 <%
+									try {
+
+										Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root", "Physics1//,");
+										//Statement statement = connection.createStatement();
+
+										PreparedStatement ps = conn.prepareStatement(
+										"select ward_name from ward;");
+
+										ResultSet resultSet = ps.executeQuery();
+
+										while (resultSet.next()) {
+											resultSet.getString(1);
+											//resultSet.getString(2);
+									%>
+									
+									<option value="<%=resultSet.getString(1)%>"> <%=resultSet.getString(1)%></option>
+									<%
+									}
+									} catch (Exception e) {
+
+									}
+									%>
+						 						
+						 </select>
 									</div>
 								</div>
 							</div>
@@ -1053,7 +1387,7 @@
 								<div class="col">
 									<div class="form-group">
 										<label for="total_admission">Total Admission</label> <input
-											type="number" name="total_admission" id="">
+											type="number" class="form-control" name="total_admission" id="">
 
 									</div>
 								</div>
@@ -1190,6 +1524,78 @@
 	
 
 	<!-- ward/bed state ends here -->
+	
+	
+	
+	
+	<!-- ward summary -->
+	
+	
+	<div id="id01" class="modal1">
+
+			<form class="modal-content1 animate"
+				action="${pageContext.request.contextPath}/generalFront/wardSummary"
+				method="post">
+				<div class="imgcontainer">
+					<span
+						onclick="document.getElementById('id01').style.display='none'"
+						class="close" title="Close Modal">&times;</span>
+					<!--  <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
+					<h2 class="avatar">
+						<strong> <span style="color: blue;">Ward Summary</span>
+						</strong>
+					</h2>
+				</div>
+
+				<div class="container1">
+					<label for="uname"><b>Ward Name</b></label> 
+					<!-- <input style="width: 60%;"
+						type="text" placeholder="Enter Ward Name"
+						name="wardName" required class="input"> -->
+						<select class="input" name="wardName" style="width: 60%;">
+						 
+						 <option>select</option>
+						 
+						 <%
+									try {
+
+										Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root", "Physics1//,");
+										//Statement statement = connection.createStatement();
+
+										PreparedStatement ps = conn.prepareStatement(
+										"select ward_name from ward;");
+
+										ResultSet resultSet = ps.executeQuery();
+
+										while (resultSet.next()) {
+											resultSet.getString(1);
+											//resultSet.getString(2);
+									%>
+									
+									<option value="<%=resultSet.getString(1)%>"> <%=resultSet.getString(1)%></option>
+									<%
+									}
+									} catch (Exception e) {
+
+									}
+									%>
+						 						
+						 </select>
+
+
+					<button class="button1" type="submit">Generate</button>
+
+				</div>
+
+				<div class="container1" style="background-color: #f1f1f1;">
+					<button  type="button"
+						onclick="document.getElementById('id01').style.display='none'"
+						class="cancelbtn">Cancel</button>
+				</div>
+			</form>
+		</div>
+	
+	<!-- ward summary ends -->
 
  <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -1277,6 +1683,27 @@
 
 		function hidden() {
 			document.getElementById("hid").style.display = "none";
+		}
+		
+		
+		function nextOfKin(){
+			var	nxt = document.getElementById("next");
+			var nxtN = document.getElementById("nextNumber");
+			var error = "Please Enter a valid name!"
+			
+			if(nxt.value.length >= 3){
+				nxtN.style.display = "block"
+					document.getElementById("errorOfNext").style.display = "none";
+			}else if(nxt.value.length <=2){
+				
+				document.getElementById("errorOfNext").innerHTML = error;
+				/* nxtN.style.display = "none" */
+			}else if(nxt.value.length = ""){
+				nxtN.style.display = "none";
+				document.getElementById("errorOfNext").innerHTML = error;
+			}else{
+				nxtN.style.display = "none";
+			}
 		}
 	</script>
 

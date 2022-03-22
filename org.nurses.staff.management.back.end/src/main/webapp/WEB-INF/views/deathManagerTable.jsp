@@ -32,7 +32,7 @@
   body * {
     visibility: hidden;
   }
-  #print, h1, #print * {
+  #print, h1,h2, #print * {
     visibility: visible;
   }
   #print {
@@ -57,24 +57,26 @@
 
 </style>
 <meta charset="ISO-8859-1">
-<title>Leave Table</title>
+<title>Admissions/Discharges Table</title>
 </head>
 <body>
- <h1 class="class mt-3" style="text-align: center; width: 100%; margin-top:12px 0 2em;">St. Joseph's Hospital,Jirapa Admission and Discharge Table</h1>
-    
+<div class="class mt-3" style="text-align: center; width: 100%; margin-top:12px 0 2em;">
+ <h1 >St. Joseph's Hospital,Jirapa </h1>
+ <h2>Admissions and Discharges Table</h2>
+    </div>
     <hr style="width:90%">
-    <div class="container mt-3" style="float: left; with:auto;" id="print">
+    <div class="container mt-3" style="" id="print">
     <!-- <div style="text-align: center; width: 100%;"> -->
             <!-- <h1>St. Joseph's Hospital,Jirapa Nurses' Staff Leave Application Table</h1> -->
         <!-- </div> -->
        <!-- <hr>  -->
        <div> </div> <br> <br>
-        <button id="b1" style="float: left; border-radius: 5em; " class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/leaveFront/profile'">back</button>
+        <button id="b1" style="float: left; border-radius: 5em; " class="btn btn-primary" onclick="history.back()">back</button>
         
         <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print"></i> </button>
         
 <div id="s1" style=" display:flex; flex-direction:row-reverse;"> <input class="form-control" id="myInput" type="text" placeholder="Search.." style="padding: .5em 2em; border-radius: 5em; width:20%; display:flex; flex-direction: flex-end;"> </div>
-        <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:auto" id="name">
+        <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:" id="name">
             <thead class="table-danger">
                 <tr>
                     <th>ID</th>
@@ -139,7 +141,7 @@
                 </tr>
 </c:forEach>
                 <tr>
-                    <td></td>
+                    <!-- <td></td> -->
                     <td></td>
                     <td></td>
                     <td></td>

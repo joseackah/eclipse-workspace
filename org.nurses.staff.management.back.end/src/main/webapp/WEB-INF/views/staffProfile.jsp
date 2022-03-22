@@ -105,7 +105,7 @@
 					href="${pageContext.request.contextPath}/scheduleFront/displayAllCheckSchedule">Check
 						Ward Schedule</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
-					href='#modal-id1'>Admission</a></li>
+					href='#modal-id4'>Admission</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id2'>Ward/Bed State</a></li>
 				<li class="nav-item"><a class="nav-link"
@@ -170,26 +170,7 @@
 
 				</div>
 				<hr class="d-sm">
-				<!-- academic record ends here -->
-
-				<!-- student starts here -->
-				<%-- 	<h3 style="background-color: gold;">Students enrollment</h3>
-				<p>students here.</p>
-				<ul class="nav nav-pills flex-column">
-					<li class="nav-item"><a class="nav-link active">Admissions</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/maleMedical">Male Medical</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Year Two</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Year
-							Three</a></li>
-					<li class="nav-item">
-						<!-- <a class="nav-link disabled" href="#">Disabled</a> -->
-						<button type="button" class="btn btn-info float-left"
-							data-toggle="modal" data-target="#myModal">Add Student</button>
-					</li>
-				</ul> --%>
+			
 
 
 				<div class="try">
@@ -237,7 +218,7 @@
 					<hr class="d-sm-none">
 				</div>
 				<hr class="d-sm">
-				<!--   students ends here -->
+				
 
 				<div class="dropdown">
 					<div class="nav-item nav nav-pills flex-colmn">
@@ -251,31 +232,31 @@
 							<li class="nav-item"><a class="nav-link" target="iframe_a"
 								href="${pageContext.request.contextPath}/generalFront/maleMedical">Male
 									Medical</a></li>
-							<li class="nav-item"><a class="nav-link"
+							<li class="nav-item"><a class="nav-link" target="iframe_b"
 								href="${pageContext.request.contextPath}/generalFront/femaleMedical">Female
 									Medical</a></li>
-							<li class="nav-item"><a class="nav-link"
+							<li class="nav-item"><a class="nav-link" target="iframe_b"
 								href="${pageContext.request.contextPath}/generalFront/maleSurgical">Male
 									Surgical</a></li>
-							<li class="nav-item"><a class="nav-link"
+							<li class="nav-item"><a class="nav-link" target="iframe_d"
 								href="${pageContext.request.contextPath}/generalFront/femaleSurgical">Female
 									Surgical</a></li>
-							<li class="nav-item"><a class="nav-link"
+							<li class="nav-item"><a class="nav-link" target="iframe_e"
 								href="${pageContext.request.contextPath}/generalFront/maternity">Maternity</a></li>
-							<li class="nav-item"><a class="nav-link"
+							<li class="nav-item"><a class="nav-link" target="iframe_f"
 								href="${pageContext.request.contextPath}/generalFront/childrensWard">Children's
 									Ward</a></li>
-							<li class="nav-item"><a class="nav-link"
+							<li class="nav-item"><a class="nav-link" target="iframe_g"
 								href="${pageContext.request.contextPath}/generalFront/generalWard">General
 									Ward</a></li>
-							<li class="nav-item"><a class="nav-link"
+							<li class="nav-item"><a class="nav-link" target="iframe_h"
 								href="${pageContext.request.contextPath}/generalFront/religiousWard">Religious
 									Ward</a></li>
-							<li class="nav-item"><a class="nav-link"
+							<li class="nav-item"><a class="nav-link" target="iframe_i"
 								href="${pageContext.request.contextPath}/generalFront/nicu">NICU</a></li>
-							<li class="nav-item"><a class="nav-link"
+							<li class="nav-item"><a class="nav-link" target="iframe_j"
 								href="${pageContext.request.contextPath}/generalFront/accidentEmergency">Accident/Emergency</a></li>
-							<li class="nav-item"><a class="nav-link"
+							<li class="nav-item"><a class="nav-link" target="iframe_k"
 								href="${pageContext.request.contextPath}/generalFront/opd">Opd</a></li>
 						</ul>
 					</div>
@@ -442,29 +423,22 @@
 					<div id="curve_chart"
 						style="width: 100%; height: 300px; margin-top: 1em;"></div>
 				</div>
-				<!-- <p>Some text..</p>
-				<p>Our vision is to develop well rounded, confident and
-					responsible individuals who aspire to achieve their full potential.
-					We will do this by providing a welcoming, happy, safe, and
-					supportive learning environment in which everyone is equal and all
-					achievements are celebrated.</p>
- -->
-				<!-- mission end here -->
+				
+ 
+				
 
 				<br>
 				<h2>OUR MISSION</h2>
 				<h5>Title description, Sep 2, 2017</h5>
 				<div class="fakeimg">
-					<img alt=""
+					<%-- <img alt=""
 						src="${pageContext.request.contextPath}/resources/png/mission.png"
-						style="width: 100%; height: 100%;">
+						style="width: 100%; height: 100%;"> --%>
+						<div id="curve_chart"
+						style="width: 100%; height: 300px; margin-top: 1em;"></div>
 				</div>
-				<p>Some text..</p>
-				<p>We are dedicated to a continuing tradition of excellence in
-					an ever-changing world. Within a safe and supportive environment,
-					we provide a relevant, high-quality education and prepare our
-					diverse student body for future endeavors. We honor achievement and
-					promote pride in ourselves, in our school, and in our community.</p>
+				<p></p>
+				<p></p>
 			</div>
 		</div>
 	</div>
@@ -559,9 +533,9 @@
 								<div class="col">
 									<div class="form-group">
 										<label for="">Leave Type</label> <select name="leave_type"
-											class="form-control" id="">
+											class="form-control" id="leaveType" onchange="leave(this.value)">
 											<option value="select">select</option>
-											<option value="annual leave">Annual Leave</option>
+											<option value="Annual leave">Annual Leave</option>
 											<option value="maternity leave">Maternity Leave</option>
 											<option value="casual leave">Casual Leave</option>
 											<option value="paternity leave">Paternity Leave</option>
@@ -571,13 +545,14 @@
 										</select>
 									</div>
 								</div>
+								<div id="show"></div>
 								<div class="col">
 									<div class="form-group">
 										<label for="staff_cate">Staff Category</label> <select
-											name="staff_cate" class="form-control" id="">
+											name="staff_cate" class="form-control" id="category" onchange="leave(this.value)">
 											<option value="select">select</option>
 											<option value="RGN">Reg. Gen. Nurse</option>
-											<option value="midwife">Reg. Midwife</option>
+											<option value="Midwife">Reg. Midwife</option>
 											<option value="NAC">NAC</option>
 											<option value="NAP">NAP</option>
 											<option value="ANXILLARY">Anxillary</option>
@@ -594,7 +569,7 @@
 									<div class="form-group">
 										<label for="leave_day_earn">Leave Days Earn</label> <input
 											type="number" class="form-control" name="leave_day_earn"
-											id="">
+											id="daysEarn">
 									</div>
 								</div>
 
@@ -731,7 +706,261 @@
 
 	<!-- <a class="btn btn-primary" data-toggle="modal" href='#modal-id1'>Trigger
 		modal</a> -->
-	<div class="modal fade" id="modal-id1">
+		
+		<div class="modal fade" id="modal-id4">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Admission Form2</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+
+				</div>
+				<form
+					action="${pageContext.request.contextPath}/admissionFront/saveAdmission_Discharge">
+					<div class="modal-body">
+
+
+
+						<div class="firstContainer">
+
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label for="patient_number">Patient Number/Id</label> <input type="text"
+											class="form-control" name="patient_number" id="">
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group">
+										<label for="patient_name">Patient Name</label> <input type="text"
+											class="form-control" name="patient_name" id="">
+									</div>
+								</div>
+							</div>
+
+
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label for="sex">Sex/Gender</label> <select
+											name="sex" class="form-control" id="lets">
+											<option value="">Select</option>
+											<option value="Male">Male</option>
+											<option value="Female ">Female</option>
+										</select>
+									</div>
+
+								</div >
+								
+								<div class="col">
+								<div class="form-group">
+								<label for="age">Age</label>
+								<input type="number" class="form-control" name="age">
+								</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label for="address">Address</label> 
+
+										<input type="text" class="form-control" name="address">
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group">
+										<label for="phone_number">Phone Number</label> 
+
+										<input type="text" class="form-control" name="phone_number">
+									</div>
+								</div>
+							</div>
+
+
+							<div class="row">
+
+								<div class="col">
+									<div class="form-group">
+										<label for="date_admitted">Date Admitted</label> <input
+											type="date" class="form-control" name="date_admitted"
+											id="">
+									</div>
+								</div>
+
+								<div class="col">
+									<div class="form-group">
+										<label for="diagnosis">Provisional Diagnosis</label> <input
+											type="text" class="form-control" name="diagnosis"
+											id="">
+									</div>
+								</div>
+
+
+							</div>
+
+
+
+
+						</div>
+
+
+						<div class="secondContainer">
+							<div class="row">
+
+
+
+								<div class="col">
+									<div class="form-group">
+										<label for="next_of_kin">Next Of Kin</label> <input type="text"
+											class="form-control" name="next_of_kin" id="">
+									</div>
+								</div>
+
+
+								<div class="col">
+									<div class="form-group">
+										<label for="next_of_kin_number">Next Of Kin Number</label> 
+										<input type="number" class="form-control" name="next_of_kin_number">
+									</div>
+								</div>
+
+							</div>
+
+
+							<div class="row" hidden="true">
+								<div class="col">
+									<div class="form-group">
+										<label for="final_diagnosis">Final Diagnosis</label> <input
+											type="text" class="form-control" name="final_diagnosis"
+											readonly>
+									</div>
+								</div>
+								<div class="col" >
+									<div class="form-group">
+										<label for="outcome_of_admission">Outcome of Admission</label> 
+										<select class="form-control" name="outcome_of_admission">
+										
+										<option value="">Select</option>
+										<option value="Discharge">Discharge</option>
+										<option value="Death">Death</option>
+										<option value="Abscond">Abscond</option>
+										<option value="Referred">Referred</option>
+										<option value="Trans-out">Trans-out</option>
+										<option value="Discharge(against Medical Advice)">Discharge(against Medical Advice)</option>
+										
+										</select>
+
+									</div>
+								</div>
+								
+							</div>
+
+
+
+
+
+							<div class="row">
+							<div class="col">
+									<div class="form-group">
+										<label for="insured">Insured</label> 
+										<select class="form-control" name="insured" onchange="displayH(this.value)">
+										<option>select</option>
+										<option value="Yes">Yes</option>
+										<option value="No">No</option>
+										
+										</select>
+
+									</div>
+
+
+								</div>
+								<div class="col" id="hid" style="display:none;">
+                                    <div class="form-group">
+                                        <label for="insurance_number">Insurance Number</label>
+                                        <input type="number" class="form-control" name="insurance_number" id="">
+                                    </div>
+                                </div>
+
+								
+							</div>
+
+						</div>
+
+
+
+						<div class="thirdContainer">
+							<div class="row">
+								<div class="col" hidden="true">
+									<div class="form-group">
+										<label for="date_discharge">Date Discharge</label> <input
+											type="date" class="form-control" name="date_discharge" id=""
+											disabled>
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group">
+										<label for="ward_name">Ward Name</label> 
+										<select
+											name="ward_name" class="form-control" id="lets">
+											 <option>select</option>
+						 
+						 <%
+									try {
+
+										Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root", "Physics1//,");
+										//Statement statement = connection.createStatement();
+
+										PreparedStatement ps = conn.prepareStatement(
+										"select ward_name from ward;");
+
+										ResultSet resultSet = ps.executeQuery();
+
+										while (resultSet.next()) {
+											resultSet.getString(1);
+											//resultSet.getString(2);
+									%>
+									
+									<option value="<%=resultSet.getString(1)%>"> <%=resultSet.getString(1)%></option>
+									<%
+									}
+									} catch (Exception e) {
+
+									}
+									%>
+											<!-- <option value="">Select</option>
+											<option value="Male Medical">Male Medical</option>
+											<option value="Female Medical">Female Medical</option>
+											<option value="Female Surgical">Female Surgical</option>
+											<option value="Male Surgical">Male Surgical</option>
+											<option value="Children Ward">Children's Ward</option>
+											<option value="Maternity">Maternity</option>
+											<option value="General Ward">General Ward</option>
+											<option value="NICU">NICU</option>
+											<option value="Religious Ward">Religious Ward</option>
+											<option value="Accident/Emergency">Accident/Emergency</option>
+											<option value="Outpatient Department">Outpatient Department</option> -->
+										</select>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Admit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+		
+	<%-- <div class="modal fade" id="modal-id1">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -957,7 +1186,7 @@
 			</div>
 		</div>
 	</div>
-
+ --%>
 
 
 
@@ -1240,6 +1469,27 @@
 
 		function hidden() {
 			document.getElementById("hid").style.display = "none";
+		}
+		
+		
+
+		
+		function leave(val){
+			
+			leavetype = document.getElementById("leaveType");
+			daysearn = document.getElementById("daysEarn");
+			category = document.getElementById("category");
+			show = document.getElementById("show");
+			
+			if(leavetype == "Annual Leave")){
+				daysearn.value = 36;
+				show.innerHTML = 36;
+			}else if(leavetype == "Annual Leave" & (category =="NAC" | "NAP")){
+				daysearn.value = 28;
+			}else{
+				
+			}
+			
 		}
 	</script>
 

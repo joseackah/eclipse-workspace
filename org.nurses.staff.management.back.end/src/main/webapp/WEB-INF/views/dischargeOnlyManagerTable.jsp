@@ -57,7 +57,7 @@
 
 </style>
 <meta charset="ISO-8859-1">
-<title>Leave Table</title>
+<title>Manager Discharge Table</title>
 </head>
 <body>
  <h1 style="text-align: center; width: 100%; margin:2px 0 2em;">St. Joseph's Hospital,Jirapa Nurses' Staff Leave Application Table</h1>
@@ -109,9 +109,9 @@
             
             </c:url>
             
-                <tr>
+                <tr onclick="window.location.href='${update}'">
                 
-                    <td>${dischargeOnly.id}</td>
+                    <td>  ${dischargeOnly.id}</td>
                     <td>${dischargeOnly.ward_name}</td>
                     <td>${dischargeOnly.patient_number}</td>
                     <td>${dischargeOnly.patient_name}</td>
@@ -133,6 +133,7 @@
                     
                     
                 </tr>
+                
 </c:forEach>
                 <tr>
                     <td></td>

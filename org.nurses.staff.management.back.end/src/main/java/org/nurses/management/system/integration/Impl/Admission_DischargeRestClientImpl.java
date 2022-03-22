@@ -85,6 +85,13 @@ public class Admission_DischargeRestClientImpl implements Admission_DischargeRes
 	}
 	
 	
+	@Override
+	public Admission_Discharge[] deathOnly(Admission_Discharge deathOnly) {
+		Admission_Discharge[] death = rest.getForObject("http://localhost:8084/admission/deathOnly", Admission_Discharge[].class);
+		return death;
+	}
+	
+	
 	/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>*/
 	/*>>>>>>>>>>>>>>>>>>===================Admissions======================<<<<<<<<<<<<<<<<<<<<<<*/
 	/*<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/	

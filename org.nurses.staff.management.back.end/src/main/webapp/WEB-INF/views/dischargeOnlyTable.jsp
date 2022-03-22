@@ -91,7 +91,7 @@
                     <th>INSURED</th>
                     <th>NUMBER</th>
                   
-                    <th id="actio">ACTION</th>
+                    <th id="actio" hidden="true">ACTION</th>
                 </tr>
             </thead>
             <tbody id="myTable">
@@ -125,7 +125,7 @@
                     <td>${dischargeOnly.insured}</td>
                     <td>${dischargeOnly.insurance_number}</td>
                     
-                    <td id="action1">
+                    <td id="action1" hidden="true">
                     
                     <a  href="${delete}" onclick="if (!confirm('Are you sure you want to delete this record?')) return false"> <i class="fa fa-trash" id="action2"></i> </a> |-|
                     <a  href="${update}"> <i class="fa fa-pen" id="action3" > </i></a>
@@ -137,7 +137,7 @@
                 </tr>
 </c:forEach>
                 <tr>
-                    <td></td>
+                    
                     <td></td>
                     <td></td>
                     <td></td>

@@ -83,6 +83,12 @@ crossorigin='anonymous'></script>
             <tbody id="myTable">
             
             <c:forEach items="${wardD}" var="wardD">
+            
+            <c:url value="retrieve/${wardD.id}" var = "update">
+            
+            
+            </c:url>
+            
                 <tr>
                     <td>${wardD.id}</td>
                     <td>${wardD.ward_name}</td>

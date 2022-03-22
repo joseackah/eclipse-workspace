@@ -79,7 +79,7 @@
         <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:auto" id="name">
             <thead class="table-danger">
                 <tr>
-                    <th>ID</th>
+                    <th style="display:none">ID</th>
                     <th>DATE</th>
                     <th>WARD NAME</th>                    
                     <th>ADMISSIONS</th>
@@ -116,19 +116,19 @@
             
                 <tr>
                 
-                    <td>${bedState.id}</td>
+                    <td style="display:none">${bedState.id}</td>
                     <td>${bedState.date}</td>
                     <td>${bedState.ward_name}</td>
                     <td>${bedState.total_admission}</td>
                     <td>${bedState.total_discharge}</td>
                     <td>${bedState.total_trans_in}</td>
                     <td>${bedState.total_trans_out}</td>
-                    <td>${bedState.total_death}</td>
+                    <td>${bedState.total_deaths}</td>
                      <td>${bedState.total_critical_ill}</td>
                     <td>${bedState.total_floor_patient}</td>
                     <td>${bedState.total_absconded}</td>
                     <td>${bedState.total_insured}</td>
-                    <td>${bedState.total_non_insred}</td>
+                    <td>${bedState.total_non_insured}</td>
                     <td>${bedState.total_remain_at_midnight}</td>
                     <th>${bedState.nurse_incharge}</th>
                     <td id="action1">
@@ -155,7 +155,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>  <td></td>  <td></td>  <td></td>
+                    <td></td>  <td></td>  <td></td>  <!-- <td></td> -->
                 </tr>
             </tbody>
         </table>

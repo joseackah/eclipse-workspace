@@ -18,7 +18,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Leave Application</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <button type="button" class="close" onclick="history.back()" aria-hidden="true">&times;</button>
 
                 </div>
                 

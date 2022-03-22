@@ -86,13 +86,13 @@
                     <th>PHONE NUMBER</th>
                     <th>DATE ADMITTED</th>
                     <th>P. DIAGNOSIS</th>
-                     <th>OUTCOME</th>
-                    <th>FINAL DIAGNOSIS</th>
+                     <!-- <th>OUTCOME</th> -->
+                  <!--   <th>FINAL DIAGNOSIS</th> -->
                     <th>NEXT FO KIN</th>
                     <th>KIN NUMBER</th>
                     <th>INSURED</th>
                     <th>NUMBER</th>
-                    <th>DATE DISCHARGE</th>
+                   <!--  <th>DATE DISCHARGE</th> -->
                   
                     <th id="actio">ACTION</th>
                 </tr>
@@ -108,7 +108,7 @@
             </c:url>
             
             
-            <c:url value="updateAdmission_Discharge1/${admission.id}"  var="update">
+            <c:url value="updateAdmission_Discharge11/${admission.id}"  var="update">
             
             
             
@@ -126,13 +126,13 @@
                     <td>${admission.phone_number}</td>
                     <td>${admission.date_admitted}</td>
                     <td>${admission.diagnosis}</td>
-                     <td>${admission.outcome_of_admission}</td>
-                    <td>${admission.final_diagnosis}</td>
+                   <%--   <td>${admission.outcome_of_admission}</td>
+                    <td>${admission.final_diagnosis}</td> --%>
                     <td>${admission.next_of_kin}</td>
                     <td>${admission.next_of_kin_number}</td>
                     <td>${admission.insured}</td>
                     <td>${admission.insurance_number}</td>
-                    <td>${admission.date_discharge}</td>
+                    <%-- <td>${admission.date_discharge}</td> --%>
                     
                     <td id="action1">
                     

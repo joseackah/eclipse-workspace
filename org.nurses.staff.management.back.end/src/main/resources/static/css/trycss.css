@@ -1,0 +1,151 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container1 {
+  width: 100%;
+  /* min-height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #22231d;
+}
+
+.text {
+	margin-left:10%;
+  width: 100%;
+  height: 50px;
+  position: relative;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+.text::after {
+  position: absolute;
+  content: "";
+  font-size: 2vw;
+  color: rgb(109, 92, 92);
+  opacity: 0;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  animation: change-text 3s linear infinite;
+}
+
+@keyframes change-text {
+  40% {
+    opacity: 3;
+   content: "ST. JOSEPH'S HOSPITAL, CENTER OF EXCELLENCE";
+    color: #9a4295;
+    letter-spacing: 10px;
+  }
+
+ /*  35% {
+    content: "GoldenEye";
+    color: #2a44b9;
+    opacity: 1;
+    letter-spacing: 10px;
+  }
+
+  60% {
+    content: "Tomorrow Never Dies";
+    color: #c1b39f;
+    opacity: 1;
+    letter-spacing: 10px;
+  }
+
+  85% {
+    content: "The World Is Not Enough";
+    color: #460bcf;
+    opacity: 1;
+    letter-spacing: 10px;
+  } */
+
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    opacity: 0;
+    letter-spacing: 0;
+    color: #fff;
+    content: "";
+  }
+}
+
+
+
+.container22 {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: crimson;
+}
+
+
+
+.try {
+  position: relative;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 100%;
+  color: #fff;
+}
+
+.try::before {
+  content: attr(data-msg);
+  filter: blur(3px);
+}
+
+.try::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 50px;
+  height: calc(100% + 4px);
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  animation: moveLeft 3s linear infinite alternate;
+}
+
+.try--content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50px;
+  overflow: hidden;
+  background-color: crimson;
+  animation: moveLeft 3s linear infinite alternate;
+}
+
+.try--data {
+  animation: moveRight 3s linear infinite alternate;
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(300px);
+  }
+}
+
+@keyframes moveRight {
+  10% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(-300px);
+  }
+}

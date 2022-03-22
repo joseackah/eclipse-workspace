@@ -34,5 +34,21 @@ public Ward_schedule[] maleMedical();
 	public Ward_schedule[] femaleMedical();
 	
 	public Ward_schedule[] opd();
+	
+	
+	
+/* counting number of nurses in a particular ward */
+	
+	public String countNurseInMaternity();
+	public String countNurseInMaleMedical();
+	public String countNurseInMaleSurgical();
+	public String countNurseInFemaleMedical();
+	public String countNurseInFemaleSurgical();
+	public String countNurseInReligiousWard();
+	public String countNurseInChildrensWard();
+	public String countNurseInGeneralWard();
+	public String countNurseInNICU();
+	public String countNurseInOpd();
+	public String countNurseInAccidentEmergency();
 
 }

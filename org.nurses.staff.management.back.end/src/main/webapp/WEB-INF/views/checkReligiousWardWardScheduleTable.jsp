@@ -68,7 +68,7 @@
         <table class="table table-bordered table-hover" style="background-color: beige;">
             <thead class="table-warning">
                 <tr>
-                    <th>ID</th>
+                    <th style="display:none;">ID</th>
                     <th>STAFF ID</th>
                     <th>WARD NAME</th>
                     <th>NURSE CATEGORY</th>
@@ -83,7 +83,7 @@
             <c:forEach items="${scheduleTable}" var="scheduleTable">
             
                 <tr>
-                    <td>${scheduleTable.id}</td>
+                    <td style="display:none;">${scheduleTable.id}</td>
                     <td>${scheduleTable.staff_id}</td>
                     <td>${scheduleTable.ward_name}</td>
                     <td>${scheduleTable.nurse_cate}</td>
@@ -101,7 +101,7 @@
                 </tr>
 </c:forEach>
                 <tr>
-                    <td></td>
+                    <td style="display:none;"></td>
                     <td></td>
                     <td></td>
                     <td></td>

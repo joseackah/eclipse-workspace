@@ -91,9 +91,9 @@
                     <th>FINAL DIAGNOSIS</th>
                     <th>NEXT OF KIN</th>
                     <th>KIN NUMBER</th>
-                    <th>DATE DISCHARGE</th>
+                    <th>DATE OF DEATH</th>
                   
-                    <th id="actio">ACTION</th>
+                    <th id="actio" hidden="true">ACTION</th>
                 </tr>
             </thead>
             <tbody id="myTable">
@@ -129,7 +129,7 @@
                     <td>${admission.next_of_kin_number}</td>                    
                     <td>${admission.date_discharge}</td>
                     
-                    <td id="action1">
+                    <td id="action1" hidden="true">
                     
                     <a  href="${delete}" onclick="if (!confirm('Are you sure you want to delete this record?')) return false"> <i class="fa fa-trash" id="action2"></i> </a> |-|
                     <a  href="${update}"> <i class="fa fa-pen" id="action3" > </i></a>
@@ -141,7 +141,7 @@
                 </tr>
 </c:forEach>
                 <tr>
-                    <td></td>
+                   
                     <td></td>
                     <td></td>
                     <td></td>

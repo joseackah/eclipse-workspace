@@ -9,7 +9,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Admission Update Form</title>
 </head>
 <body>
 
@@ -179,7 +179,7 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" onclick="history.back()">Close</button>
                         <button type="submit" class="btn btn-primary">Save Record</button>
                     </div>
                 </form>

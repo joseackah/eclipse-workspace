@@ -156,6 +156,15 @@ public class Admission_DischargeController {
 		
 	}
 	
+	
+	@RequestMapping(value = "updateAdmission_Discharge11/{id}", method = RequestMethod.GET)
+	public String searchAdmission_Discharge11(@PathVariable("id") Integer id, ModelMap model) {
+		Admission_Discharge admission = admissionRest.findAdmission_Discharge(id);
+		model.addAttribute("admission", admission);
+		return "admissionUpdate";
+		
+	}
+	
 	@RequestMapping(value = "inchargeAdmission_Discharge", method = RequestMethod.GET)
 	public String searchLAdmission_Discharge(@RequestParam("id") Integer id, ModelMap model) {
 		Admission_Discharge admission = admissionRest.findAdmission_Discharge(id);
@@ -451,7 +460,7 @@ public class Admission_DischargeController {
 	  
 	  @RequestMapping(value = "/displayDeath", method = RequestMethod.GET)
 		public String deathTable(Admission_Discharge admissionD, ModelMap model) {
-			Admission_Discharge[] admission = admissionRest.getAllAdmission_Discharge(admissionD);
+			Admission_Discharge[] admission = admissionRest.deathOnly(admissionD);
 			model.addAttribute("admission", admission);
 
 			return "deathTable";
@@ -572,7 +581,7 @@ public class Admission_DischargeController {
 	  
 	  @RequestMapping(value = "/displayManagerDeath", method = RequestMethod.GET)
 		public String deathManagerTable(Admission_Discharge admissionD, ModelMap model) {
-			Admission_Discharge[] admission = admissionRest.getAllAdmission_Discharge(admissionD);
+			Admission_Discharge[] admission = admissionRest.deathOnly(admissionD);
 			model.addAttribute("admission", admission);
 
 			return "deathManagerTable";

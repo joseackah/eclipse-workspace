@@ -150,4 +150,83 @@ public class Newborn_tableRestClientImpl implements Newborn_tableRestClient {
 		// TODO Auto-generated method stub
 		return rest.getForObject("http://localhost:8084/newborn/countTotalNumberOfBabies", String.class);
 	}
+	
+	
+	
+	/* counting newborn deaths in various months */
+	
+	
+	@Override
+	public String countNewbornDeathJanuary() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/newborn/countNewbornDeathJanuary", String.class);
+	}
+
+	@Override
+	public String countNewbornDeathFebruary() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/newborn/countNewbornDeathFebruary", String.class);
+	}
+
+	@Override
+	public String countNewbornDeathMarch() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/newborn/countNewbornDeathMarch", String.class);
+	}
+
+	@Override
+	public String countNewbornDeathApril() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/newborn/countNewbornDeathApril", String.class);
+	}
+
+	@Override
+	public String countNewbornDeathMay() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/newborn/countNewbornDeathMay", String.class);
+	}
+
+	@Override
+	public String countNewbornDeathJune() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/newborn/countNewbornDeathJune", String.class);
+	}
+
+	@Override
+	public String countNewbornDeathJuly() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/newborn/countNewbornDeathJuly", String.class);
+	}
+
+	@Override
+	public String countNewbornDeathAugust() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/newborn/countNewbornDeathAugust", String.class);
+	}
+
+	@Override
+	public String countNewbornDeathSeptember() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/newborn/countNewbornDeathSeptember", String.class);
+	}
+
+	@Override
+	public String countNewbornDeathOctober() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/newborn/countNewbornDeathOctober", String.class);
+	}
+
+	@Override
+	public String countNewbornDeathNovember() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/newborn/countNewbornDeathNovember", String.class);
+	}
+
+	@Override
+	public String countNewbornDeathDecember() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/newborn/countNewbornDeathDecember", String.class);
+	}
+
+	
 }

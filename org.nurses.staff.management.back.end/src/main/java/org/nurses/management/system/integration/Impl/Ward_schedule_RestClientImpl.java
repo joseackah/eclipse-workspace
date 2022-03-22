@@ -123,9 +123,75 @@ public class Ward_schedule_RestClientImpl implements Ward_schedule_RestClient {
 
 	@Override
 	public Ward_schedule[] opd() {
-		// TODO Auto-generated method stub
+		
 		Ward_schedule[] opdSchedule = rest.getForObject("http://localhost:8084/ward_schedule/opdSchedule", Ward_schedule[].class);
 		return opdSchedule;
+	}
+
+	@Override
+	public String countNurseInMaternity() {
+		
+		return rest.getForObject("http://localhost:8084/ward_schedule/nurseInMaternity", String.class);
+	}
+
+	@Override
+	public String countNurseInMaleMedical() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/ward_schedule/nurseInMaleMedical", String.class);
+	}
+
+	@Override
+	public String countNurseInMaleSurgical() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/ward_schedule/nurseInMaleSurgical", String.class);
+	}
+
+	@Override
+	public String countNurseInFemaleMedical() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/ward_schedule/nurseInFemaleMedical", String.class);
+	}
+
+	@Override
+	public String countNurseInFemaleSurgical() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/ward_schedule/nurseInFemaleSurgical", String.class);
+	}
+
+	@Override
+	public String countNurseInReligiousWard() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/ward_schedule/nurseInReligiousWard", String.class);
+	}
+
+	@Override
+	public String countNurseInChildrensWard() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/ward_schedule/nurseInChildrensWard", String.class);
+	}
+
+	@Override
+	public String countNurseInGeneralWard() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/ward_schedule/nurseInGeneralWard", String.class);
+	}
+
+	@Override
+	public String countNurseInNICU() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/ward_schedule/nurseInNICU", String.class);
+	}
+
+	@Override
+	public String countNurseInOpd() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/ward_schedule/nurseInOpd", String.class);
+	}
+
+	@Override
+	public String countNurseInAccidentEmergency() {
+		// TODO Auto-generated method stub
+		return rest.getForObject("http://localhost:8084/ward_schedule/nurseInAccidentEmergency", String.class);
 	}
 
 }

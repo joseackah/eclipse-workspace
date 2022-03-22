@@ -181,5 +181,9 @@ div.dt-datetime-error {
   line-height: 1.25em;
   text-align: center;
   color: #b11f1f; }
+  
+  .hide{
+  display:none;
+  }
 
 

@@ -22,7 +22,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Ward Schedule</h4>
-                    <button type="button" class="close" data-dismiss="mo" aria-hidden="true">&times;</button>
+                    <button type="button" class="close" onclick="history.back()" aria-hidden="true">&times;</button>
 
                 </div>
                 <form action="${pageContext.request.contextPath}/scheduleFront/updateS">
@@ -102,7 +102,7 @@
                     
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" onclick="history.back()" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </div>
                 </form>

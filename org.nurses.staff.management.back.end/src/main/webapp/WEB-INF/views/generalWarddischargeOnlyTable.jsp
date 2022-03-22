@@ -79,7 +79,7 @@
         <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:100" id="name">
             <thead class="table-danger">
                 <tr>
-                    <th>ID</th>
+                    <th style="display:none;">ID</th>
                     <th>WARD NAME</th>
                     <th>PATIENT NUMBER</th>
                     <th>PATIENT NAME</th>
@@ -113,8 +113,8 @@
             </c:url>
             <%int i=1; %>
                 <tr>
-                <td><%=i++ %></td>
-                    <td>${dischargeOnly.id}</td>
+              <%--   <td><%=i++ %></td> --%>
+                    <td style="display:none;">${dischargeOnly.id}</td>
                     <td>${dischargeOnly.ward_name}</td>
                     <td>${dischargeOnly.patient_number}</td>
                     <td>${dischargeOnly.patient_name}</td>
@@ -139,7 +139,7 @@
                 </tr>
 </c:forEach>
                 <tr>
-                    <td></td>
+                    <td style="display:none;"></td>
                     <td></td>
                     <td></td>
                     <td></td>

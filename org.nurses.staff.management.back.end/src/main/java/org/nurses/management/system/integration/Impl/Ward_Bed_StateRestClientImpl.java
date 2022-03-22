@@ -93,7 +93,7 @@ public class Ward_Bed_StateRestClientImpl implements Ward_Bed_StateRestClient {
 
 	@Override
 	public Ward_Bed_State[] maleMedical() {
-		Ward_Bed_State[] maleMedicalLeave = rest.getForObject("http://localhost:8084/bedState/femaleMedicalBedState", Ward_Bed_State[].class);
+		Ward_Bed_State[] maleMedicalLeave = rest.getForObject("http://localhost:8084/bedState/maleMedicalBedState", Ward_Bed_State[].class);
 		return maleMedicalLeave;
 	}
 

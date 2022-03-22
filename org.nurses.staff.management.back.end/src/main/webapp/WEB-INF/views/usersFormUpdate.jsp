@@ -33,7 +33,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h4 class="modal-title">User Enrollment</h4>
-					<button type="button" class="close" data-dismiss="modal"
+					<button type="button" class="close" onclick="history.back()"
 						aria-hidden="true">&times;</button>
 
 				</div>
@@ -85,7 +85,7 @@
 								<div class="form-group">
 									<label for="userPassword">Password</label> <input
 										type="password" class="form-control"
-										value="${users.userPassword }" name="userPassword"
+										placeholder="*********" name="userPassword"
 										id="myInput"> <input type="checkbox"
 										onclick="myFunction()"> <label>Show Password</label>
 								</div>

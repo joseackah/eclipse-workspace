@@ -57,7 +57,7 @@
 
 </style>
 <meta charset="ISO-8859-1">
-<title>Leave Table</title>
+<title>Discharge Table</title>
 </head>
 <body>
 <div style="text-align: center; width: 100%; margin:2px 0 2em;">
@@ -79,7 +79,7 @@
         <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:100" id="name">
             <thead class="table-danger">
                 <tr>
-                    <th>ID</th>
+                    <th style="display:none;">ID</th>
                     <th>WARD NAME</th>
                     <th>PATIENT NUMBER</th>
                     <th>PATIENT NAME</th>
@@ -113,7 +113,7 @@
             
                 <tr>
                 
-                    <td>${dischargeOnly.id}</td>
+                    <td style="display:none;">${dischargeOnly.id}</td>
                     <td>${dischargeOnly.ward_name}</td>
                     <td>${dischargeOnly.patient_number}</td>
                     <td>${dischargeOnly.patient_name}</td>
@@ -147,7 +147,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <!-- <td></td> -->
                     
                     <td></td> 
                 </tr>

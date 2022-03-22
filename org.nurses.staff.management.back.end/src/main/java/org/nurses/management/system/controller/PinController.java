@@ -7,12 +7,14 @@ import org.nurses.management.system.integration.dto.Pin_Ain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@CrossOrigin(origins = "http://localhost:8084")
 @RequestMapping("/pinFront")
 public class PinController {
 	
@@ -49,11 +51,11 @@ public class PinController {
 		return "";
 	}
 
-	@RequestMapping(value = "updatePin1", method = RequestMethod.GET)
-	public String searchPin1(@RequestParam("Id") Integer id, ModelMap model) {
+	@RequestMapping(value = "updatePin1/{id}", method = RequestMethod.GET)
+	public String searchPin1(@PathVariable("id") Integer id, ModelMap model) {
 		Pin_Ain ain = pinRest.find(id);
 		model.addAttribute("ain", ain);
-		return "";
+		return "pin_ainUpdate";
 		
 	}
 	
@@ -65,9 +67,9 @@ public class PinController {
 	}
 
 	@RequestMapping("/updateP")
-	public String update(Pin_Ain leave) {
-		pinRest.updatePinAin(leave);
-		return "";
+	public String update(Pin_Ain pin) {
+		pinRest.updatePinAin(pin);
+		return "redirect:/pinFront/displayAllPin";
 	}
 
 	

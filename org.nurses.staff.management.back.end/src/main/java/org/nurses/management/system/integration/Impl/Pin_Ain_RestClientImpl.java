@@ -58,7 +58,7 @@ public class Pin_Ain_RestClientImpl implements Pin_Ain_RestClient {
 
 	@Override
 	public Pin_Ain find(Integer id) {
-		Pin_Ain findPin = rest.getForObject("http://localhost:8084/pin_ain/findById/" + id, Pin_Ain.class);
+		Pin_Ain findPin = rest.getForObject("http://localhost:8084/pin_ain/getPinById/" + id, Pin_Ain.class);
 		return findPin;
 	}
 

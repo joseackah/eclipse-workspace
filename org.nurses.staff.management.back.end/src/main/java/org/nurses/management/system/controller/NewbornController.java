@@ -5,6 +5,7 @@ import org.nurses.management.system.integration.dto.Newborn_table;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@CrossOrigin(origins = "http://localhost:8084")
 @RequestMapping("/newbornFront")
 public class NewbornController {
 
@@ -267,7 +269,80 @@ public class NewbornController {
 	 * >>>>>>>>>>>>>>>>>>=========================================<<<<<<<<<<<<<<<<<<
 	 * <<<<<<<<
 	 */
+/* Counting Newborn death from january to december */
 	
+	@ModelAttribute("countNewbornDeathJanuary")
+	public String countNewbornDeathJanuary() {
+		return newbornRest.countNewbornDeathJanuary();
+	}
+	
+	
+	
+	@ModelAttribute("countNewbornDeathFebruary")
+	public String countNewbornDeathFebruary() {
+		return newbornRest.countNewbornDeathFebruary();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathMarch")
+	public String countNewbornDeathMarch() {
+		return newbornRest.countNewbornDeathMarch();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathApril")
+	public String countNewbornDeathApril() {
+		return newbornRest.countNewbornDeathApril();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathMay")
+	public String countNewbornDeathMay() {
+		return newbornRest.countNewbornDeathMay();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathJune")
+	public String countNewbornDeathJune() {
+		return newbornRest.countNewbornDeathJune();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathJuly")
+	public String countNewbornDeathJuly() {
+		return newbornRest.countNewbornDeathJuly();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathAugust")
+	public String countNewbornDeathAugust() {
+		return newbornRest.countNewbornDeathAugust();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathSeptember")
+	public String countNewbornDeathSeptember() {
+		return newbornRest.countNewbornDeathSeptember();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathOctober")
+	public String countNewbornDeathOctober() {
+		return newbornRest.countNewbornDeathOctober();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathNovember")
+	public String countNewbornDeathNovember() {
+		return newbornRest.countNewbornDeathNovember();
+	}
+	
+	
+	@ModelAttribute("countNewbornDeathDecember")
+	public String countNewbornDeathDecember() {
+		return newbornRest.countNewbornDeathDecember();
+	}
+
 
 	/*
 	 * >>>>>>>>>>>>>>>>>>=========================================<<<<<<<<<<<<<<<<<<

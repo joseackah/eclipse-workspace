@@ -32,12 +32,12 @@
   body * {
     visibility: hidden;
   }
-  #print, h1, #print * {
+  #print, h1,h2, #print * {
     visibility: visible;
   }
   #print {
     position: absolute;
-    left: 0;
+    left: 10%;
     top: 0;
   }
   
@@ -57,13 +57,16 @@
 
 </style>
 <meta charset="ISO-8859-1">
-<title>Leave Table</title>
+<title>Manager Admission Table</title>
 </head>
 <body>
- <h1 style="text-align: center; width: 100%; margin:2px 0 2em;">St. Joseph's Hospital,Jirapa Nurses' Staff Leave Application Table</h1>
+<div style="text-align: center; width: 100%; margin:2px 0 2em;">
+ <h1 >St. Joseph's Hospital,Jirapa </h1>
+    <h2>Admissions Table</h2>
     
+    </div>
     <hr style="width:90%">
-    <div class="container mt-3" id="print">
+    <div class="container mt-3" id="print" style="width:100%;">
     <!-- <div style="text-align: center; width: 100%;"> -->
             <!-- <h1>St. Joseph's Hospital,Jirapa Nurses' Staff Leave Application Table</h1> -->
         <!-- </div> -->
@@ -74,7 +77,7 @@
         <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print"></i> </button>
         
 <div id="s1" style=" display:flex; flex-direction:row-reverse;"> <input class="form-control" id="myInput" type="text" placeholder="Search.." style="padding: .5em 2em; border-radius: 5em; width:20%; display:flex; flex-direction: flex-end;"> </div>
-        <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:auto" id="name">
+        <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:" id="name">
             <thead class="table-danger">
                 <tr>
                     <th>ID</th>

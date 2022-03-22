@@ -41,4 +41,35 @@ public interface Newborn_tableRestClient {
 	public String countNewbornNovember();
 	
 	public String countNewbornDecember();
+	
+	
+	
+/* counting number of babies deaths in the various month in a year */
+	
+	
+	public String countNewbornDeathJanuary();
+	
+	public String countNewbornDeathFebruary();
+	
+	public String countNewbornDeathMarch();
+	
+	public String countNewbornDeathApril();
+	
+	public String countNewbornDeathMay();
+	
+	public String countNewbornDeathJune();
+	
+	public String countNewbornDeathJuly();
+
+	public String countNewbornDeathAugust();
+	
+	public String countNewbornDeathSeptember();
+	
+	public String countNewbornDeathOctober();
+
+	public String countNewbornDeathNovember();
+	
+	public String countNewbornDeathDecember();
+	
+	
 }

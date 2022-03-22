@@ -15,7 +15,7 @@ public interface Admission_DischargeRestClient {
 	
 	public Admission_Discharge [] dischargeOnly(Admission_Discharge dischargeOnly);
 
-	
+	public Admission_Discharge [] deathOnly(Admission_Discharge deathOnly);
 	
 	
 	

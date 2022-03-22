@@ -11,9 +11,9 @@
     
    
     
-    <link href="${pageContext.request.contextPath}/resources/datatables.min.css"
+    <link href="${pageContext.request.contextPath}/resources/css/datatables.min.css"
 	rel="stylesheet">
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/datatables.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/datatables.min.js"></script>
 	
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -81,7 +81,7 @@
         <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:100" id="name">
             <thead class="table-danger">
                 <tr>
-                    <th>ID</th>
+                    <th style="display: none;">ID</th>
                     <th>WARD NAME</th>
                     <th>PATIENT NUMBER</th>
                     <th>PATIENT NAME</th>
@@ -117,7 +117,7 @@
             
                 <tr>
                 
-                    <td>${admission.id}</td>
+                    <td style="display: none;">${admission.id}</td>
                     <td>${admission.ward_name}</td>
                     <td>${admission.patient_number}</td>
                     <td>${admission.patient_name}</td>
@@ -143,7 +143,7 @@
                 </tr>
 </c:forEach>
                 <tr>
-                    <td></td>
+                   <!--  <td></td> -->
                     <td></td>
                     <td></td>
                     <td></td>

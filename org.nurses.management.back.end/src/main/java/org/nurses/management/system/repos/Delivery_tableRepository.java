@@ -24,7 +24,7 @@ public interface Delivery_tableRepository extends JpaRepository<Delivery_table, 
 	@Query(value = "select count(*) from delivery_table where type_of_delivery ='SVD(Induced)'", nativeQuery = true)
 	public String countSVDInduce();
 
-	@Query(value = "select count(*) from delivery_table;", nativeQuery = true)
+	@Query(value = "select count(*) from delivery_table where year(date_of_delivery) = year(current_date);", nativeQuery = true)
 	public String countDelivery();
 
 	/* counting Delivery in the various month in a year */

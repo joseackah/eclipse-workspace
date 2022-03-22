@@ -134,5 +134,85 @@ public class Newborn_tableController {
 	public String countNewbornDecember() {
 		return newbornRepos.countNewbornDecember();
 	}
+	
+	
+	
+	/* Counting death for newborn */
+	
+	
+/* Counting Newborn from january to december */
+	
+	@GetMapping("/countNewbornDeathJanuary")
+	public String countNewbornDeathJanuary() {
+		return newbornRepos.countNewbornDeathJanuary();
+	}
+	
+	
+	
+	@GetMapping("countNewbornDeathFebruary")
+	public String countNewbornDeathFebruary() {
+		return newbornRepos.countNewbornDeathFebruary();
+	}
+	
+	
+	@GetMapping("countNewbornDeathMarch")
+	public String countNewbornDeathMarch() {
+		return newbornRepos.countNewbornDeathMarch();
+	}
+	
+	
+	@GetMapping("countNewbornDeathApril")
+	public String countNewbornDeathApril() {
+		return newbornRepos.countNewbornDeathApril();
+	}
+	
+	
+	@GetMapping("countNewbornDeathMay")
+	public String countNewbornDeathMay() {
+		return newbornRepos.countNewbornDeathMay();
+	}
+	
+	
+	@GetMapping("countNewbornDeathJune")
+	public String countNewbornDeathJune() {
+		return newbornRepos.countNewbornDeathJune();
+	}
+	
+	
+	@GetMapping("countNewbornDeathJuly")
+	public String countNewbornDeathJuly() {
+		return newbornRepos.countNewbornDeathJuly();
+	}
+	
+	
+	@GetMapping("countNewbornDeathAugust")
+	public String countNewbornDeathAugust() {
+		return newbornRepos.countNewbornDeathAugust();
+	}
+	
+	
+	@GetMapping("countNewbornDeathSeptember")
+	public String countNewbornDeathSeptember() {
+		return newbornRepos.countNewbornDeathSeptember();
+	}
+	
+	
+	@GetMapping("countNewbornDeathOctober")
+	public String countNewbornDeathOctober() {
+		return newbornRepos.countNewbornDeathOctober();
+	}
+	
+	
+	@GetMapping("countNewbornDeathNovember")
+	public String countNewbornDeathNovember() {
+		return newbornRepos.countNewbornDeathNovember();
+	}
+	
+	
+	@GetMapping("countNewbornDeathDecember")
+	public String countNewbornDeathDecember() {
+		return newbornRepos.countNewbornDeathDecember();
+	}
+
 
 }

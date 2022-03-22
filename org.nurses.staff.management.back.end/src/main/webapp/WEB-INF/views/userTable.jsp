@@ -96,7 +96,7 @@
                     <td>${userT.userType}</td>
                     <td>${userT.ward_name}</td>
                     <td>${userT.userId }</td>
-                    <td>${userT.userPassword}</td>
+                    <td>***********</td>
                     <td>${userT.image}</td>
                     <td>${userT.dateCreated}</td>
                     <td>${userT.createdBy}</td>

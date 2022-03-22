@@ -5,6 +5,7 @@ import org.nurses.management.system.integration.dto.Ward;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@CrossOrigin(origins = "http://localhost:8084")
 @RequestMapping("/wardFront")
 public class WardController {
 	
@@ -43,6 +45,13 @@ public class WardController {
 	
 		return "";
 	
+	}
+	
+	
+	@RequestMapping("/wardUpdate")
+	public String update(Ward ward) {
+		wardRest.updateWard(ward);
+		return "redirect:/wardFront/displayAllWard";
 	}
 	
 	
@@ -119,16 +128,16 @@ public class WardController {
 	 */
 
 	
-	  @RequestMapping(value="/retrieve{Id}", method=RequestMethod.GET) 
-	  public String retriveId(@PathVariable("Id")Integer id, ModelMap model) {
+	  @RequestMapping(value="/retrieve/{id}", method=RequestMethod.GET) 
+	  public String retriveId(@PathVariable("id")Integer id, ModelMap model) {
 	  
-	  //Students[] students = studentsRestClient.getAllStudents(student);
+	  
 		  Ward ids = wardRest.findById(id); 
-	  model.addAttribute("ids", ids);
+		  model.addAttribute("ids", ids);
 	  
 	 
 	  
-	  return null; //"search"; 
+	  return "wardUpdate"; 
 	  }
 	 
 

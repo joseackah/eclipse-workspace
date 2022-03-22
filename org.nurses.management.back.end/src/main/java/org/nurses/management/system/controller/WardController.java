@@ -44,7 +44,7 @@ public class WardController {
 		return wardRepos.findAll();
 	}
 	
-	@GetMapping("/findWardById")
+	@GetMapping("/findWardById/{id}")
 	public Optional<Ward> findById(@PathVariable("id") int id) {
 		return wardRepos.findById(id);
 	}

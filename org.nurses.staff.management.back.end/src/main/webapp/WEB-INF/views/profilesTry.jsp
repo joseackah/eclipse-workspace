@@ -87,7 +87,7 @@
 </head>
 <body class="">
 	<!-- body class = "cont" -->
-	<div id='firstHeader' class='firstHeader' name='firstHeader' style="margin-top: 1%; height: 5%;">
+	<div id='firstHeade' class='firstHeade' name='firstHeader' style="margin-top: 1%; height: 5%;">
 
 		<h1 style="text-align: center; font-weight: bold;font-size: 400%; height: 5%;">
 			<ins>
@@ -177,7 +177,7 @@
 			class="w3-bar-item w3-button w3-hide-small">schedule </a> <a
 			href="${pageContext.request.contextPath}/leaveFront/nurseProfile"
 			class="w3-bar-item w3-button w3-hide-small"> Nurse Profile</a> 
-			<a
+			<%-- <a
 			href="${pageContext.request.contextPath}/admissionFront/displayAdmissionOnlyManager"
 			class="w3-bar-item w3-button w3-hide-small">Admissions</a> 
 			
@@ -192,15 +192,15 @@
 			
 			<a
 			href="${pageContext.request.contextPath}/admissionFront/displayAllAdmission_DischargeManager"
-			class="w3-bar-item w3-button w3-hide-small">Admission/Discharge</a> 
+			class="w3-bar-item w3-button w3-hide-small">Admission/Discharge</a>  --%>
 			
 			<a
 			href="${pageContext.request.contextPath}/generalFront/topTen"
 			class="w3-bar-item w3-button w3-hide-small">Top Ten</a> 
 			
 			<a
-			href="${pageContext.request.contextPath}/generalFront/multiple"
-			class="w3-bar-item w3-button w3-hide-small">multiple input</a> 
+			href="${pageContext.request.contextPath}/generalFront/nurseStaffProfile"
+			class="w3-bar-item w3-button w3-hide-small">Staff Profile</a> 
 			
 			
 			<button id="b1" style="float:right; border-radius: 5em; position: absolute; right: 2%; top: 25%; display:flex; flex-direction:row-reverse; margin-left: 35em;" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/'">log out</button>
@@ -239,18 +239,7 @@
 </div>
 	</div>
 
-	<!-- <div id="demo"
-		class="w3-bar-block w3-red w3-hide w3-hide-large w3-hide-medium">
-		<a href="#" class="w3-bar-item w3-button">Enroll Student</a> <a
-			href="#" class="w3-bar-item w3-button">Enroll Parent</a> <a href="#"
-			class="w3-bar-item w3-button">Display Student</a> <a href="#"
-			class="w3-bar-item w3-button">Enroll Teacher</a> <a href="#"
-			class="w3-bar-item w3-button">Display Teacher</a> <a href="#"
-			class="w3-bar-item w3-button">Display results</a>
-
-	</div> -->
-
-	<!--  test nav ends here -->
+		<!--  test nav ends here -->
 
 
 	<div class="wrapper" style="border: solid gold;">
@@ -278,7 +267,7 @@
 						
 						<hr class="d-sm">
 								<h4>Hospital/Ward Records</h4>
-				<!-- <p>Enter Examination records here.</p> -->
+			
 				<hr class="d-sm">		
 <div class="dropdown">
 
@@ -320,11 +309,7 @@
 										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/scheduleFront/displayAllSchedule">Display Ward Schedule</a></li>
 										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/pinFront/displayAllPin">Pin/Ain</a></li>
 										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/userFront/displayAllUser">Users</a></li>
-										<%-- <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/generalWard">General Ward</a></li>
-										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/religiousWard">Religious Ward</a></li>
-										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/nicu">NICU</a></li>
-										<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admissionFront/accidentEmergency">Accident/Emergency</a></li> --%>
-									</ul>
+										</ul>
 								
 								
 								
@@ -406,24 +391,27 @@
 							<hr class="d-sm-none">
 						</div>
 						<br>
-						<!-- academic record area  ends here-->
-						<!-- certificate column starts -->
+						
 						<div>
 							<ul>
-								<%-- <li class="nav-item"><a class="nav-link active"
-									href="${pageContext.request.contextPath}/general/certificateForm">Generate
-										Certificate</a></li> --%>
+								
 							</ul>
-							<button class="button1"
+					<hr class="d-sm">	
+					<div>
+					<button onclick="document.getElementById('modal-id9').style.display='block'" data-toggle="modal"
+			class="nav-item nav nav-pills flex-colmn nav-link active">Post An Event</button>	
+				</div>			
+<hr class="d-sm">
+							<!-- <button class="button1"
 								onclick="document.getElementById('id01').style.display='block'"
 								style="width: auto;">Generate Certificate</button>
 
 							<button class="button2"
 								onclick="document.getElementById('id02').style.display='block'"
-								style="width: auto;">Generate Transcript</button>
+								style="width: auto;">Generate Transcript</button> -->
 						</div>
 
-						<!-- certificate column ends -->
+						
 
 					</div>
 				</div>
@@ -526,14 +514,14 @@
 							<p style="text-align: left;">Total Death: ${countTodayDeath}</p>
 						</div>
 					<div class="w3-card-2 w3-blue w3-margin"
-							style="height: 12em; width: 20%"><a class="w3-card-2 w3-blue w3-margin" style="" href="#">
+							style="height: 12em; width: 20%">
 							
 							<strong> <ins> Bed Capacity</ins></strong>
 							<p style="text-align: left;">Total Bed: ${bedCapacity}</p>
 							<p style="text-align: left;">Total Occupied Bed: ${bedOccupancy}</p>
 							<p style="text-align: left;">Total Vacant Bed: ${bedCapacity - bedOccupancy}</p>
 							
-							</a></div>	
+							</div>	
 							<div class="w3-card-2 w3-black w3-margin"
 							style="height: 12em; width: 20%; float:left;">
 							
@@ -546,7 +534,16 @@
 							
 							</div>
 						<div class="w3-card-2 w3-green w3-margin"
-							style="height: 12em; width: 20%">Year pass students:</div>
+							style="height: 12em; width: 20%">Year
+							
+							
+							
+							</div>
+							
+							
+							
+							
+							
 						<div class="w3-card-2 w3-teal w3-margin w3-round-large"
 							style="height: 12em; width: 20%; text-align:;">
 						<strong > <ins > Total Yesterday's Admission/Discharge</ins></strong>
@@ -564,101 +561,90 @@
 
 				<!-- card ends here -->
 				<hr>
-				<!-- get all students table starts here -->
-				<%-- <div style="float:; position: relative; left: 5%;">
-					<table border="1" id="name" style="width: 90%;">
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th>FIRST NAME</th>
-								<th>LAST NAME</th>
-								<th>SEX/GENDER</th>
-								<th>AGE</th>
-								<th>CLASS LEVEL</th>
-
-								<th>ACTION</th>
-							</tr>
-						</thead>
-						<tbody id="myTable">
-							<c:forEach items="${student}" var="student">
-								<c:url value="update1" var="updateURL">
-									<c:param value="${student.studentId}" name="studentId"></c:param>
-									<c:param value="${student.firstName}" name="firstName"></c:param>
-									<c:param value="${student.lastName}" name="lastName"></c:param>
-									<c:param value="${student.sex}" name="sex"></c:param>
-									<c:param value="${student.age}" name="age"></c:param>
-									<c:param value="${student.classLevel}" name="classLevel"></c:param>
-
-
-								</c:url>
-
-								<c:url value="deleteStudents/${student.studentId}"
-									var="removeURL">
-									<!-- <c:param value="" name="id"></c:param> -->
-								</c:url>
-
-								<c:url value="results" var="results">
-									<c:param value="${student.studentId}" name="studentId"></c:param>
-									<c:param value="${student.firstName}" name="firstName"></c:param>
-									<c:param value="${student.lastName}" name="lastName"></c:param>
-									<c:param value="${student.sex}" name="sex"></c:param>
-									<c:param value="${student.age}" name="age"></c:param>
-									<c:param value="${student.classLevel}" name="classLevel"></c:param>
-								</c:url>
-
-								<tr>
-									<td>${student.studentId}</td>
-									<td>${student.firstName}</td>
-									<td>${student.lastName}</td>
-									<td>${student.sex}</td>
-									<td>${student.age}</td>
-									<td>${student.classLevel}</td>
-
-
-									<c:url value="" var="accounts">
-										<c:param value="${student.studentId}" name="studentId"></c:param>
-
-
-
-									</c:url>
-
-
-
-									<td><a href="${updateURL }">Update</a> | <a
-										href="${removeURL }"
-										onclick="if (!confirm('Are you sure you want to delete this record?')) return false">Delete</a>
-										| <a href="${results}">Results</a> | <a href="accounts"
-										data-toggle="modal" data-target="#myModal">accounts</a> <!-- <button type="button" class="btn btn-info float-left" data-toggle="modal" data-target="#myModal">Add Student</button> -->
-									</td>
-								</tr>
-
-							</c:forEach>
-						</tbody>
-
-					</table>
-				</div> --%>
-
-				<!-- get all students table ends here -->
+				
 				<hr>
 				<!-- pie chart starts here -->
-				<div style="display: flex;">
-					<div id="piechart" style="margin-right: 20px; width: 40%;"></div>
+				<div class="row" style="display: flex;content:space-between;">
+					<div class="col" id="piechart" style="margin-right:; width: 500; height: 300; "></div>
 					<!-- pie chart ends here -->
 
 					<!-- trend chart starts here -->
 
-					<div id="trendchart"
-						style="margin-right: 2px; background-color:; width: 20%;"></div>
+					<div class="col" id="trendchart"
+						style="margin-left:-2%; background-color:; width: 15%;"></div>
 					<!-- trend chart ends here -->
-					<hr>
+					
 					<!-- comparison line chart starts here -->
 
 				
 
 					<!-- comparison line chart ends here -->
+					
+					<!-- event table -->
+					<div class="col" style="margin-left:; background-color:; width:9%;">
+						<h2>NOTICE</h2>
+				<h5>Upcoming Events</h5>
+				<div class="fake">
+				
+				<table class="table table-bordered table-hover"
+			style="background-color: antiquewhite;">
+				
+				<thead class="table-warning">
+				<tr>
+				<!-- <th>Id</th> -->
+				<th>Event</th>
+				<th>Venue</th>
+				<th>Date</th>
+				<th>Participant</th>
+				</tr>
+				
+				
+				</thead>
+				
+				<tbody>
+				<c:forEach items="${eventsT}" var="eventsD">
+				<c:url value="eventsUpdate1/${eventsD.event_id}" var="updateURL">
+				
+				</c:url>
+				
+				
+				<c:url value="deleteEvents/${eventsD.event_id}"
+									var="removeURL">
+									
+								</c:url>
+				
+				<tr>
+				<td hidden="true">${eventsD.event_id}</td>
+				<td>${eventsD.event_name}</td>
+				<td>${eventsD.venue}</td>
+				<td>${eventsD.event_date}</td>
+				<td>${eventsD.participant}</td>
+				</tr>
+				</c:forEach>
+				
+				
+				
+				</tbody>
+				
+				</table>
+				
+				
 				</div>
-
-	<div id="curve_chart" style="width:; height: 400px; margin-top: 1em;"></div>
+				<p></p>
+				<p></p>
+				</div>
+				<!-- events table ends -->
+					
+					
+				</div>
+<div style="display: flex;">
+	<div id="curve_chart" style="width:60%; height: 400px; margin-top: 1em;"></div>
+	
+	
+	<div id="mat_chart" style="width:60%; float:left; height: 400px; margin-top: 1em;"></div>
+	</div>
+	
+	
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath }/resources/js/loader.js"></script>
 
@@ -677,115 +663,12 @@
 
 
 
-		<!-- </div> -->
+		
 
 
-		<!-- modal to generate certificate form starts here -->
+	
 
-		<!-- modal form -->
-
-
-
-		<div id="id01" class="modal1">
-
-			<form class="modal-content1 animate"
-				action="${pageContext.request.contextPath}/schoolStudents/certificate"
-				method="post">
-				<div class="imgcontainer">
-					<span
-						onclick="document.getElementById('id01').style.display='none'"
-						class="close" title="Close Modal">&times;</span>
-					<!--  <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
-					<h2 class="avatar">
-						<strong> <span style="color: blue;">BI</span>PS
-						</strong>
-					</h2>
-				</div>
-
-				<div class="container1">
-					<label for="uname"><b>Student Id/Index Number</b></label> <input
-						type="text" placeholder="Enter Student Id/Index Number"
-						name="studentId" required class="input">
-
-
-					<button class="button1" type="submit">Generate</button>
-
-				</div>
-
-				<div class="container1" style="background-color: #f1f1f1">
-					<button type="button"
-						onclick="document.getElementById('id01').style.display='none'"
-						class="cancelbtn">Cancel</button>
-				</div>
-			</form>
-		</div>
-
-		<script>
-			// Get the modal
-			var modal = document.getElementById('id01');
-
-			// When the user clicks anywhere outside of the modal, close it
-			window.onclick = function(event) {
-				if (event.target == modal) {
-					modal.style.display = "none";
-				}
-			}
-		</script>
-		<!-- modal form ends -->
-		<!-- modal to generate certificate form end here -->
-
-
-		<!-- transcript form starts here -->
-
-		<div id="id02" class="modal1">
-
-			<form class="modal-content1 animate"
-				action="${pageContext.request.contextPath}/general/transcript"
-				method="post">
-				<div class="imgcontainer">
-					<span
-						onclick="document.getElementById('id02').style.display='none'"
-						class="close" title="Close Modal">&times;</span>
-					<!--  <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
-					<h2 class="avatar">
-						<strong> <span style="color: blue;">BI</span>PS
-						</strong>
-					</h2>
-				</div>
-
-				<div class="container1">
-					<label for="uname"><b>Student Id/Index Number</b></label> <input
-						type="text" placeholder="Enter Student Id/Index Number"
-						name="studentId" required class="input">
-
-
-					<button class="button2" type="submit">Generate Transcript</button>
-
-				</div>
-
-				<div class="container1" style="background-color: #f1f1f1">
-					<button type="button"
-						onclick="document.getElementById('id02').style.display='none'"
-						class="cancelbtn1">Cancel</button>
-				</div>
-			</form>
-		</div>
-
-		<script>
-			// Get the modal
-			var modal = document.getElementById('id02');
-
-			// When the user clicks anywhere outside of the modal, close it
-			window.onclick = function(event) {
-				if (event.target == modal) {
-					modal.style.display = "none";
-				}
-			}
-		</script>
-
-
-
-		<!-- transcript form ends here -->
+	
 
 
 
@@ -796,12 +679,7 @@
 
 
 
-		<!-- pie chart javascript start here -->
-		<%-- <spring:url value="/resources/js/loader.js" var="loaderJs" />
-
-		<script src="${loaderJs}"></script> --%>
-<!-- 		/org.nurses.staff.management.back.end/src/main/resources/static/js/loader.js
- -->
+	
 		
 		<!-- https://www.gstatic.com/charts/loader.js -->
 		<script type="text/javascript">
@@ -814,14 +692,14 @@
 			// Draw the chart and set the chart values
 			function drawChart() {
 				var data = google.visualization
-						.arrayToDataTable([ [ 'Task', 'Hours per Day' ],
-								[ 'Year 1', 86 ], [ 'Year 2', 90 ],
-								[ 'Year 3', 75 ], [ 'Total P.', 65 ] /* , [ 'Sleep', 8 ] */]);
+						.arrayToDataTable([ [ 'Task', 'Number' ],
+								[ '2019', 86 ], [ '2020', 90 ],
+								[ '2021', 75 ], [ '2022', 65 ] /* , [ 'Sleep', 8 ] */]);
 
 				// Optional; add a title and set the width and height of the chart
 				var options = {
-					'title' : 'BIPS POPULATION',
-					'width' : 550,
+					'title' : 'Admission',
+					'width' : 450,
 					'height' : 400
 				};
 
@@ -851,15 +729,18 @@
 			// Draw the chart and set the chart values
 			function drawChart() {
 				var data = google.visualization
-						.arrayToDataTable([ [ 'Task', 'Hours per Day' ],
-								[ 'Year 1', 78 ], [ 'Year 2', 59 ],
-								[ 'Year 3', 14 ], [ 'Total P.', 54 ] /* , [ 'Sleep', 8 ] */]);
+						.arrayToDataTable([ [ 'Year', 'Admission', 'Discharge','Death' ],
+								[ '2019', 78, 56, 10 ], [ '2020', 59, 75, 12 ],
+								[ '2021', 14, 85, 6 ], [ '2022', 54, 63, 11 ] /* , [ 'Sleep', 8 ] */]);
 
 				// Optional; add a title and set the width and height of the chart
 				var options = {
-					'title' : 'BIPS POPULATION',
-					'width' : 550,
-					'height' : 400
+					'title' : 'Admission and Discharge',
+					'width' : 480,
+					'height' : 400,
+					legend : {
+						position : 'bottom'
+					}
 				};
 
 				// Display the chart inside the <div> element with id="piechart"
@@ -946,13 +827,13 @@ chart.render();
 					/* [0, 0, 0, 0], */
 					[ 'Jan', ${countAdmissionJanuary}, ${countDischargeJanuary}, ${countDeathJanuary}], 
 					[ 'Feb', ${countAdmissionFebruary}, ${countDischargeFebruary}, ${countDeathFebruary} ],
-					[ 'March', ${countAdmissionMarch}, ${countDischargeMarch}, ${countDeathMarch} ], 
-					[ 'April', ${countAdmissionApril}, ${countDischargeApril}, ${countDeathApril} ],
+					[ 'Mar', ${countAdmissionMarch}, ${countDischargeMarch}, ${countDeathMarch} ], 
+					[ 'Apr', ${countAdmissionApril}, ${countDischargeApril}, ${countDeathApril} ],
 					[ 'May', ${countAdmissionMay}, ${countDischargeMay}, ${countDeathMay} ],
-					[ 'June', ${countAdmissionJune}, ${countDischargeJune}, ${countDeathJune} ],
-					[ 'July', ${countAdmissionJuly}, ${countDischargeJuly}, ${countDeathJuly} ],
+					[ 'Jun', ${countAdmissionJune}, ${countDischargeJune}, ${countDeathJune} ],
+					[ 'Jul', ${countAdmissionJuly}, ${countDischargeJuly}, ${countDeathJuly} ],
 					[ 'Aug', ${countAdmissionAugust}, ${countDischargeAugust}, ${countDeathAugust} ],
-					[ 'Sept', ${countAdmissionSeptember}, ${countDischargeSeptember}, ${countDeathSeptember} ],
+					[ 'Sep', ${countAdmissionSeptember}, ${countDischargeSeptember}, ${countDeathSeptember} ],
 					[ 'Oct', ${countAdmissionOctober}, ${countDischargeOctober}, ${countDeathOctober} ],
 					[ 'Nov', ${countAdmissionNovember}, ${countDischargeNovember}, ${countDeathNovember} ],
 					[ 'Dec', ${countAdmissionDecember}, ${countDischargeDecember}, ${countDeathDecember} ]
@@ -962,6 +843,8 @@ chart.render();
 			var options = {
 				title : 'Admission and Discharge Performance',
 				curveType : 'function',
+				'width' : 700,
+				'height' : 400,
 				legend : {
 					position : 'bottom'
 				}
@@ -976,7 +859,63 @@ chart.render();
 
 
 	<!-- <div id="curve_chart" style="width: 900px; height: 500px"></div> -->
+	
+	<!-- maternal health chart -->
+<script type="text/javascript">
+		google.charts.load('current', {
+			'packages' : [ 'corechart' ]
+		});
+		google.charts.setOnLoadCallback(drawChart);
 
+		 function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+					[ 'Year', 'Delivery', 'Newborn', 'StillBirth/neonata death' ],
+					/* [0, 0, 0, 0], */
+					/* [ 'Jan', ${countAdmissionJanuary}, ${countDischargeJanuary}, ${countDeathJanuary}], 
+					[ 'Feb', ${countAdmissionFebruary}, ${countDischargeFebruary}, ${countDeathFebruary} ],
+					[ 'Mar', ${countAdmissionMarch}, ${countDischargeMarch}, ${countDeathMarch} ], 
+					[ 'Apr', ${countAdmissionApril}, ${countDischargeApril}, ${countDeathApril} ],
+					[ 'May', ${countAdmissionMay}, ${countDischargeMay}, ${countDeathMay} ],
+					[ 'Jun', ${countAdmissionJune}, ${countDischargeJune}, ${countDeathJune} ],
+					[ 'Jul', ${countAdmissionJuly}, ${countDischargeJuly}, ${countDeathJuly} ],
+					[ 'Aug', ${countAdmissionAugust}, ${countDischargeAugust}, ${countDeathAugust} ],
+					[ 'Sep', ${countAdmissionSeptember}, ${countDischargeSeptember}, ${countDeathSeptember} ],
+					[ 'Oct', ${countAdmissionOctober}, ${countDischargeOctober}, ${countDeathOctober} ],
+					[ 'Nov', ${countAdmissionNovember}, ${countDischargeNovember}, ${countDeathNovember} ],
+					[ 'Dec', ${countAdmissionDecember}, ${countDischargeDecember}, ${countDeathDecember} ] */
+					
+					[ 'Jan', ${countDeliveryJanuary}, ${countNewbornJanuary}, ${countNewbornDeathJanuary}], 
+					[ 'Feb', ${countDeliveryFebruary}, ${countNewbornFebruary}, ${countNewbornDeathFebruary} ],
+					[ 'Mar', ${countDeliveryMarch}, ${countNewbornMarch},${countNewbornDeathMarch} ], 
+					[ 'Apr', ${countDeliveryApril}, ${countNewbornApril}, ${countNewbornDeathApril} ],
+					[ 'May', ${countDeliveryMay}, ${countNewbornMay}, ${countNewbornDeathMay} ],
+					[ 'Jun', ${countDeliveryJune}, ${countNewbornJune}, ${countNewbornDeathJune} ],
+					[ 'Jul', ${countDeliveryJuly}, ${countNewbornJuly}, ${countNewbornDeathJuly} ],
+					[ 'Aug', ${countDeliveryAugust}, ${countNewbornAugust}, ${countNewbornDeathAugust}],
+					[ 'Sep', ${countDeliverySeptember}, ${countNewbornSeptember}, ${countNewbornDeathSeptember} ],
+					[ 'Oct', ${countDeliveryOctober}, ${countNewbornOctober}, ${countNewbornDeathOctober}],
+					[ 'Nov', ${countDeliveryNovember}, ${countNewbornNovember}, ${countNewbornDeathNovember} ],
+					[ 'Dec', ${countDeliveryDecember}, ${countNewbornDecember}, ${countNewbornDeathDecember} ]
+					
+					
+					]);
+
+			var options = {
+				title : 'Delivery Performance',
+				curveType : 'function',
+				'width' : 700,
+				'height' : 400,
+				legend : {
+					position : 'bottom'
+				}
+			};
+
+			var chart = new google.visualization.LineChart(document
+					.getElementById('mat_chart'));
+
+			chart.draw(data, options);
+		}
+	</script>
 
 	<!-- comparison line trend javascripts ends here -->
 
@@ -1243,7 +1182,7 @@ chart.render();
 							</div>
 						<div class="col" id="">
 								<div class="form-group">
-									<label for="grade">Current Gade/Position</label> 
+									<label for="grade">Current Grade/Position</label> 
 									<select class="form-control" name="grade" id="" style="display:;">
 									<option value="">Select</option>
 								
@@ -1871,7 +1810,7 @@ chart.render();
 							<div class="col">
 								<div class="form-group">
 									<label for="wardIncharge">Ward Incharge</label> <input
-										type="text" class="form-control" name="" id="myInput" hidden>
+										type="text" class="form-control" name="" id="myInput" hidden=true>
 
 								</div>
 							</div>
@@ -1880,7 +1819,7 @@ chart.render();
 							<div class="col">
 								<div class="form-group">
 									<label for=""></label> <input type="date" class="form-control"
-										name="" id="" hidden>
+										name="" id="" hidden=true>
 								</div>
 							</div>
 						</div>
@@ -1891,7 +1830,7 @@ chart.render();
 							<div class="col">
 								<div class="form-group">
 									<label for=""></label> <input type="text" class="form-control"
-										name="" id="" hidden>
+										name="" id="" hidden=true>
 
 								</div>
 							</div>
@@ -1920,6 +1859,105 @@ chart.render();
 
 
 
+<!-- events form starts here -->
+
+<!-- <a class="btn btn-primary" data-toggle="modal" href='#modal-id1'>Ward form</a> -->
+	<div class="modal" id="modal-id9">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Events</h4>
+					<button type="button" onclick="document.getElementById('modal-id9').style.display='none'" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+
+				</div>
+
+				<form action="${pageContext.request.contextPath}/eventsFront/saveEvents">
+					<div class="modal-body">
+
+						<div class="row">
+							<div class="col">
+								<div class="form-group">
+									<label for="event_name">Event Name/Title</label> <textarea 
+										class="form-control" name="event_name" id=""></textarea>
+								</div>
+							</div>
+							
+						</div>
+
+						<div class="row">
+						
+						<div class="col">
+								<div class="form-group">
+									<label for="venue">Event Venue</label> <input type="text"
+										class="form-control" name="venue" id="">
+								</div>
+							</div>
+						
+						
+						
+							<div class="col">
+								<div class="form-group">
+									<label for="event_date">Event Date</label> <input type="date"
+										name="event_date" id="" class="form-control">
+										</div>
+							</div>
+						</div>
+
+
+
+						<div class="row">
+							<div class="col">
+								<div class="form-group">
+									<label for="participant">Participant</label> <input
+										type="text" class="form-control" name="participant"
+										id="myInput">
+
+								</div>
+							</div>
+
+
+							<div class="col" style="display:none;">
+								<div class="form-group">
+									<label for=""></label> <input type="date" class="form-control"
+										name="" id="" hidden>
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="row">
+							<div class="col">
+								<div class="form-group">
+									<label for=""></label> <input type="text" class="form-control"
+										name="" id="" hidden>
+
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="document.getElementById('modal-id9').style.display='none'" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Post</button>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+<!-- events form ends here -->
+
+
+
+
+
+
+
+
 <!-- navbar top starts here -->
 
  <script>
@@ -1945,7 +1983,7 @@ chart.render();
 
 <div id="linechart_material"></div>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
 google.charts.load('current', {'packages':['line']});
       google.charts.setOnLoadCallback(drawChart);
@@ -2003,7 +2041,7 @@ google.charts.load('current', {'packages':['line']});
       chart.draw(data,options);
     }
 
-</script>
+</script> -->
 
 
 

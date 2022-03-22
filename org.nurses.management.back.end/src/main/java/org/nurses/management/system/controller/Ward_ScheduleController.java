@@ -3,6 +3,7 @@ package org.nurses.management.system.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.aspectj.bridge.CountingMessageHandler;
 import org.nurses.management.system.entity.Ward_schedule;
 import org.nurses.management.system.repos.Ward_schedule_Repository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -107,6 +108,69 @@ public class Ward_ScheduleController {
 	@GetMapping("/opdSchedule")
 	public List<Ward_schedule> opdSchedule() {
 		return wardScheduleRepos.opd();
+	}
+	
+	
+	
+	/* Counting nurse in particular ward */
+	
+	@GetMapping("nurseInMaleMedical")
+	public String  countNurseInMaleMedical() {
+		return wardScheduleRepos.countNurseInMaleMedical();
+		
+	}
+	
+	@GetMapping("nurseInMaleSurgical")
+	public String  countNurseInMaleSurgical() {
+		return wardScheduleRepos.countNurseInMaleSurgical();
+		
+	}
+	
+	@GetMapping("nurseInFemaleMedical")
+	public String  countNurseInFemaleMedical() {
+		return wardScheduleRepos.countNurseInFemaleMedical();
+		
+	}
+	
+	@GetMapping("nurseInFemaleSurgical")
+	public String  countNurseInFemaleSurgical() {
+		return wardScheduleRepos.countNurseInFemaleSurgical();
+		
+	}
+	
+	@GetMapping("nurseInMaternity")
+	public String  countNurseInMaternity() {
+		return wardScheduleRepos.countNurseInMaternity();
+		
+	}
+	@GetMapping("nurseInNICU")
+	public String  countNurseInNICU() {
+		return wardScheduleRepos.countNurseInNICU();
+		
+	}
+	
+	@GetMapping("nurseInReligiousWard")
+	public String  countNurseInReligiousWard() {
+		return wardScheduleRepos.countNurseInReligiousWard();
+		
+	}
+	
+	@GetMapping("nurseInGeneralWard")
+	public String  countNurseInGeneralWard() {
+		return wardScheduleRepos.countNurseInGeneralWard();
+		
+	}
+	
+	@GetMapping("nurseInOpd")
+	public String  countNurseInOpd() {
+		return wardScheduleRepos.countNurseInOpd();
+		
+	}
+	
+	@GetMapping("nurseInAccidentEmergency")
+	public String  countNurseInAccidentEmergency() {
+		return wardScheduleRepos.countNurseInAccidentEmergency();
+		
 	}
 	
 	

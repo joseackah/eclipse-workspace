@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Admission"/>
+		<item key="selection" value="countNewbornDeath"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="true"/>
 		<item key="isRegEx" value="true"/>
 		<list key="findhistory">
-			<item value="admission"/>
-			<item value="bed State"/>
-			<item value="bedState"/>
-			<item value="requestMapping"/>
-			<item value="delivery"/>
-			<item value="newbornRepos"/>
-			<item value="getMapping"/>
-			<item value="Newbornrepos"/>
-			<item value="newborn"/>
-			<item value="delivery_table"/>
-			<item value="maternityDischarge"/>
-			<item value="maternityAdmission"/>
-			<item value="maternityAdmisstion"/>
-			<item value="deliveryRepos"/>
-			<item value="date_admitted"/>
+			<item value="countNewborn"/>
+			<item value="where"/>
+			<item value="manager"/>
+			<item value="displayDeath"/>
+			<item value="eventsD"/>
+			<item value="ward"/>
+			<item value="leave"/>
+			<item value="Ward"/>
+			<item value="Male Medical"/>
+			<item value=",Male Medical"/>
+			<item value=",Outpatient Department"/>
+			<item value=",Accident/Emergency"/>
+			<item value=",Childrens Ward"/>
+			<item value=",General Ward"/>
+			<item value=",Religious Ward"/>
 		</list>
 		<list key="replacehistory">
-			<item value="ModelAttribute"/>
-			<item value="newborn"/>
-			<item value="Newborn"/>
-			<item value="newbornRest"/>
-			<item value="RequestMapping"/>
-			<item value="newbornRepos"/>
-			<item value="newborn_table"/>
-			<item value="Delivery"/>
-			<item value="deliveryRest"/>
-			<item value="date_of_delivery"/>
-			<item value="delivery_table"/>
-			<item value="deliveryRepos"/>
-			<item value="Opd"/>
-			<item value="AccidentEmergency"/>
+			<item value="countNewbornDeath"/>
+			<item value="where condition_of_baby = &apos;death&apos; and"/>
+			<item value="where condition_of_baby = &quot;death&quot; and"/>
+			<item value="event"/>
+			<item value="events"/>
+			<item value="Events"/>
+			<item value="Male Medical"/>
+			<item value="Outpatient Department"/>
+			<item value="Accident/Emergency"/>
+			<item value="Childrens Ward"/>
+			<item value="General Ward"/>
+			<item value="Religious Ward"/>
 			<item value="NICU"/>
+			<item value="Maternity"/>
+			<item value="Male Surgical"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="8"/>
-		<item key="DIALOG_Y_ORIGIN" value="103"/>
-		<item key="DIALOG_WIDTH" value="284"/>
+		<item key="DIALOG_X_ORIGIN" value="55"/>
+		<item key="DIALOG_Y_ORIGIN" value="61"/>
+		<item key="DIALOG_WIDTH" value="305"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
