@@ -99,7 +99,7 @@
 </head>
 <body>
 	<div class="jumbotron text-center" style="margin-bottom: 0">
-		<h1>St. Joseph's Hospital, Jirapa</h1> <h2>Female Surgical Ward</h2>
+		<h1></h1> <h2>Female Surgical Ward</h2>
 		<p></p>
 	</div>
 
@@ -115,7 +115,7 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/general/homePage">Home</a>
+					href="${pageContext.request.contextPath}/generalFront/femaleSurgical">Home</a>
 					</li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id'>Apply for Leave</a></li>
@@ -144,15 +144,15 @@
 		</div>
 	</nav>
 
-	<div class="container" style="margin: 30px">
+	<div class="container" style="margin: 0px">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-3 table-warning w3-padding" style="height: 1000px; width:30%;">
 				<h2>Administrator</h2>
 				<h5>Photo of me:</h5>
-				<div class="w3-circle" style="width: 200px; height: 200px;">
-					<div class="fakeimg">
+				<div class="w3-circle " style="width: 200px; height: 200px;">
+					<div class="fakeim">
 						<img class="w3-circle" alt="our mision"
-							src="${pageContext.request.contextPath}/resources/png/mission.png"
+							src="${pageContext.request.contextPath}/resources/icons/color_person_female.png"
 							style="width: 100%; height: 100%;" />
 					</div>
 				</div>
@@ -484,8 +484,23 @@
 
 			<!-- card ends here -->
 
+<!-- charts starts here -->
+	<div class="row" style="margin-left: 40%;">
+				
+				<div class="col" style="width: 100%;">
 
+					
+				</div>
+				<div class="container" style="width: 150%">	
+	<div  id="curve_chart"
+						style="width: 100%; height: 300px; margin-top: 1em;"></div>
+</div>
+				
+				
 
+				<br>
+				
+			</div>
 
 
 			
@@ -493,42 +508,7 @@
 		</div>
 		
 		
-		<div class="row" style="margin-left: 40%;">
-				<!-- <h2>OUR VISION</h2>
-				<h5>Title description, Dec 7, 2017</h5> -->
-				<div class="col" style="width: 100%;">
-
-					<!-- <div id="curve_chart"
-						style="width: 100%; height: 300px; margin-top: 1em;"></div> -->
-				</div>
-				<div class="container" style="width: 150%">	
-	<div  id="curve_chart"
-						style="width: 100%; height: 300px; margin-top: 1em;"></div>
-</div>
-				<!-- <p>Some text..</p>
-				<p>Our vision is to develop well rounded, confident and
-					responsible individuals who aspire to achieve their full potential.
-					We will do this by providing a welcoming, happy, safe, and
-					supportive learning environment in which everyone is equal and all
-					achievements are celebrated.</p>
- -->
-				<!-- mission end here -->
-
-				<br>
-				<%-- <h2>OUR MISSION</h2>
-				<h5>Title description, Sep 2, 2017</h5>
-				<div class="col">
-					<img alt=""
-						src="${pageContext.request.contextPath}/resources/png/mission.png"
-						style="width: 100%; height: 100%;">
-				</div>
-				<p>Some text..</p>
-				<p>We are dedicated to a continuing tradition of excellence in
-					an ever-changing world. Within a safe and supportive environment,
-					we provide a relevant, high-quality education and prepare our
-					diverse student body for future endeavors. We honor achievement and
-					promote pride in ourselves, in our school, and in our community.</p> --%>
-			</div>
+	
 		
 		
 	</div>

@@ -227,7 +227,7 @@ label {
 			
 			
 			<ins>
-					ST. JOSEPH'S HOSPITAL, JIRAPA
+					<!-- ST. JOSEPH'S HOSPITAL, JIRAPA -->
 					<!-- <p>(<abbr title="Bernice's International Preparatory School"></abbr>)</p> -->
 				</ins>
 				
@@ -240,8 +240,7 @@ label {
 			
 		<h1 class="" >
 		
-	<span class="">	Welcome to St.
-			Joseph's Hospital Nurses' Management Database</span></h1>
+	<span class="">	Welcome to Hospital Management Database</span></h1>
 			<span class="ml12"></span>
 		</div>
 		

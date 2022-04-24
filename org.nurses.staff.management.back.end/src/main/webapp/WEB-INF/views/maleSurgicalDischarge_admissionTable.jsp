@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="links.jsp" %>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -60,20 +61,150 @@
 <title>Admission & Discharge Table</title>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="navbar_top">
+		<a class="navbar-brand" href="#"><h1
+				style="font-size: 50px; font-weight: bold;">
+				<span style="color: blue; font-size:;">M</span>SW
+			</h1></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/generalFront/maleSurgical">Home</a>
+					</li>
+				<li class="nav-item"><a class="nav-link" data-toggle="modal"
+					href='#modal-id'>Apply for Leave</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/leaveFront/displayAllMaleSurgicalRecom">Recommend
+						Leave</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/leaveFront/displayLeaveApprovalMaleSurgical">Check
+						Leave Approval</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/scheduleFront/displayAllCheckMaleSurgicalSchedule">Check
+						Ward Schedule</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="modal"
+					href='#modal-id4'>Admission</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="modal"
+					href='#modal-id2'>Ward/Bed State</a></li>
+				<%-- <li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/admissionFront/form">form</a>
+				</li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/leaveFront/displayAllMaleMedicalLeave">leave check</a>
+				</li> --%>
+			</ul>
+						        <button id="b1" style="float:right; border-radius: 5em; display:flex; flex-direction:row-reverse; margin-left: 35em;" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/'">log out</button>
+			
+		</div>
+	</nav>
+
+<div class="wrapper">
+
+
+<aside class="aside_body w3-padding" style="width:195px; height:800px; ">
+
+<div class="">
+				<h3>Administrator</h3>
+				<h5>Photo of me:</h5>
+				<div class="w3-circle" style="width: 180px; height: 180px; margin-left:-10px;">
+					<div class="fakeimg">
+						<img class="w3-circle" alt="our mision"
+							src="${pageContext.request.contextPath}/resources/icons/person-icon-male.jpg"
+							style="width: 100%; height: 100%;" />
+					</div>
+				</div>
+				<p>Administrator</p>
+					<%=(new java.util.Date()).toLocaleString() %>
+				<!--   academic record start here -->
+<div class="dropdown">
+				<h3>Hospital/Ward Records</h3>
+				<p></p>
+				<div class="nav-item nav nav-pills flex-colmn">
+									<div class="nav-link active">Report Display</div>
+								</div>
+				
+				<div class="dropdown-content">
+				<ul class="nav nav-pills flex-column">
+					<!-- <li class="nav-item"><a class="nav-link active"
+						style="width: 100%;">Report Display</a></li> -->
+					<li class="nav-item"><a class="nav-link"
+						href="${pageContext.request.contextPath}/admissionFront/maleSurgical">Admission</a>
+					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="${pageContext.request.contextPath}/admissionFront/displayDischargeOnlyMaleSurgical">Discharge</a>
+					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="${pageContext.request.contextPath}/admissionFront/displayDeathMaleSurgical">Death</a>
+					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="${pageContext.request.contextPath}/bedStateFront/displayAllMaleSurgicalWard_Bed_State">Ward
+							State</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="${pageContext.request.contextPath}/admissionFront/displayAllAdmission_DischargeMaleSurgical">Admission/Discharge</a>
+					</li>
+				</ul>
+				</div>
+				
+</div>
+<hr class="d-sm">
+
+<div class="nav-item nav nav-pills" >
+									<button onclick="document.getElementById('id01').style.display='block'" class="nav-link active">Discharge Summary</button>
+								</div>
+	<hr class="d-sm">							
+				
+		<div class="nav-item nav nav-pills" >
+		<form action="${pageContext.request.contextPath}/generalFront/wardSummary" method="post">
+		<input type="text" value="Male Surgical" name="wardName" hidden="true">
+		
+		<button type="submit" onclick="'" class="nav-link active">Discharge Summary</button>
+		</form>
+									
+								</div>		
+		
+		
+		<hr class="d-sm" style="width: 50%">							
+				
+		<div class="nav-item nav nav-pills" >
+		<form action="${pageContext.request.contextPath}/generalFront/wardTopTen" method="post">
+		<input type="text" value="Male Surgical" name="wardName" hidden="true">
+		
+		<button type="submit" onclick="" class="nav-link active">Top Ten</button>
+		</form>
+									
+								</div>	
+				
+				<hr class="d-sm-none">
+				
+			</div>
+
+
+
+</aside>
+
+<main style="width: 100%;">
+
+
+
+
 <div class="class mt-3" style="text-align: center; width: 100%; margin-top:12px 0 2em;">
- <h1 >St. Joseph's Hospital,Jirapa </h1>
- <h2>Male Surgical Admission and Discharge Table</h2>
+ <h1 >Male Surgical </h1>
+ <h2> Admission and Discharge Table</h2>
     </div>
-    <hr style="width:90%">
-    <div class="container mt-3" style="float:; with:auto; margin-left: 5em;" id="print">
+    <hr style="width:90%; margin:auto;" class="hero">
+    <div class="container mt-3" style=" width:100%; margin-left:25px;" id="print">
     
        <div> </div> <br> <br>
-        <button id="b1" style="float: left; border-radius: 5em; " class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/generalFront/maleSurgical'">back</button>
         
         <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print"></i> </button>
         
 <div id="s1" style=" display:flex; flex-direction:row-reverse;"> <input class="form-control" id="myInput" type="text" placeholder="Search.." style="padding: .5em 2em; border-radius: 5em; width:20%; display:flex; flex-direction: flex-end;"> </div>
-        <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:100" id="name">
+        <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:100%" id="name">
             <thead class="table-danger">
                 <tr>
                     <th style="display: none;">ID</th>
@@ -161,9 +292,33 @@
                     <td></td>  <td></td>  <td></td>  <td></td>
                 </tr>
             </tbody>
+            <thead class="table-danger">
+                <tr>
+                    <th style="display: none;">ID</th>
+                    <th>WARD NAME</th>
+                    <th>PATIENT NUMBER</th>
+                    <th>PATIENT NAME</th>
+                    <th>AGE</th>
+                    <th>SEX</th>
+                    <th>ADDRESS</th>
+                    <th>PHONE NUMBER</th>
+                    <th>DATE ADMITTED</th>
+                    <th>P. DIAGNOSIS</th>
+                     <th>OUTCOME</th>
+                    <th>FINAL DIAGNOSIS</th>
+                    <th>NEXT FO KIN</th>
+                    <th>KIN NUMBER</th>
+                    <th>INSURED</th>
+                    <th>NUMBER</th>
+                    <th>DATE DISCHARGE</th>
+                  
+                    <th id="actio">ACTION</th>
+                </tr>
+            </thead>
         </table>
     </div>
-
+</main>
+</div>
 <script>
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {

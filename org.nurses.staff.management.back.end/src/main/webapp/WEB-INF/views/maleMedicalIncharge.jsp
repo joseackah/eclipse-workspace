@@ -19,7 +19,8 @@
 <title>Male Medical Home</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -28,8 +29,10 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
+ -->
+<link
+	href="${pageContext.request.contextPath}/resources/css/projectCss.css"
+	rel="stylesheet">
 <link
 	href="${pageContext.request.contextPath}/resources/css/profile.css"
 	rel="stylesheet">
@@ -98,14 +101,17 @@
 }
 </style>
 </head>
-<body>
+<body style="width:100%">
+
+<div>
+
 	<div class="jumbotron text-center" style="margin-bottom: 0">
-		<h1>St. Joseph's Hospital, Jirapa</h1>
-		<h2>Male Medical Ward</h2>
+		<h1></h1>
+		<h1>Male Medical Ward</h1>
 		<p></p>
 	</div>
 
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark"
+	<div class="navbar navbar-expand-sm bg-dark navbar-dark"
 		id="navbar_top">
 		<a class="navbar-brand" href="#"><h1
 				style="font-size: 50px; font-weight: bold;">
@@ -118,7 +124,7 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/general/homePage">Home</a>
+					href="${pageContext.request.contextPath}/generalFront/maleMedical">Home</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id'>Apply for Leave</a></li>
@@ -145,18 +151,18 @@
 				out</button>
 
 		</div>
-	</nav>
+	</div>
 
-	<div class="container" style="margin: 30px; width: 90%;">
+	<div class="container" style="margin: 0px; width: 100%;">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-3 w3-teal" style="width:30%; height:1000px;">
 				<h2>Administrator</h2>
 				<h5>Photo of me:</h5>
 				<div class="w3-circle" style="width: 200px; height: 200px;">
-					<div class="fakeimg">
+					<div class="fakeim">
 						<img class="w3-circle" alt="our mision"
-							src="${pageContext.request.contextPath}/resources/png/mission.png"
-							style="width: 100%; height: 100%;" />
+							src="${pageContext.request.contextPath}/resources/icons/color_person_male.png"
+							style="width: 100%; height: 100%; margin-left: 20px;" />
 					</div>
 				</div>
 				<p>Administrator</p>
@@ -481,13 +487,10 @@
 
 
 				<!-- mission start here -->
-
-			</div>
-
-
-		</div>
-
-		<div class="row" style="margin-left: 40%;">
+				
+				
+				
+<div class="row" style="margin-left: 40%;">
 			<!-- <h2>OUR VISION</h2>
 				<h5>Title description, Dec 7, 2017</h5> -->
 			<div class="col" style="width: 100%;">
@@ -504,6 +507,18 @@
 			<br>
 
 		</div>
+		
+		
+		
+		
+		
+		
+			</div>
+
+
+		</div>
+
+		
 	</div>
 
 
@@ -541,7 +556,7 @@
 	<div class="modal fade" id="modal-id">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header table-primary" id="form_color" style="">
 					<h4 class="modal-title">Leave Application</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -549,7 +564,7 @@
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/leaveFront/saveLeave">
-					<div class="modal-body">
+					<div class="modal-body table-warning">
 
 
 
@@ -782,7 +797,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer table-danger">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Apply</button>
 					</div>
@@ -805,15 +820,15 @@
 		<div class="modal fade" id="modal-id4">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Admission Form2</h4>
+				<div class="modal-header table-primary">
+					<h4 class="modal-title">Admission Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/admissionFront/saveAdmission_Discharge">
-					<div class="modal-body">
+					<div class="modal-body table-warning">
 
 
 
@@ -1046,7 +1061,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer table-danger">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Admit</button>
 					</div>
@@ -1328,7 +1343,7 @@
 	<div class="modal fade" id="modal-id2" ng-app="">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header table-primary">
 					<h4 class="modal-title">Ward/Bed State Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -1336,7 +1351,7 @@
 				</div>
 
 				<form action="">
-					<div class="modal-body">
+					<div class="modal-body table-warning">
 
 
 
@@ -1518,7 +1533,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer btn-danger">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Save Record</button>
 					</div>
@@ -1717,6 +1732,6 @@
 			}
 		}
 	</script>
-
+</div>
 </body>
 </html>

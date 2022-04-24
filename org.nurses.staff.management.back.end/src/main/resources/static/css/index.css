@@ -9,35 +9,97 @@
 	background-color:brown;
 }
 
-nav {
+/* nav {
     display: flex;
-    /*display: inline-block;*/
+    display: inline-block;
     align-items: right;
     align-content: flex-end;
-    width: 100%;
+    width: 50%;
     border: 4px;
-    background-color: blue;
+    background-color: white;
     justify-content: flex-end;
-}
+} */
 
 nav li {
     display: inline-block;
     align-content: flex-end;
-    padding: 10px;
-    margin: 10px;
+    padding: 5px;
+    margin: 1px;
     background-color: white;
-    /*align-content: center;*/
+    align-content: center;
     text-align: center;
+    color: blue;
+    width: 60px;
+    
+}
+nav li:active{
+	color: green;
+	background-color: blue;
 }
 
-#searchForm {
+nav li:hover{
+	
+	cursor: pointer;
+	color: white;
+	background-color: teal;
+	
+}
+
+
+
+
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #print, h1,h2, #print * {
+    visibility: visible;
+  }
+  #print {
+    position: absolute;
+    left: 0;
+    top: 05%;
+  }
+  
+  .b1, .sr-only, #prev, #b1, #b2, #maxRows {
+  
+  visibility:hidden;
+  
+  }
+  .b3, .sr-only{
+  
+  visibility:hidden;
+  
+  }
+  
+  #myInput, #action, #action1, #action2, #action3  {
+  
+  visibility:hidden;
+  
+  }
+  
+  nav li{
+  display: none;
+  }
+  
+  .b4{
+  position: absolute;
+  top: 5%;
+  
+  }
+  .b5{
+  background-color: black;
+  }
+
+/* #searchForm {
 	
     float: center;
     height: 20px;
     width: 20%;
-}
+} */
 
-#input {
+/* #input {
 	display: flex;
     align-content: flex-end;
     float: right;
@@ -47,20 +109,20 @@ nav li {
     padding-top: 30px;
     padding-bottom: 16px;
     margin: 5px;
-}
+} */
 
-#navsub {
+/* #navsub {
 	display: flex;
     float: right;
     margin-top: 10px;
     margin-right: 5px;
     margin-left: 0px;
     padding: 10px;
-}
+} */
 
-#firstHeader {
-    /*display: flex;*/
-    /*float: left;*/
+/* #firstHeader {
+    display: flex;
+    float: left;
     background-color: yellow;
     height: 500%;
 }
@@ -77,18 +139,18 @@ nav li {
 
 #log {
     padding-top: px;
-    /*display: ;*/
+    display: ;
     float: right;
     padding-left: 50px;
     padding: 5px;
 }
 
 #sect1 {
-    /*display: flex;*/
+    display: flex;
     background-color: blue;
     padding: 5px;
     display: inline-flex;
-    /*align-content: space-between;*/
+    align-content: space-between;
     margin: 5px;
     clear: both;
 }
@@ -103,7 +165,7 @@ nav li {
     width:50%;
     text-align: center;
     padding:10px;
-}
+} */
 
 .collapsible {
     background-color: rgb(145, 125, 157);
@@ -128,20 +190,22 @@ nav li {
     overflow: hidden;
     background-color: whitesmoke;
 }
-.aside, .article{
+/* .aside, .article{
 	padding: 10px;
-}
+} */
 
-.article:hover{
+/* .article:hover{
 	background-color: blue;
 	color: white;
-}
+} */
 
 .td{
 	padding: .5em 2em;
 	border-radius: 5em;
 }
-nav li:hover{
-	background-color:red;
+/* nav li:hover{
+	background-color: rgb(214, 231, 236); 
+	cursor: pointer;
 	
+} */
 }

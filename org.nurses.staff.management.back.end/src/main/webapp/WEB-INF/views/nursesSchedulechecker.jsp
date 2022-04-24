@@ -28,6 +28,50 @@
 
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/js/profile.js"></script>
+	
+	
+	<script src='${pageContext.request.contextPath}/resources/js/font-awesome.js' 
+	crossorigin='anonymous'></script>
+
+<link href="${pageContext.request.contextPath}/resources/font-awesome.min.css"
+	rel="stylesheet">
+
+<style type="text/css">
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #print, h1,h2, #print * {
+    visibility: visible;
+  }
+  #print, h2 {
+    position: absolute;
+    left: 0;
+    top: 05%;
+  }
+  
+  h2 {
+    position: absolute;
+    left: 02%;
+    top: 05%;
+  }
+  
+  #b1, #b2 {
+  
+  visibility:hidden;
+  
+  }
+  
+  #myInput, #action, #action1, #action2, #action3  {
+  
+  visibility:hidden;
+  
+  }
+}
+
+
+</style>
 <meta charset="ISO-8859-1">
 <title>Leave Id Display</title>
 </head>
@@ -36,7 +80,12 @@
 	<div class="container mt-3" style="margin-left:">
 		<h2>Ward Schedule Checker</h2>
 	</div>
-<div class="container mt-3">
+<div class="container mt-3" id="print">
+
+<button id="b1" style="float: left; border-radius: 5em; " class="btn btn-primary" onclick="history.back()">back</button>
+        
+        <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print"></i> </button>
+        
 	<table class="table table-bordered table-hover" style="background-color: beige;">
 		<thead class="table-success">
 			<tr>
@@ -119,7 +168,7 @@
 				<td><%=rs.getString(3)%></td>
 				<td><%=rs.getString(4)%></td>
 				<td><%=rs.getString(5)%></td>
-				<td><a href="${pageContext.request.contextPath}/generalFront/disApproval/<%=rs.getInt(1)%>" <%-- onclick="window.location.href='${pageContext.request.contextPath}/generalFront/disApproval/<%=rs.getInt(3)%>'" --%>>Check Leave</a></td>
+				<td><a href="${pageContext.request.contextPath}/generalFront/disApproval/<%=rs.getInt(1)%>">Check</a></td>
 
 
 			</tr>
@@ -135,5 +184,13 @@
 		</tbody>
 	</table>
 	</div>
+	
+	
+	
+	
+	
+	
+	
+	
 </body>
 </html>

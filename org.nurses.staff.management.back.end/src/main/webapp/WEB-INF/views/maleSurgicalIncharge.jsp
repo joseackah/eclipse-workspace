@@ -6,6 +6,8 @@
 <%@ page import="java.sql.DriverManager"%>
 <%@ page import="java.sql.Connection"%>
 <%@ page import="java.util.*,java.sql.*"%>
+
+
 	
 <!DOCTYPE html>
 <html>
@@ -105,7 +107,7 @@
 </head>
 <body>
 	<div class="jumbotron text-center" style="margin-bottom: 0">
-		<h1>St. Joseph's Hospital, Jirapa</h1> <h2>Male Surgical Ward</h2>
+		 <h1>Male Surgical Ward</h1>
 		<p></p>
 	</div>
 
@@ -121,7 +123,7 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/general/homePage">Home</a>
+					href="${pageContext.request.contextPath}/generalFront/maleSurgical">Home</a>
 					</li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id'>Apply for Leave</a></li>
@@ -150,15 +152,15 @@
 		</div>
 	</nav>
 
-	<div class="container" style="margin: 30px; width: 90%;">
+	<div class="container" style="margin: 0px; width: 100%;">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-3 table-primary w3-padding" style="width:30%; height:1000px;">
 				<h2>Administrator</h2>
 				<h5>Photo of me:</h5>
 				<div class="w3-circle" style="width: 200px; height: 200px;">
-					<div class="fakeimg">
+					<div class="fakeim">
 						<img class="w3-circle" alt="our mision"
-							src="${pageContext.request.contextPath}/resources/png/mission.png"
+							src="${pageContext.request.contextPath}/resources/icons/color_person_male.png"
 							style="width: 100%; height: 100%;" />
 					</div>
 				</div>
@@ -231,7 +233,7 @@
 			<div class="col-xl" style="width:100%; margin:30px;">
 				<!-- card starts here -->
 			<div class="w3-container w3-padding w3-center"
-				style="margin: 10px; position: relative; left: 4em;">
+				style="margin: 10px; position: relative; left: 1em;">
 				<div class="row w3-padding " style="width:200%;">
 
 					<div class="w3-card-2 w3-yellow w3-margin"
@@ -486,49 +488,29 @@
 
 
 
-			<!-- mission start here -->
-			
-			</div>
-		</div>
-		
-		
-		
-		<div class="row" style="margin-left: 40%;">
-				<!-- <h2>OUR VISION</h2>
-				<h5>Title description, Dec 7, 2017</h5> -->
+			<!-- charts start here -->
+			<div class="row" style="margin-left: 40%;">
+				
 				<div class="col" style="width: 100%;">
 
-					<!-- <div id="curve_chart"
-						style="width: 100%; height: 300px; margin-top: 1em;"></div> -->
+				
 				</div>
 				<div class="container" style="width: 150%">	
 	<div  id="curve_chart"
 						style="width: 100%; height: 300px; margin-top: 1em;"></div>
 </div>
-				<!-- <p>Some text..</p>
-				<p>Our vision is to develop well rounded, confident and
-					responsible individuals who aspire to achieve their full potential.
-					We will do this by providing a welcoming, happy, safe, and
-					supportive learning environment in which everyone is equal and all
-					achievements are celebrated.</p>
- -->
-				<!-- mission end here -->
+				
 
 				<br>
-				<%-- <h2>OUR MISSION</h2>
-				<h5>Title description, Sep 2, 2017</h5>
-				<div class="col">
-					<img alt=""
-						src="${pageContext.request.contextPath}/resources/png/mission.png"
-						style="width: 100%; height: 100%;">
-				</div>
-				<p>Some text..</p>
-				<p>We are dedicated to a continuing tradition of excellence in
-					an ever-changing world. Within a safe and supportive environment,
-					we provide a relevant, high-quality education and prepare our
-					diverse student body for future endeavors. We honor achievement and
-					promote pride in ourselves, in our school, and in our community.</p> --%>
+				
 			</div>
+			</div>
+			
+		</div>
+		
+		
+		
+		
 		
 		
 	</div>

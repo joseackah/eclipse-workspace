@@ -93,7 +93,7 @@
 </head>
 <body>
 	<div class="jumbotron text-center" style="margin-bottom: 0">
-		<h1>St. Joseph's Hospital, Jirapa</h1> <h2>Welcome to Staff Dashboard</h2>
+		<h1></h1> <h2>Welcome to Staff Dashboard</h2>
 		<p></p>
 	</div>
 
@@ -134,6 +134,8 @@
 				<%-- <li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/leaveFront/displayAllMaleMedicalLeave">Death (Neonate)</a>
 				</li> --%>
+				
+				<li class="nav-item"> </li>
 			</ul>
 						        <button id="b1" style="float:right; border-radius: 5em; display:flex; flex-direction:row-reverse; margin-left: 35em;" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/'">log out</button>
 			
@@ -148,7 +150,7 @@
 				<div class="w3-circle" style="width: 200px; height: 200px;">
 					<div class="fakeimg">
 						<img class="w3-circle" alt="our mision"
-							src="${pageContext.request.contextPath}/resources/png/mission.png"
+							src="${pageContext.request.contextPath}/resources/icons/color_person_male.png"
 							style="width: 100%; height: 100%;" />
 					</div>
 				</div>

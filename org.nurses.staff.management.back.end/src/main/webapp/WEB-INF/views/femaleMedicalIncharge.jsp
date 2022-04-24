@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	
+	<%-- <%@include file="links.jsp" %> --%>
 	
 	
 	<%@ page import="java.sql.PreparedStatement"%>
@@ -15,7 +15,10 @@
 <title>Female Medical Home</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -91,7 +94,7 @@
 </head>
 <body>
 	<div class="jumbotron text-center" style="margin-bottom: 0">
-		<h1>St. Joseph's Hospital, Jirapa</h1> <h2>Female Medical Ward</h2>
+		<h1></h1> <h1>Female Medical Ward</h1>
 		<p></p>
 	</div>
 
@@ -107,7 +110,7 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/general/homePage">Home</a>
+					href="${pageContext.request.contextPath}/generalFront/femaleMedical">Home</a>
 					</li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id'>Apply for Leave</a></li>
@@ -134,16 +137,16 @@
 		</div>
 	</nav>
 
-	<div class="container" style="margin: 30px">
+	<div class="container" style="margin:0px; width: 100%;">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-3 table-primary" style="width:25%; height:1000px;">
 				<h2>Administrator</h2>
 				<h5>Photo of me:</h5>
 				<div class="w3-circle" style="width: 200px; height: 200px;">
-					<div class="fakeimg">
+					<div class="fakeim">
 						<img class="w3-circle" alt="our mision"
-							src="${pageContext.request.contextPath}/resources/png/mission.png"
-							style="width: 100%; height: 100%;" />
+							src="${pageContext.request.contextPath}/resources/icons/color_person_female.png"
+							style="width: 100%; height: 100%; margin-left: 20px;" />
 					</div>
 				</div>
 				<p>Administrator</p>
@@ -476,15 +479,11 @@
 
 
 
-			<!-- mission start here -->
+			<!-- charts -->
 			
-	</div>
-		</div>
-	
-	
-	
-	
-	<div class="row" style="margin-left:50%;">
+			
+			
+			<div class="row" style="margin-left:50%;">
 				<!-- <h2>OUR VISION</h2>
 				<h5>Title description, Dec 7, 2017</h5> -->
 				<div class="col" style="width: 100%;">
@@ -502,6 +501,14 @@
 				<br>
 				
 			</div>
+			
+	</div>
+		</div>
+	
+	
+	
+	
+	
 		
 				
 </div>	
@@ -1696,5 +1703,6 @@
 			document.getElementById("hid").style.display = "none";
 		}
 	</script>
-</body>
+	
+	</body>
 </html>

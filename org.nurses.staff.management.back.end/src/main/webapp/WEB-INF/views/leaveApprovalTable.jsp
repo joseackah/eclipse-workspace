@@ -60,6 +60,8 @@
 <title>Leave Table</title>
 </head>
 <body>
+
+
  <h1 style="text-align: center; width: 100%; margin:2px 0 2em;">St. Joseph's Hospital,Jirapa Nurses' Staff Leave Application Table</h1>
     
     <hr style="width:90%">

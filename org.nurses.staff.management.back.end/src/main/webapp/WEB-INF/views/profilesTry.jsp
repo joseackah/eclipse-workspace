@@ -16,6 +16,9 @@
 <html>
 <head>
 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+
 
 <%-- <link href="${pageContext.request.contextPath}/resources/css/main.css"
 	rel="stylesheet"> --%>
@@ -75,6 +78,26 @@
 <script
 	src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 <style type="text/css">
+
+
+
+@media screen and (max-width: 600px){
+
+.col, .row{
+
+width: ;
+display: block;
+}
+
+.row, .col{
+
+width:500%;
+background-color:;
+display: block;
+}
+
+
+}
 </style>
 
 
@@ -94,8 +117,7 @@
 				Hospital Staff(Nurses') 
 				
 				<p>Management System
-<!-- 					(<abbr title="Bernice's International Preparatory School">BIPS</abbr>)
- -->				</p>
+				</p>
 			</ins>
 		</h1>
 	</div>
@@ -113,37 +135,10 @@
 				style="display: -webkit-flex; -webkit-flex-direction: row; flex-direction: row; float: right;">
 				<ul
 					style="align-content: center; justify: center; display: inline-block;">
-					<%-- <li><a
-						href="${pageContext.request.contextPath}/leaveFront/profile">HOME</a></li> --%>
-
-
-					<%-- <li><a href="${pageContext.request.contextPath}/lowerPrimary/saveResults">Add Results</a></li> --%>
-
-					<%-- <% out.print("Today is:"+java.util.Calendar.getInstance().getTime()); %> --%>
-
+					
 				</ul>
 
-				<!-- <ul > <li style="background-color: blue;"> </li> <li style="background-color: blue;"> </li> </ul> -->
-			<%-- 	<div class="dropdown"
-					style="width: 50px; position: absolute; right: 10%; top: 15%;">
-					<button
-						style="width: 50px; position: absolute; right: 2%; top: 15%;"
-						type="button" data-toggle="dropdown"
-						class="btn btn-primary dropdown-toggle">
-						&#9776; <span class="caret"></span>
-					</button>
-
-					<ul class="dropdown-menu dropdown-menu-sm-right" id="menu"
-						style="margin-left: 10px;">
-
-						<a href="#" style="margin-left: 10px;">change password</a>
-						<br>
-						<br>
-						<a href="${pageContext.request.contextPath}/"
-							style="margin-left: 10px;">log out</a>
-					</ul>
-
-				</div> --%>
+				
 			</div>
 		</div>
 	</nav>
@@ -177,22 +172,6 @@
 			class="w3-bar-item w3-button w3-hide-small">schedule </a> <a
 			href="${pageContext.request.contextPath}/leaveFront/nurseProfile"
 			class="w3-bar-item w3-button w3-hide-small"> Nurse Profile</a> 
-			<%-- <a
-			href="${pageContext.request.contextPath}/admissionFront/displayAdmissionOnlyManager"
-			class="w3-bar-item w3-button w3-hide-small">Admissions</a> 
-			
-			
-			<a
-			href="${pageContext.request.contextPath}/admissionFront/displayDischargeOnlyManager"
-			class="w3-bar-item w3-button w3-hide-small">Discharges</a> 
-			
-			<a
-			href="${pageContext.request.contextPath}/admissionFront/displayManagerDeath"
-			class="w3-bar-item w3-button w3-hide-small">Death</a> 
-			
-			<a
-			href="${pageContext.request.contextPath}/admissionFront/displayAllAdmission_DischargeManager"
-			class="w3-bar-item w3-button w3-hide-small">Admission/Discharge</a>  --%>
 			
 			<a
 			href="${pageContext.request.contextPath}/generalFront/topTen"
@@ -212,28 +191,7 @@
 </div>
 
 
-<%-- 	<div class="dropdown"
-					style="float:right; border-radius: 5em; display:flex; flex-direction:row-reverse; margin-left: 10em;">
-					<button
-						style="width: 50px; position: absolute; right: 2%; top: 15%;"
-						type="button" data-toggle="dropdown"
-						class="btn btn-primary dropdown-toggle">
-						&#9776; <span class="caret"></span>
-					</button>
 
-					<ul class="dropdown-menu dropdown-menu-sm-right" id="menu"
-						style="margin-left: 10px; position: absolute;" >
-
-						<a href="#" style="margin-left: 10px;">change password</a>
-						<br>
-						<br>
-						<a href="${pageContext.request.contextPath}/"
-							style="margin-left: 10px;">log out</a>
-					</ul>
-
-				</div>
-
- --%>
 
 
 </div>
@@ -260,7 +218,7 @@
 						<div class="w3-center">
 							<img class="w3-circle w3-center"
 								style="width: 200px; height: 200px;" alt=""
-								src="${pageContext.request.contextPath}/resources/png/mission.png">
+								src="${pageContext.request.contextPath}/resources/icons/color_person_male.png">
 							<p>admin profile</p>
 
 						</div>
@@ -277,29 +235,7 @@
 <div class="dropdown-content">
 
 						<div class="w3-tea" style="width: 100%;">
-							<%-- <a class="w3-btn w3-aqua w3-margin" type="" 
-								onclick="window.location.href='${pageContext.request.contextPath}/nurseFront/displayAllNurse'">Display
-								Nurses</a>
-							<br>
-							<button class="btn btn-primary w3-margin"
-								onclick="window.location.href='${pageContext.request.contextPath}/wardFront/displayAllWard'">Display
-								ward</button>
-							<br>
-							<button class="btn btn-warning w3-margin"
-								onclick="window.location.href='${pageContext.request.contextPath}/leaveFront/displayAllLeave'">Display
-								Leave Applied</button>
-							<br>
-							<button class="btn btn-primary w3-margin"
-								onclick="window.location.href='${pageContext.request.contextPath}/scheduleFront/displayAllSchedule'">Ward
-								Schedule</button>
-
-							<button class="btn btn-danger w3-margin"
-								onclick="window.location.href='${pageContext.request.contextPath}/pinFront/displayAllPin'">Display
-								Pin/Ain</button>
-							<button class="btn btn-secondary w3-margin"
-								onclick="window.location.href='${pageContext.request.contextPath}/userFront/displayAllUser'">User
-								Display</button> --%>
-								
+							
 								<ul class="nav nav-pills flex-column">
 
 
@@ -362,10 +298,10 @@
 <hr class="d-sm">
 
 						<!-- <br> -->
-						<!-- academic record area  starts here-->
+						
 						<div class="try">
 
-							<!-- <button class="nav-item">Results Entry</button> -->
+							
 							<div class="dropdown">
 								<div class="nav-item nav nav-pills flex-colmn">
 									<div class="nav-link active">Ward Admissions</div>
@@ -402,13 +338,7 @@
 			class="nav-item nav nav-pills flex-colmn nav-link active">Post An Event</button>	
 				</div>			
 <hr class="d-sm">
-							<!-- <button class="button1"
-								onclick="document.getElementById('id01').style.display='block'"
-								style="width: auto;">Generate Certificate</button>
-
-							<button class="button2"
-								onclick="document.getElementById('id02').style.display='block'"
-								style="width: auto;">Generate Transcript</button> -->
+							
 						</div>
 
 						
@@ -426,11 +356,17 @@
 			<div class="< w3-margin w3-aqua w3-padding w3-card w3-round-large"
 				style="height: 1500px;">
 				<!-- card starts here -->
+				
+				
+				
 				<div class="w3-container w3-padding w3-center"
-					style="margin: 10px; position: relative; left: 4em;">
+					style="margin: 10px;">
 					<div class="row w3-padding " style="width: 100">
 
-						<div class="w3-card-2 w3-yellow w3-margin"
+
+						<div class="row">
+					
+						<div class="w3-card-2 w3-yellow w3-margin col" id="card"
 							style="height: 12em; width: 20%">
 							<strong> <ins> Total Nurses  </ins></strong>
 							<p style="text-align: left;">total Nurses: ${countNurses}</p>
@@ -438,8 +374,10 @@
 							<p style="text-align: left;">total females: ${countFemale}</p>
 
 						</div>
+						
 
-						<div class="w3-card-2 w3-green w3-margin w3-middle"
+						
+						<div class="w3-card-2 w3-green w3-margin w3-middle col" id="card"
 							style="height: 12em; width: 20%">
 							<strong> <ins> Nurse Category</ins></strong> <p></p>
 							
@@ -491,21 +429,24 @@
 							
 							
 												
-							<%-- <div style="text-align: left;">total General Nurse: ${countYear1}</div> 
-							<div style="text-align: left;">total Midwife: ${countYear1Male}</div>
-							
-							<div style="text-align: left;">total NAC: ${countYear1Female}</div>
-							<div style="text-align: left;">total NAP: ${countYear1Female}</div>
-							<div style="text-align: left;">total ANCILLARY: ${countYear1Female}</div> --%>
+						
 						</div>
-						<div class="w3-card-2 w3-red w3-margin"
+						
+						
+						
+						
+						<div class="w3-card-2 w3-red w3-margin col" id="card"
 							style="height: 12em; width: 20%">
 							<strong> <ins> Total Admission to date</ins></strong>
 							<p style="text-align: left;">total Admission: ${countAdmissionToDate}</p>
 							<p style="text-align: left;">total Discharge: ${countDischarge}</p>
 							<p style="text-align: left;">total Death: ${countDeath}</p>
 						</div>
-						<div class="w3-card-2 w3-teal w3-margin"
+						
+						
+						
+						
+						<div class="w3-card-2 w3-teal w3-margin col" id="card"
 							style="height: 12em; width: 20%">
 
 							<strong> <ins> Total Today's Admission/Discharge</ins></strong>
@@ -513,7 +454,13 @@
 							<p style="text-align: left;">Total Discharge: ${countTodayDischarge}</p>
 							<p style="text-align: left;">Total Death: ${countTodayDeath}</p>
 						</div>
-					<div class="w3-card-2 w3-blue w3-margin"
+						
+						</div>
+						
+						
+						<div class="row">
+						
+					<div class="w3-card-2 w3-blue w3-margin col" id="card"
 							style="height: 12em; width: 20%">
 							
 							<strong> <ins> Bed Capacity</ins></strong>
@@ -522,8 +469,11 @@
 							<p style="text-align: left;">Total Vacant Bed: ${bedCapacity - bedOccupancy}</p>
 							
 							</div>	
-							<div class="w3-card-2 w3-black w3-margin"
-							style="height: 12em; width: 20%; float:left;">
+							
+							
+							
+							<div class="w3-card-2 w3-black w3-margin col" id="card"
+							style="height: 12em; width: 20%;">
 							
 							<strong > <ins > Ward/Bed State</ins></strong>
 							<p style="text-align: left;">Remain at Midnight: ${midnightRmain}</p>
@@ -533,7 +483,9 @@
 							
 							
 							</div>
-						<div class="w3-card-2 w3-green w3-margin"
+							
+							
+						<div class="w3-card-2 w3-green w3-margin col" id="card"
 							style="height: 12em; width: 20%">Year
 							
 							
@@ -544,13 +496,14 @@
 							
 							
 							
-						<div class="w3-card-2 w3-teal w3-margin w3-round-large"
+						<div class="w3-card-2 w3-teal w3-margin w3-round-large col" id="card"
 							style="height: 12em; width: 20%; text-align:;">
 						<strong > <ins > Total Yesterday's Admission/Discharge</ins></strong>
 							<p style="text-align: left;">Total Admission: ${countYesterdayAdmission}</p>
 							<p style="text-align: left;">Total Discharge: ${countYesterdayDischarge}</p>
 							<p style="text-align: left;">Total Death: ${countYesterdayDeath}</p>
  
+						</div>
 						</div>
 					</div>
 
@@ -560,9 +513,12 @@
 
 
 				<!-- card ends here -->
-				<hr>
+				<!-- <hr>
 				
-				<hr>
+				<hr> -->
+				
+				
+				
 				<!-- pie chart starts here -->
 				<div class="row" style="display: flex;content:space-between;">
 					<div class="col" id="piechart" style="margin-right:; width: 500; height: 300; "></div>
@@ -581,7 +537,7 @@
 					<!-- comparison line chart ends here -->
 					
 					<!-- event table -->
-					<div class="col" style="margin-left:; background-color:; width:9%;">
+					<div class="col" style=" width:9%;">
 						<h2>NOTICE</h2>
 				<h5>Upcoming Events</h5>
 				<div class="fake">
@@ -630,21 +586,24 @@
 				
 				
 				</div>
-				<p></p>
-				<p></p>
+				
+				
 				</div>
 				<!-- events table ends -->
 					
 					
 				</div>
-<div style="display: flex;">
-	<div id="curve_chart" style="width:60%; height: 400px; margin-top: 1em;"></div>
+				
+				
+	<div class="row">		
+<div  style="display: flex;">
+	<div class="col" id="curve_chart" style="width:60%; height: 400px; margin-top: 1em;"></div>
 	
 	
-	<div id="mat_chart" style="width:60%; float:left; height: 400px; margin-top: 1em;"></div>
+	<div class="col" id="mat_chart" style="width:60%; float:; height: 400px; margin-top: 1em;"></div>
 	</div>
 	
-	
+	</div>	
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath }/resources/js/loader.js"></script>
 

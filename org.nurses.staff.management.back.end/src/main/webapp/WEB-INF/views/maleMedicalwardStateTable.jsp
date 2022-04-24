@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="links.jsp" %>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -60,18 +61,158 @@
 <title>Ward/Bed State Table</title>
 </head>
 <body>
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark"
+		id="navbar_top">
+		<a class="navbar-brand" href="#"><h1
+				style="font-size: 50px; font-weight: bold;">
+				<span style="color: blue; font-size:;">M</span>MW
+			</h1></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/generalFront/maleMedical">Home</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" data-toggle="modal"
+					href='#modal-id'>Apply for Leave</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/leaveFront/displayAllMaleMedicalRecom">Recommend
+						Leave</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/leaveFront/displayLeaveApprovalMaleMedical">Check
+						Leave Approval</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/scheduleFront/displayAllCheckMaleMedicalSchedule">Check
+						Ward Schedule</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="modal"
+					href='#modal-id4'>Admission</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="modal"
+					href='#modal-id2'>Ward/Bed State</a></li>
+
+			</ul>
+
+			<button id="b1"
+				style="float: right; border-radius: 5em; display: flex; flex-direction: row-reverse; margin-left: 35em;"
+				class="btn btn-primary"
+				onclick="window.location.href='${pageContext.request.contextPath}/'">log
+				out</button>
+
+		</div>
+	</nav>
+
+<div class="wrapper">
+<aside style="width:30%; height:800px; " class="aside_body w3-padding">
+
+<div  style="">
+				<h3>Administrator</h3>
+				<h5>Photo of me:</h5>
+				<div class="w3-circle" style="width: 200px; height: 200px;">
+					<div class="fakeimg">
+						<img class="w3-circle" alt="our mision"
+							src="${pageContext.request.contextPath}/resources/icons/person-icon-male.jpg"
+							style="width: 100%; height: 100%;" />
+					</div>
+				</div>
+				<p>Administrator</p>
+			<p>	<%=(new java.util.Date()).toLocaleString()%></p>
+				<!--   academic record start here -->
+				<div class="dropdown">
+					<h3>Hospital/Ward Records</h3>
+					<p></p>
+					<div class="nav-item nav nav-pills flex-colmn">
+						<div class="nav-link active">Report Display</div>
+					</div>
+
+					<div class="dropdown-content">
+						<ul class="nav nav-pills flex-column">
+							<!-- <li class="nav-item"><a class="nav-link active"
+						style="width: 100%;">Report Display</a></li> -->
+							<li class="nav-item"><a class="nav-link"
+								href="${pageContext.request.contextPath}/admissionFront/maleMedical">Admission</a>
+							</li>
+							<li class="nav-item"><a class="nav-link"
+								href="${pageContext.request.contextPath}/admissionFront/displayDischargeOnlyMaleMedical">Discharge</a>
+							</li>
+							<li class="nav-item"><a class="nav-link"
+								href="${pageContext.request.contextPath}/admissionFront/displayDeathMaleMedical">Death</a>
+							</li>
+							<li class="nav-item"><a class="nav-link"
+								href="${pageContext.request.contextPath}/bedStateFront/displayAllMaleMedicalWard_Bed_State">Ward
+									State</a></li>
+							<li class="nav-item"><a class="nav-link"
+								href="${pageContext.request.contextPath}/admissionFront/displayAllAdmission_DischargeMaleMedical">Admission/Discharge</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				<hr class="d-sm" style="width: 100%;">
+
+				<div class="nav-item nav nav-pills flex-colmn">
+					<button
+						onclick="document.getElementById('id01').style.display='block'"
+						class="nav-link active">Discharge Summary</button>
+				</div>
+
+
+				<hr class="d-sm-none">
+
+				<hr class="d-sm" style="width: 100%;">
+
+				<div class="nav-item nav nav-pills">
+					<form
+						action="${pageContext.request.contextPath}/generalFront/wardSummary"
+						method="post">
+						<input type="text" value="Male Medical" name="wardName"
+							hidden="true">
+
+						<button type="submit" onclick="'" class="nav-link active">Discharge
+							Summary</button>
+					</form>
+
+				</div>
+				
+				
+		<hr class="d-sm" style="width: 100%">							
+				
+		<div class="nav-item nav nav-pills" >
+		<form action="${pageContext.request.contextPath}/generalFront/wardTopTen" method="post">
+		<input type="text" value="Male Medical" name="wardName" hidden="true">
+		
+		<button type="submit" onclick="" class="nav-link active">Top Ten</button>
+		</form>
+									
+								</div>	
+
+			</div>
+
+
+
+
+
+</aside>
+
+
+
+<main style="width:100%;">
+
+
 <div style="text-align: center; width: 100%; margin:2px 0 2em;"> 
- <h1 >St. Joseph's Hospital,Jirapa</h1>
- <h2>Male Medical Ward/Bed State Table</h2>
+ <h1 >Male Medical</h1>
+ <h1>Ward/Bed State Table</h1>
     </div>
-    <hr style="width:90%">
+    <hr style="width:90%; margin:auto;">
     <div class="container mt-3" id="print">
     <!-- <div style="text-align: center; width: 100%;"> -->
             <!-- <h1>St. Joseph's Hospital,Jirapa Nurses' Staff Leave Application Table</h1> -->
         <!-- </div> -->
        <!-- <hr>  -->
        <div> </div> <br> <br>
-        <button id="b1" style="float: left; border-radius: 5em; " class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/generalFront/maleMedical'">back</button>
         
         <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print"></i> </button>
         
@@ -160,7 +301,8 @@
             </tbody>
         </table>
     </div>
-
+</main>
+</div>
 <script>
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {
