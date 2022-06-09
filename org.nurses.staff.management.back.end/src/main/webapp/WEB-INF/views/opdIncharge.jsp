@@ -87,11 +87,15 @@
 	height: 200px;
 	background: #aaa;
 }
+/* html,body {
+    margin:0;
+    padding:0;
+    overflow-x:hidden; */
 </style>
 </head>
-<body>
+<body >
 	<div class="jumbotron text-center" style="margin-bottom: 0">
-		<h1>St. Joseph's Hospital, Jirapa</h1>
+		<h1> </h1>
 		<h2>Outpatient Department (OPD)</h2>
 		<p></p>
 	</div>
@@ -109,7 +113,7 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/general/homePage">Home</a>
+					href="${pageContext.request.contextPath}/generalFront/opd">Home</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id'>Apply for Leave</a></li>
@@ -142,15 +146,15 @@
 		</div>
 	</nav>
 
-	<div class="container" style="margin: 30px">
+	<div class="container" style="margin: 0px">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-3 table-warning" style="height:1000px;">
 				<h2>Administrator</h2>
 				<h5>Photo of me:</h5>
 				<div class="w3-circle" style="width: 200px; height: 200px;">
-					<div class="fakeimg">
+					<div class="fakeim">
 						<img class="w3-circle" alt="our mision"
-							src="${pageContext.request.contextPath}/resources/png/mission.png"
+							src="${pageContext.request.contextPath}/resources/icons/sp2.jpg"
 							style="width: 100%; height: 100%;" />
 					</div>
 				</div>
@@ -244,7 +248,7 @@ document.getElementById("date").innerHTML = dateTime;
 			<div class="col-xl">
 				<!-- card starts here -->
 				<div class="w3-container w3-padding w3-center"
-					style="margin: 10px; position: relative; left: 4em;">
+					style="margin: 10px; position: relative; left: em;">
 					<div class="row w3-padding " style="width: 200%;">
 
 						<div class="w3-card-2 w3-yellow w3-margin"
@@ -484,14 +488,7 @@ document.getElementById("date").innerHTML = dateTime;
 				<!-- card ends here -->
 
 
-
-
-
-				
-			</div>
-		</div>
-
-		<div class="row" style="margin-left: 40%;">
+<div class="row" style="margin-left: 40%;">
 			
 			<div class="col" style="width: 100%;">
 
@@ -506,6 +503,13 @@ document.getElementById("date").innerHTML = dateTime;
 			<br>
 
 		</div>
+
+
+				
+			</div>
+		</div>
+
+		
 	</div>
 
 	<div class="jumbotron text-center"
@@ -539,9 +543,9 @@ document.getElementById("date").innerHTML = dateTime;
 
 	<!-- <a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Leave Application</a> -->
 	<div class="modal fade" id="modal-id">
-		<div class="modal-dialog">
+		<div class="modal-dialog ">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header btn-primary">
 					<h4 class="modal-title">Leave Application</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -549,7 +553,7 @@ document.getElementById("date").innerHTML = dateTime;
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/leaveFront/saveLeave">
-					<div class="modal-body">
+					<div class="modal-body table-warning">
 
 
 
@@ -697,7 +701,7 @@ document.getElementById("date").innerHTML = dateTime;
 								</div>
 
 
-								<div class="col">
+								<div class="col" hidden="true">
 									<div class="form-group">
 										<label for="incharge_recom">Incharge Recommendation</label> <select
 											name="incharge_recom" class="form-control" id="" readonly>
@@ -714,7 +718,7 @@ document.getElementById("date").innerHTML = dateTime;
 
 
 							<div class="row">
-								<div class="col">
+								<div class="col" hidden="true">
 									<div class="form-group">
 										<label for="incharge_name">Incharge Name</label> <input
 											type="text" class="form-control" name="incharge_name"
@@ -733,7 +737,7 @@ document.getElementById("date").innerHTML = dateTime;
 
 
 
-							<div class="row">
+							<div class="row" hidden="true">
 								<div class="col">
 									<div class="form-group">
 										<label for="leave_end_date">Leave End Date</label> <input
@@ -760,7 +764,7 @@ document.getElementById("date").innerHTML = dateTime;
 
 
 						<div class="thirdContainer">
-							<div class="row">
+							<div class="row" hidden="true">
 								<div class="col">
 									<div class="form-group">
 										<label for="approved_by">Approved By</label> <input
@@ -781,7 +785,7 @@ document.getElementById("date").innerHTML = dateTime;
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer btn-danger">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Apply</button>
 					</div>
@@ -804,15 +808,15 @@ document.getElementById("date").innerHTML = dateTime;
 		<div class="modal fade" id="modal-id4">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Admission Form2</h4>
+				<div class="modal-header btn-primary">
+					<h4 class="modal-title">Admission Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/admissionFront/saveAdmission_Discharge">
-					<div class="modal-body">
+					<div class="modal-body table-warning">
 
 
 
@@ -1045,7 +1049,7 @@ document.getElementById("date").innerHTML = dateTime;
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer btn-danger">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Admit</button>
 					</div>
@@ -1326,15 +1330,15 @@ document.getElementById("date").innerHTML = dateTime;
 	<div class="modal fade" id="modal-id2">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header btn-primary">
 					<h4 class="modal-title">Ward/Bed State Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 
 				</div>
 
-				<form action="">
-					<div class="modal-body">
+				<form action="${pageContext.request.contextPath}/bedStateFront/saveWard_Bed_State" method="post">
+					<div class="modal-body table-warning">
 
 
 
@@ -1391,7 +1395,7 @@ document.getElementById("date").innerHTML = dateTime;
 								<div class="col">
 									<div class="form-group">
 										<label for="total_admission">Total Admission</label> <input
-											type="number" name="total_admission" id="">
+											class="form-control" type="number" name="total_admission" id="">
 
 									</div>
 								</div>
@@ -1513,7 +1517,7 @@ document.getElementById("date").innerHTML = dateTime;
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer btn-danger">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Save Record</button>
 					</div>

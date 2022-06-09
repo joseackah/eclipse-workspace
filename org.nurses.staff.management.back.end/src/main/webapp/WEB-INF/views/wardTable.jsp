@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="forms.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -110,17 +111,17 @@ crossorigin='anonymous'></script>
 			</div>
 			<div style="float: lef;">
 		<a href="${pageContext.request.contextPath}/leaveFront/profile"
-			class="w3-bar-item w3-button">Home</a> <a href="#modal-id"
+			class="w3-bar-item w3-button">Home</a> <a href="#modal-id10"
 			data-toggle="modal" class="w3-bar-item w3-button w3-hide-small">Add
-			User</a> <a href="#modal-id1" data-toggle="modal"
+			User</a> <a href="#modal-id11" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Add Ward</a> <a
-			href="#modal-id2" data-toggle="modal"
+			href="#modal-id12" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Add Nurse</a> <a
-			href="#modal-id3" data-toggle="modal"
+			href="#modal-id13" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">PIN/AIN</a> <a
-			href="#modal-id4" data-toggle="modal"
+			href="#modal-id14" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Schedule Nurse</a> <a
-			href="#modal-id5" data-toggle="modal" data-toggle="modal"
+			href="#modal-id15" data-toggle="modal" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Apply for Leave </a> <a
 			href="${pageContext.request.contextPath}/scheduleFront/displayAll"
 			class="w3-bar-item w3-button w3-hide-small">schedule </a> <a
@@ -136,7 +137,7 @@ crossorigin='anonymous'></script>
 			class="w3-bar-item w3-button w3-hide-small">Staff Profile</a> 
 			
 			
-			<button id="b1" style="float:right; border-radius: 5em; position: absolut; right: 2%; top: 10%; display:flex; flex-direction:row-reverse;margin-top:0.5%; margin-left: 25em;" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/'">log out</button>
+			<button id="b1" style="float:right; border-radius: 5em; position: absolut; right: 2%; top: 10%; display:flex; flex-direction:row-reverse;margin-top:0.5%; margin-left: 15em;" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/'">log out</button>
 			
 			<a
 			href="javascript:void(0)"
@@ -286,7 +287,7 @@ crossorigin='anonymous'></script>
 							</ul>
 					<hr class="d-sm">	
 					<div>
-					<button onclick="document.getElementById('modal-id9').style.display='block'" data-toggle="modal"
+					<button onclick="document.getElementById('modal-id16').style.display='block'" data-toggle="modal"
 			class="nav-item nav nav-pills flex-colmn nav-link active">Post An Event</button>	
 				</div>			
 <hr class="d-sm">
@@ -326,7 +327,7 @@ crossorigin='anonymous'></script>
     <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print"></i> </button>
        
     
-       <div style=" display:flex; flex-direction:row-reverse;">    <button onclick="window.location.href='${pageContext.request.contextPath}/nurseFront/addStaff'" class="btn btn-primary" id="myInput" type="button"  style="padding: .5em 2em; border-radius: 5em; width:20%; display:; flex-direction: flex-end;">Add Ward </button>
+       <div style=" display:flex; flex-direction:row-reverse;">  <a href="#modal-id11" data-toggle="modal">  <button data-toggle="modal" class="btn btn-primary" id="myInput" type="button"  style="padding: .5em 2em; border-radius: 5em; width:100%; display:; flex-direction: flex-end;">Add Ward </button></a>
  <input class="form-control" id="myInput" type="text" placeholder="Search.." style="padding: .5em 2em; border-radius: 5em; width:20%; display:flex; flex-direction: flex-end;"> 
  
   <select class  ="form-control" name="state" id="maxRows" style="width:20%">
@@ -370,9 +371,9 @@ crossorigin='anonymous'></script>
                     <td>${wardD.total_staff}</td>
                     <td>${wardD.bed_capacity}</td>
                     <td>${wardD.ward_incharge}</td>
-                    <td id="action" style="align-content: center;">
-                    <a id="action" href="${delete}" onclick="if (!confirm('Are you sure you want to delete this record?')) return false"> <i id="action" class="fa fa-trash"></i> </a> |  |
-                    <a id="action" href="${update}"> <i id="action" class="fa fa-pen"> </i></a>
+                    <td id="action" class="w3-center">
+                    <a id="action" href="${delete}" onclick="if (!confirm('Are you sure you want to delete this record?')) return false"> <i style="margin-left: 10px; margin-right: 10px;" id="action" class="fa fa-trash"></i></a> |  
+                    <a style="margin-left:10px;" id="action" href="${update}"> <i id="action" class="fa fa-pen"> </i></a>
                     
                     </td>
 

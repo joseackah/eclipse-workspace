@@ -13,6 +13,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/resources/js/angular.min.js"></script>
+
+
 <meta charset="ISO-8859-1">
 <title>Nurse Staff Profile</title>
 <meta charset="utf-8">
@@ -82,7 +87,8 @@
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
 	
-	
+	<link href="${pageContext.request.contextPath}/resources/css/projectCss.css"
+	rel="stylesheet">
 <style>
 
 .fakeimg {
@@ -90,10 +96,34 @@
 	background: #aaa;
 }
 </style>
+
+<script type="text/javascript">
+function onLoadSubmit() {
+	document.Try.submit();
+}
+</script>
+
+
 </head>
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<%
+
+String name = request.getParameter("userId");
+
+
+%>
+
+<%-- <form:form name="Try" action="${pageContext.request.contextPath}/generalFront/vali" id="form1" modelAttribute="fere" method="POST"> 
+			
+			<input hidden="true" class="form-control" type="text" name="userId" value="24" >
+			
+			
+			</form:form>
+ --%>
+
 	<div class="jumbotron text-center" style="margin-bottom: 0">
-		<h1></h1> <h2>Welcome to Staff Dashboard</h2>
+		<h1>Welcome</h1> <h2> Staff Dashboard</h2>
 		<p></p>
 	</div>
 
@@ -109,7 +139,7 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/general/homePage">Home</a>
+					href="${pageContext.request.contextPath}/generalFront/nurseStaffProfile">Home</a>
 					</li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id'>Apply for Leave</a></li>
@@ -117,17 +147,17 @@
 					href="${pageContext.request.contextPath}/leaveFront/displayAllMaternityRecom">Recommend
 						Leave</a></li> --%>
 				<li class="nav-item"><a class="nav-link"
-					 onclick="document.getElementById('id01').style.display='block'">Check
+					 onclick="document.getElementById('id08').style.display='block'">Check
 						Leave Approval</a></li>
 				<li class="nav-item"><a class="nav-link"
-					onclick="document.getElementById('id02').style.display='block'">Check
+					onclick="document.getElementById('id09').style.display='block'">Check
 						Ward Schedule</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id4'>Admission</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id2'>Ward/Bed State</a></li>
 					<li class="nav-item"><a class="nav-link" data-toggle="modal"
-					href='#modal-id4'>Admission2</a></li>
+					href='#modal-id4'>Admission</a></li>
 				<%-- <li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/admissionFront/form">Birth (Neonate)</a>
 				</li> --%>
@@ -154,7 +184,12 @@
 							style="width: 100%; height: 100%;" />
 					</div>
 				</div>
-				<p>Staff</p>
+				<p>${userId}</p>
+				<p>${name}</p>
+				<p>
+				
+					
+				</p>
 
 				<!--   academic record start here -->
 <div class="dropdown">
@@ -301,7 +336,7 @@
 	<div class="modal fade" id="modal-id">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Leave Application</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -309,7 +344,7 @@
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/leaveFront/saveLeave">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -512,7 +547,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Apply</button>
 					</div>
@@ -534,7 +569,7 @@
 	<div class="modal fade" id="modal-id1">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Admission/Discharge Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -543,7 +578,7 @@
 
 				<form
 					action="${pageContext.request.contextPath}/admissionFront/saveAdmission_Discharge">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -754,7 +789,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Save Record</button>
 					</div>
@@ -779,15 +814,15 @@
 	<div class="modal fade" id="modal-id2">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Ward/Bed State Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 
 				</div>
 
-				<form action="">
-					<div class="modal-body">
+				<form action="${pageContext.request.contextPath}/bedStateFront/saveWard_Bed_State" method="post">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -813,7 +848,7 @@
 								<div class="col">
 									<div class="form-group">
 										<label for="total_admission">Total Admission</label> <input
-											type="number" name="total_admission" id="">
+										class="form-control"	type="number" name="total_admission" id="">
 
 									</div>
 								</div>
@@ -936,7 +971,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Save Record</button>
 					</div>
@@ -961,14 +996,17 @@
 
 <!-- check leave approval here ends -->
 
-<div id="id01" class="modal1">
+
+<!-- check leave approval here --> 
+
+<div id="id08" class="modal1">
 
 			<form class="modal-content1 animate"
 				action="${pageContext.request.contextPath}/generalFront/staffCheckLeave"
 				method="post">
-				<div class="imgcontainer">
+				<div class="imgcontainer" id="">
 					<span
-						onclick="document.getElementById('id01').style.display='none'"
+						onclick="document.getElementById('id08').style.display='none'"
 						class="close" title="Close Modal">&times;</span>
 					<!--  <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
 					<h2 class="avatar">
@@ -988,23 +1026,25 @@
 
 				</div>
 
-				<div class="container1" style="background-color: #f1f1f1;">
+				<div id="modalHeader" class="container1" style="background-color: #f1f1f1;">
 					<button  type="button"
-						onclick="document.getElementById('id01').style.display='none'"
+						onclick="document.getElementById('id08').style.display='none'"
 						class="cancelbtn">Cancel</button>
 				</div>
 			</form>
 		</div>
+<!-- check leave approval here ends -->
 
+<!-- staff ward checker starts here -->
 
-<div id="id02" class="modal1">
+<div id="id09" class="modal1">
 
 			<form class="modal-content1 animate"
 				action="${pageContext.request.contextPath}/generalFront/staffCheckWard"
 				method="post">
-				<div class="imgcontainer">
+				<div class="imgcontainer" id="">
 					<span
-						onclick="document.getElementById('id02').style.display='none'"
+						onclick="document.getElementById('id09').style.display='none'"
 						class="close" title="Close Modal">&times;</span>
 					<!--  <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
 					<h2 class="avatar">
@@ -1026,13 +1066,13 @@
 
 				<div class="container1" style="background-color: #f1f1f1;">
 					<button  type="button"
-						onclick="document.getElementById('id02').style.display='none'"
+						onclick="document.getElementById('id09').style.display='none'"
 						class="cancelbtn">Cancel</button>
 				</div>
 			</form>
 		</div>
 
-
+<!-- staff ward checker ends here -->
 
 
 <!-- admission try form starts here -->
@@ -1041,7 +1081,7 @@
 	<div class="modal fade" id="modal-id4">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Admission Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -1049,7 +1089,7 @@
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/admissionFront/saveAdmission_Discharge">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -1282,7 +1322,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Admit</button>
 					</div>
@@ -1312,6 +1352,14 @@
 		} */
 	</script>
 	
-
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl',['$scope', '$state', '$timeout', function($scope, $state, $timeout) {
+  
+  $timeout(function () {
+     $state.go('www.google.com')
+  }, 2000);
+}]);
+</script>
 </body>
 </html>

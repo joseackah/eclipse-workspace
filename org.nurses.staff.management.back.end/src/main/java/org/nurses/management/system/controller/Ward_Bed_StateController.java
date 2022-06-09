@@ -94,16 +94,71 @@ public class Ward_Bed_StateController {
 	
 
 	@RequestMapping("/saveWard_Bed_State")
-	public String savebedState(Ward_Bed_State bedState) {
+	public String savebedState(Ward_Bed_State bedState, @RequestParam("ward_name")String ward_name) {
 		bedRest.saveWard_Bed_State(bedState);
-		// System.out.println("product saved successfully");
+		
+		if(ward_name.equals("Religious Ward")) {
+			
+			
+			return "redirect:/bedStateFront/displayAllReligiousWardWard_Bed_State";
+		}else if(ward_name.equals("Male Medical")) {
+			
+			return "redirect:/bedStateFront/displayAllMaleMedicalWard_Bed_State";
+		}else if(ward_name.equals("Female Medical")) {
+			return "redirect:/bedStateFront/displayAllfemaleMedicalWard_Bed_State";
+		}else if(ward_name.equals("Male Surgical")) {
+			return "redirect:/bedStateFront/displayAllMaleSurgicalWard_Bed_State";
+		}else if(ward_name.equals("Female Surgical")) {
+			return "redirect:/bedStateFront/displayAllFemaleSurgicalWard_Bed_State";
+		}else if(ward_name.equals("Maternity")) {
+			return "redirect:/bedStateFront/displayAllMaternityWard_Bed_State";
+		}else if(ward_name.equals("NICU")) {
+			return "redirect:/bedStateFront/displayAllNicuWard_Bed_State";
+		}else if(ward_name.equals("General Ward")) {
+			return "redirect:/bedStateFront/displayAllGeneralWardWard_Bed_State";
+		}else if(ward_name.equals("Accident/Emergency")) {
+			return "redirect:/bedStateFront/displayAllAccidentEmergencyWard_Bed_State";
+		}else if(ward_name.equals("Outpatient Department")) {
+			return "redirect:/bedStateFront/displayAllopdWard_Bed_State";
+		}else if(ward_name.equals("Childrens Ward")) {
+			return "redirect:/bedStateFront/displayAllChildrensWarWard_Bed_State";
+		}else
 		return "redirect:/bedStateFront/displayAllWard_Bed_State";
 
 	}
 
 	@RequestMapping("/deleteWard_Bed_State/{id}")
-	public String deleteStudents(@PathVariable("id") Integer id) {
+	public String deleteStudents(@PathVariable("id") Integer id, @RequestParam("ward_name")String ward_name) {
 		bedRest.deleteWard_Bed_State(id);
+		
+		
+		
+		if(ward_name.equals("Religious Ward")) {
+			
+			
+			return "redirect:/bedStateFront/displayAllReligiousWardWard_Bed_State";
+		}else if(ward_name.equals("Male Medical")) {
+			
+			return "redirect:/bedStateFront/displayAllMaleMedicalWard_Bed_State";
+		}else if(ward_name.equals("Female Medical")) {
+			return "redirect:/bedStateFront/displayAllfemaleMedicalWard_Bed_State";
+		}else if(ward_name.equals("Male Surgical")) {
+			return "redirect:/bedStateFront/displayAllMaleSurgicalWard_Bed_State";
+		}else if(ward_name.equals("Female Surgical")) {
+			return "redirect:/bedStateFront/displayAllFemaleSurgicalWard_Bed_State";
+		}else if(ward_name.equals("Maternity")) {
+			return "redirect:/bedStateFront/displayAllMaternityWard_Bed_State";
+		}else if(ward_name.equals("NICU")) {
+			return "redirect:/bedStateFront/displayAllNicuWard_Bed_State";
+		}else if(ward_name.equals("General Ward")) {
+			return "redirect:/bedStateFront/displayAllGeneralWardWard_Bed_State";
+		}else if(ward_name.equals("Accident/Emergency")) {
+			return "redirect:/bedStateFront/displayAllAccidentEmergencyWard_Bed_State";
+		}else if(ward_name.equals("Outpatient Department")) {
+			return "redirect:/bedStateFront/displayAllopdWard_Bed_State";
+		}else if(ward_name.equals("Childrens Ward")) {
+			return "redirect:/bedStateFront/displayAllChildrensWarWard_Bed_State";
+		}else
 
 		return "redirect:/leaveFront/displayAllLeave";
 	}
@@ -197,7 +252,7 @@ public class Ward_Bed_StateController {
 	  
 	  
 	  
-	  @RequestMapping(value = "/displayAllfemaleMedicalWard_Bed_State", method = RequestMethod.GET)
+	  @RequestMapping(value = "/displayAllFemaleMedicalWard_Bed_State", method = RequestMethod.GET)
 		public String femaleMedicalWardState(Ward_Bed_State bedStates, ModelMap model) {
 			Ward_Bed_State[] bedState = bedRest.femaleMedical();
 			model.addAttribute("bedState", bedState);

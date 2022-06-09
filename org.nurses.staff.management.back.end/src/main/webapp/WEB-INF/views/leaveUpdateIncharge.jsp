@@ -8,14 +8,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
+    <link href="${pageContext.request.contextPath}/resources/css/projectCss.css"
+	rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>Leave Application Form</title>
 </head>
-<body>
+<body class="body1">
  <!-- <a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Leave Application</a> -->
     <div class="mo fad" id="modal-id">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog btn-padding">
+            <div class="modal-content" id="modalHeader">
                 <div class="modal-header">
                     <h4 class="modal-title">Leave Application</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -23,7 +25,7 @@
                 </div>
                 
                 <form action="${pageContext.request.contextPath}/leaveFront/updateIncharge">
-                <div class="modal-body">
+                <div class="modal-body" id="modalBody">
                     
 
 
@@ -181,7 +183,7 @@
 
                     
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer" id="modalFooter">
                     <button type="button" class="btn btn-default" data-dismiss="modal" onclick="history.back()">Close</button>
                     <button type="submit" class="btn btn-primary">Recommend</button>
                 </div>

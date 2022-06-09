@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="countNewbornDeath"/>
+		<item key="selection" value="userForm"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="true"/>
 		<item key="isRegEx" value="true"/>
 		<list key="findhistory">
+			<item value="userForm"/>
+			<item value="checkward"/>
+			<item value="checkwardscheduletable"/>
+			<item value="checkwardschedule"/>
 			<item value="countNewborn"/>
 			<item value="where"/>
 			<item value="manager"/>
@@ -19,10 +23,6 @@
 			<item value="Male Medical"/>
 			<item value=",Male Medical"/>
 			<item value=",Outpatient Department"/>
-			<item value=",Accident/Emergency"/>
-			<item value=",Childrens Ward"/>
-			<item value=",General Ward"/>
-			<item value=",Religious Ward"/>
 		</list>
 		<list key="replacehistory">
 			<item value="countNewbornDeath"/>

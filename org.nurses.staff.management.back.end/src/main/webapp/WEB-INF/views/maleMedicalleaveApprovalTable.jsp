@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@include file="forms.jsp" %>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -106,12 +106,12 @@
   }
   #print, h1, h2, #print * {
     visibility: visible;
-    margin: 0.5em;
+    margin: 0.1em;
   }
   #print {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 5%;
   }
   
   #b1, #b2 {
@@ -136,7 +136,7 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark"
 		id="navbar_top">
-		<a class="navbar-brand" href="#"><h1
+		<a id="b2" class="navbar-brand" href="#"><h1 id="b2"
 				style="font-size: 50px; font-weight: bold;">
 				<span style="color: blue; font-size:;">M</span>MW
 			</h1></a>
@@ -291,7 +291,7 @@
        <!-- <hr>  -->
        <div> </div> <br> <br>
         
-        <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print"></i> </button>
+        <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print" id="b2"></i> </button>
         
 <div id="s1" style=" display:flex; flex-direction:row-reverse;"> <input class="form-control" id="myInput" type="text" placeholder="Search.." style="padding: .5em 2em; border-radius: 5em; width:20%; display:flex; flex-direction: flex-end;"> </div>
         <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:" id="name">
@@ -375,9 +375,30 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>  <td></td>  <td></td> <!--  <td></td> -->
+                    <td></td>  <td></td>  <td></td>  <td></td>
                 </tr>
             </tbody>
+            <thead class="table-danger">
+                <tr>
+                    <th>ID</th>
+                    <th>WARD NAME</th>	
+                    <th>STAFF ID</th>
+                    <th>NAME</th>
+                    <th>STAFF CATEGORY</th>
+                    <th>LEAVE TYPE</th>
+                    <th>LEAVE DAYS EARN</th>
+                    <th>LEAVE DAYS APPLY</th>
+                    <th>LEAVE DATE</th>
+                     <th>LEAVE RECOM.</th>
+                    <th>INCHARGE NAME</th>
+                    <th>LEAVE END DATE</th>
+                    <th>RESUMPTION DATE</th>
+                    <th>DATE APPROVED</th>
+                    <th>APPROVED BY</th>
+                    <th>REMARKS</th>
+                    <!-- <th id="action">ACTION</th> -->
+                </tr>
+            </thead>
         </table>
     </div>
 </main>

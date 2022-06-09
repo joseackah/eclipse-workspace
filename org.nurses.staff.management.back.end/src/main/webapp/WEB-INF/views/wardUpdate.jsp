@@ -20,7 +20,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Ward Update Form</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <button onclick="window.location.href='${pageContext.request.contextPath}/wardFront/displayAllWard'" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
                 </div>
                 <form action="${pageContext.request.contextPath}/wardFront/wardUpdate">
@@ -104,7 +104,7 @@
                    
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button onclick="window.location.href='${pageContext.request.contextPath}/wardFront/displayAllWard'" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </div> 
                 </form>

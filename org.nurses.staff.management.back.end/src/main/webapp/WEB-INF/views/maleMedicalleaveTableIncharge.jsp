@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@include file="links.jsp" %>
+<%@include file="links.jsp" %><%@include file="forms.jsp" %>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -301,6 +301,26 @@
                     <td></td>
                 </tr>
             </tbody>
+            <thead class="table-danger">
+                <tr>
+                    <th>ID</th>
+                    <th>WARD NAME</th>
+                    <th>STAFF ID</th>
+                    <th>NAME</th>
+                    <th>STAFF CATEGORY</th>
+                    <th>LEAVE TYPE</th>
+                    <th>LEAVE DAYS EARN</th>
+                    <th>LEAVE DAYS APPLY</th>
+                    <th>LEAVE DATE</th>
+                    <th>LEAVE RECOM.</th>
+                    <th>INCHARGE NAME</th>
+                    <th>LEAVE END DATE</th>
+                    <th>RESUMPTION DATE</th>
+                    <th>DATE APPROVED</th>
+                    <th>APPROVED BY</th>
+                    <th id="actio">ACTION</th>
+                </tr>
+            </thead>
         </table>
     </div>
 </main>

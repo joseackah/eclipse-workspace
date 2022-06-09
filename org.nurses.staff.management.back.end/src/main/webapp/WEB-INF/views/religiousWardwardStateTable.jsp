@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="links.jsp" %><%@include file="forms.jsp" %>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -60,23 +61,144 @@
 <title>Ward/Bed State Table</title>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="navbar_top">
+		<a class="navbar-brand" href="#"><h1
+				style="font-size: 50px; font-weight: bold;">
+				<span style="color: blue; font-size:;">R</span>W
+			</h1></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/generalFront/religiousWard">Home</a>
+					</li>
+				<li class="nav-item"><a class="nav-link" data-toggle="modal"
+					href='#modal-id'>Apply for Leave</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/leaveFront/displayAllReligiousWardRecom">Recommend
+						Leave</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/leaveFront/displayLeaveApprovalReligiousWard">Check
+						Leave Approval</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/scheduleFront/displayAllCheckReligiousWardSchedule">Check
+						Ward Schedule</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="modal"
+					href='#modal-id4'>Admission</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="modal"
+					href='#modal-id2'>Ward/Bed State</a></li>
+			 
+			</ul>
+						        <button id="b1" style="float:right; border-radius: 5em; display:flex; flex-direction:row-reverse; margin-left: 35em;" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/'">log out</button>
+			
+		</div>
+	</nav>
+	
+	<div class="wrapper">
+	
+	<aside class="aside_body w3-padding" style="width:30%; height:1000px;">
+	<div >
+				<h2>Administrator</h2>
+				<h5>Photo of me:</h5>
+				<div class="w3-circle" style="width: 200px; height: 200px;">
+					<div class="fakeim">
+						<img class="w3-circle" alt="our mision"
+							src="${pageContext.request.contextPath}/resources/icons/sp4.jpg"
+							style="width: 100%; height: 100%;" />
+					</div>
+				</div>
+				<p>Administrator</p>
+
+				
+<div class="dropdown">
+				<h3>Hospital/Ward Records</h3>
+				<p></p>
+				<div class="nav-item nav nav-pills flex-colmn">
+									<div class="nav-link active">Report Display</div>
+								</div>
+				
+				<div class="dropdown-content">
+				<ul class="nav nav-pills flex-column">
+					<!-- <li class="nav-item"><a class="nav-link active"
+						style="width: 100%;">Report Display</a></li> -->
+					<li class="nav-item"><a class="nav-link"
+						href="${pageContext.request.contextPath}/admissionFront/religiousWard">Admission</a>
+					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="${pageContext.request.contextPath}/admissionFront/displayDischargeOnlyReligiousWard">Discharge</a>
+					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="${pageContext.request.contextPath}/admissionFront/displayDeathReligiousWard">Death</a>
+					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="${pageContext.request.contextPath}/bedStateFront/displayAllReligiousWardWard_Bed_State">Ward
+							State</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="${pageContext.request.contextPath}/admissionFront/displayAllAdmission_DischargeReligiousWard">Admission/Discharge</a>
+					</li>
+				</ul>
+				</div>
+				
+</div>
+<hr class="d-sm">
+
+
+<div class="nav-item nav nav-pills" >
+									<button onclick="document.getElementById('id01').style.display='block'" class="nav-link active">Discharge Summary</button>
+								</div>
+								
+				
+				<hr class="d-sm">
+
+				<div class="nav-item nav nav-pills">
+					<form
+						action="${pageContext.request.contextPath}/generalFront/wardSummary"
+						method="post">
+						<input type="text" value="Religious Ward" name="wardName"
+							hidden="true">
+
+						<button type="submit" onclick="'" class="nav-link active">Discharge
+							Summary</button>
+					</form>
+
+				</div>
+				
+				
+		<hr class="d-sm" style="width: 50%">							
+				
+		<div class="nav-item nav nav-pills" >
+		<form action="${pageContext.request.contextPath}/generalFront/wardTopTen" method="post">
+		<input type="text" value="Religious Ward" name="wardName" hidden="true">
+		
+		<button type="submit" onclick="" class="nav-link active">Top Ten</button>
+		</form>
+									
+								</div>			
+				
+					
+				<hr class="d-sm-none">
+				
+			</div>
+	
+	</aside>
+	
+	<main style="width:100%;">
 <div style="text-align: center; width: 100%; margin:2px 0 2em;">
- <h1 >St. Joseph's Hospital,Jirapa </h1>
- <h2>Religious Ward/Bed State</h2>
+ <h1 >Religious Ward  </h1>
+ <h2> Ward/Bed State</h2>
     </div>
-    <hr style="width:90%">
+    <hr style="width:90%; margin:auto">
     <div class="container mt-3" id="print">
-    <!-- <div style="text-align: center; width: 100%;"> -->
-            <!-- <h1>St. Joseph's Hospital,Jirapa Nurses' Staff Leave Application Table</h1> -->
-        <!-- </div> -->
-       <!-- <hr>  -->
-       <div> </div> <br> <br>
-        <button id="b1" style="float: left; border-radius: 5em; " class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/generalFront/religiousWard'">back</button>
-        
+        <div> </div> <br> <br>
+         
         <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print"></i> </button>
         
 <div id="s1" style=" display:flex; flex-direction:row-reverse;"> <input class="form-control" id="myInput" type="text" placeholder="Search.." style="padding: .5em 2em; border-radius: 5em; width:20%; display:flex; flex-direction: flex-end;"> </div>
-        <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:auto" id="name">
+        <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:100%" id="name">
             <thead class="table-danger">
                 <tr>
                     <th style="display:none;">ID</th>
@@ -102,8 +224,8 @@
             <c:forEach items="${bedState}" var="bedState">
             
             
-            <c:url value="deleteLeave/${bedState.id}" var="delete">
-            
+            <c:url value="deleteWard_Bed_State/${bedState.id}" var="delete">
+            		<c:param value="${bedState.ward_name}" name="ward_name"></c:param>
             
             </c:url>
             
@@ -123,12 +245,12 @@
                     <td>${bedState.total_discharge}</td>
                     <td>${bedState.total_trans_in}</td>
                     <td>${bedState.total_trans_out}</td>
-                    <td>${bedState.total_death}</td>
+                    <td>${bedState.total_deaths}</td>
                      <td>${bedState.total_critical_ill}</td>
                     <td>${bedState.total_floor_patient}</td>
                     <td>${bedState.total_absconded}</td>
                     <td>${bedState.total_insured}</td>
-                    <td>${bedState.total_non_insred}</td>
+                    <td>${bedState.total_non_insured}</td>
                     <td>${bedState.total_remain_at_midnight}</td>
                     <th>${bedState.nurse_incharge}</th>
                     <td id="action1">
@@ -158,8 +280,30 @@
                     <td></td>  <td></td>  <td></td>  <td></td>
                 </tr>
             </tbody>
+            <thead class="table-danger">
+                <tr>
+                    <th style="display:none;">ID</th>
+                    <th>DATE</th>
+                    <th>WARD NAME</th>                    
+                    <th>ADMISSIONS</th>
+                    <th>DISCHARGES</th>
+                    <th>TRANS-INS</th>
+                    <th>TRANS-OUT</th>
+                    <th>DEATHS</th>
+                     <th>CRITICAL ILL</th>
+                    <th>FLOOR PATIENT</th>
+                    <th>ABSCONDED</th>
+                    <th>INSURED</th>
+                    <th>NON-INSURED</th>
+                    <th>REMAIN AT MIDNIGHT</th>
+                    <th>NURSE INCHARGE</th>
+                    <th id="actio">ACTION</th>
+                </tr>
+            </thead>
         </table>
     </div>
+</main>
+</div>
 
 <script>
 $(document).ready(function(){

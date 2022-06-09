@@ -93,12 +93,44 @@
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
 
-
+<link href="${pageContext.request.contextPath}/resources/css/projectCss.css"
+	rel="stylesheet">
 <style>
 .fakeimg {
 	height: 200px;
 	background: #aaa;
 }
+
+
+
+.modal {
+    overflow-y: auto;
+}
+
+.modal-open {
+    overflow: auto;
+}
+
+.modal-open[style] {
+    padding-right: 0px !important;
+}
+
+body.modal-open-noscroll 
+{
+  padding-right: 0!important;
+  overflow: hidden;
+}
+.modal-open-noscroll .navbar-default, .modal-open .navbar-default 
+{
+  padding-right: 0!important;
+}
+
+body {
+padding-right:0px !important;
+margin-right:0px !important;
+}
+
+
 </style>
 </head>
 <body style="width:100%">
@@ -797,7 +829,7 @@
 
 
 					</div>
-					<div class="modal-footer table-danger">
+					<div class="modal-footer btn-danger">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Apply</button>
 					</div>
@@ -1061,7 +1093,7 @@
 
 
 					</div>
-					<div class="modal-footer table-danger">
+					<div class="modal-footer btn-danger">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Admit</button>
 					</div>

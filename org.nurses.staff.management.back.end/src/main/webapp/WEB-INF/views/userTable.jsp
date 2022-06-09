@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="forms.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -111,17 +112,17 @@
 			</div>
 			<div style="float: lef;">
 		<a href="${pageContext.request.contextPath}/leaveFront/profile"
-			class="w3-bar-item w3-button">Home</a> <a href="#modal-id"
+			class="w3-bar-item w3-button">Home</a> <a href="#modal-id10"
 			data-toggle="modal" class="w3-bar-item w3-button w3-hide-small">Add
-			User</a> <a href="#modal-id1" data-toggle="modal"
+			User</a> <a href="#modal-id11" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Add Ward</a> <a
-			href="#modal-id2" data-toggle="modal"
+			href="#modal-id12" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Add Nurse</a> <a
-			href="#modal-id3" data-toggle="modal"
+			href="#modal-id13" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">PIN/AIN</a> <a
-			href="#modal-id4" data-toggle="modal"
+			href="#modal-id14" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Schedule Nurse</a> <a
-			href="#modal-id5" data-toggle="modal" data-toggle="modal"
+			href="#modal-id15" data-toggle="modal" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Apply for Leave </a> <a
 			href="${pageContext.request.contextPath}/scheduleFront/displayAll"
 			class="w3-bar-item w3-button w3-hide-small">schedule </a> <a
@@ -137,7 +138,7 @@
 			class="w3-bar-item w3-button w3-hide-small">Staff Profile</a> 
 			
 			
-			<button id="b1" style="float:right; border-radius: 5em; position: absolut; right: 2%; top: 25%; display:flex; flex-direction:row-reverse; margin-top:0.5%; margin-left: 25em;" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/'">log out</button>
+			<button id="b1" style="float:right; border-radius: 5em; position: absolut; right: 2%; top: 25%; display:flex; flex-direction:row-reverse; margin-top:0.5%; margin-left: 15em;" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/'">log out</button>
 			
 			<a
 			href="javascript:void(0)"
@@ -288,7 +289,7 @@
 							</ul>
 					<hr class="d-sm">	
 					<div>
-					<button onclick="document.getElementById('modal-id9').style.display='block'" data-toggle="modal"
+					<button onclick="document.getElementById('modal-id16').style.display='block'" data-toggle="modal"
 			class="nav-item nav nav-pills flex-colmn nav-link active">Post An Event</button>	
 				</div>			
 <hr class="d-sm">
@@ -340,14 +341,14 @@
  
  </div>
         
-        <table class="table table-bordered table-hover" style="background-color: antiquewhite;" id="name">
+        <table class="table table-bordered table-hover" style="background-color: aliceblue;" id="name">
             <thead class="table-warning">
                 <tr>
                     <th>ID</th>
+                    <th>USER ID</th>
                     <th>NAME</th>
                     <th>USER TYPE</th>
                     <th>WARD NAME</th>
-                    <th>USER ID</th>
                     <th>USER PASSWORD</th>
                     <th>IMAGE</th>
                     <th>DATE CREATED</th>
@@ -356,7 +357,7 @@
  
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="myTable">
             <c:forEach items="${userT}" var="userT">
             
             <c:url value="updateUsers1/${userT.id}" var = "update">
@@ -371,18 +372,18 @@
             </c:url>
                 <tr>
                     <td>${userT.id}</td>
+                    <td>${userT.userId }</td>
                     <td>${userT.name}</td>
                     <td>${userT.userType}</td>
                     <td>${userT.ward_name}</td>
-                    <td>${userT.userId }</td>
                     <td>***********</td>
                     <td>${userT.image}</td>
                     <td>${userT.dateCreated}</td>
                     <td>${userT.createdBy}</td>
-                    <td id="action">
+                    <td class="w3-center" id="action">
                     
                     
-                      <a  id="action" href="${delete}" onclick="if (!confirm('Are you sure you want to delete this record?')) return false" style="margin-left:1.5em;"> <i id="action" class="fa fa-trash"></i> </a> | - |
+                      <a  id="action" href="${delete}" onclick="if (!confirm('Are you sure you want to delete this record?')) return false" style="margin-left:1.5em;"> <i style="margin-right: 15px;" id="action" class="fa fa-trash"></i></a> |
                     <a id="action" href="${update}"> <i id="action" class="fa fa-pen"> </i></a>
                     
                     
@@ -428,6 +429,23 @@
 
 
 </div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+
+
+
+
 
 <!-- navbar top starts here -->
 
@@ -607,6 +625,8 @@ id++;
 //$(this).prepend('<td>' + id + '</td>');
 });
 });
+
+
 
 
 

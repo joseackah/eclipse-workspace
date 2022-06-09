@@ -93,7 +93,8 @@
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
 	
-	
+	 <link href="${pageContext.request.contextPath}/resources/css/projectCss.css"
+	rel="stylesheet">
 <style>
 
 .fakeimg {
@@ -104,7 +105,7 @@
 </head>
 <body>
 	<div class="jumbotron text-center" style="margin-bottom: 0">
-		 <h1>St. Joseph's Hospital, Jirapa</h1> <h2>Paediatric(Children's) Ward</h2>
+		 <h1></h1> <h2>Paediatric(Children's) Ward</h2>
 		<p></p>
 	</div>
 
@@ -120,7 +121,7 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/general/homePage">Home</a>
+					href="${pageContext.request.contextPath}/generalFront/childrensWard">Home</a>
 					</li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id'>Apply for Leave</a></li>
@@ -144,21 +145,25 @@
 		</div>
 	</nav>
 
-	<div class="container" style="margin: 30px">
+	<div class="container" style="margin: 0px">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-3 table-warning" style="width:20%; height:1000px;">
 				<h2>Administrator</h2>
 				<h5>Photo of me:</h5>
 				<div class="w3-circle" style="width: 200px; height: 200px;">
-					<div class="fakeimg">
+					<div class="fakeim">
 						<img class="w3-circle" alt="our mision"
-							src="${pageContext.request.contextPath}/resources/png/mission.png"
+							src="${pageContext.request.contextPath}/resources/icons/chilld.jpg"
 							style="width: 100%; height: 100%;" />
 					</div>
 				</div>
 				<p>Administrator</p>
-<%=(new java.util.Date()).toLocaleString() %>
+
 				
+				<div ng-app="myApp" ng-controller="myCtrl"> 
+<h1 style="text-align:left; font-size: 20px;">{{theTime}}</h1>
+
+</div>
 <div class="dropdown">
 				<h3>Hospital/Ward Records</h3>
 				<p></p>
@@ -228,7 +233,7 @@
 			<div class="col-xl">
 			<!-- card starts here -->
 			<div class="w3-container w3-padding w3-center"
-				style="margin: 10px; position: relative; left: 4em;">
+				style="margin: 10px; position: relative; left: 0.2em;">
 				<div class="row w3-padding " style="width:200%;">
 
 					<div class="w3-card-2 w3-yellow w3-margin"
@@ -480,17 +485,7 @@
 
 
 			<!-- card ends here -->
-
-
-
-
-
-			
-			</div>
-		</div>
-		
-		
-		<div class="row" style="margin-left: 40%;">
+<div class="row" style="margin-left: 40%;">
 				
 				<div class="col" style="width: 100%;">
 
@@ -506,6 +501,16 @@
 			
 			</div>
 	</div>
+
+
+
+
+			
+			</div>
+		</div>
+		
+		
+		
 
 	<div class="jumbotron text-center"
 		style="margin-bottom: 0; align-context: space-between;">
@@ -540,7 +545,7 @@
 	<div class="modal fade" id="modal-id">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Leave Application</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -548,7 +553,7 @@
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/leaveFront/saveLeave">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -784,7 +789,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Apply</button>
 					</div>
@@ -807,15 +812,15 @@
 		<div class="modal fade" id="modal-id4">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Admission Form2</h4>
+				<div class="modal-header" id="modalHeader">
+					<h4 class="modal-title">Admission Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/admissionFront/saveAdmission_Discharge">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -1048,7 +1053,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Admit</button>
 					</div>
@@ -1343,15 +1348,15 @@
 	<div class="modal fade" id="modal-id2">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Ward/Bed State Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 
 				</div>
 
-				<form action="">
-					<div class="modal-body">
+				<form action="${pageContext.request.contextPath}/bedStateFront/saveWard_Bed_State" method="post">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -1532,7 +1537,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Save Record</button>
 					</div>
@@ -1727,5 +1732,14 @@
 			}
 		}
 	</script>
+	
+	
+	
+	<script
+	src="${pageContext.request.contextPath}/resources/js/angular.min.js"></script>
+	
+	
+	<script
+	src="${pageContext.request.contextPath}/resources/js/time.js"></script>
 </body>
 </html>

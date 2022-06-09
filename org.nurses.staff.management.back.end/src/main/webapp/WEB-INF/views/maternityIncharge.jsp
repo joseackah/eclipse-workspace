@@ -102,16 +102,47 @@ location.reload();
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
 
+<link href="${pageContext.request.contextPath}/resources/css/projectCss.css"
+	rel="stylesheet">
+
+
 <style>
 .fakeimg {
 	height: 200px;
 	background: #aaa;
 }
+
+.modal {
+    overflow-y: auto;
+}
+
+.modal-open {
+    overflow: auto;
+}
+
+.modal-open[style] {
+    padding-right: 0px !important;
+}
+
+body.modal-open-noscroll 
+{
+  padding-right: 0!important;
+  overflow: hidden;
+}
+.modal-open-noscroll .navbar-default, .modal-open .navbar-default 
+{
+  padding-right: 0!important;
+}
+
+body {
+padding-right:0px !important;
+margin-right:0px !important;
+}
 </style>
 </head>
 <body>
 	<div class="jumbotron text-center" style="margin-bottom: 0">
-		<h1>St. Joseph's Hospital, Jirapa</h1>
+		<h1> </h1>
 		<h2>Maternity/Labour Ward</h2>
 		<p></p>
 	</div>
@@ -129,7 +160,7 @@ location.reload();
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/general/homePage">Home</a>
+					href="${pageContext.request.contextPath}/generalFront/maternity">Home</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id'>Apply for Leave</a></li>
@@ -149,7 +180,7 @@ location.reload();
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id5'>Delivery</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
-					href='#modal-id4'>Birth (Neonate)</a></li>
+					href='#modal-id6'>Birth (Neonate)</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Death
 						(Neonate)</a></li>
 						
@@ -169,7 +200,7 @@ location.reload();
 			
 			</ul>
 			<button id="b1"
-				style="float: right; border-radius: 5em; display: flex; flex-direction: row-reverse; margin-left: 35em;"
+				style="float: right; border-radius: 2em; display: flex; flex-direction: row-reverse; margin-left: 10em;"
 				class="btn btn-primary"
 				onclick="window.location.href='${pageContext.request.contextPath}/'">log
 				out</button>
@@ -177,15 +208,15 @@ location.reload();
 		</div>
 	</nav>
 
-	<div class="container" style="margin: 30px">
+	<div class="container" style="margin:0px; width:100%;">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-3 table-danger" style="width:30%; height:1000px">
 				<h2>Administrator</h2>
 				<h5>Photo of me:</h5>
 				<div class="w3-circle" style="width: 200px; height: 200px;">
-					<div class="fakeimg">
+					<div class="fakeim">
 						<img class="w3-circle" alt="our mision"
-							src="${pageContext.request.contextPath}/resources/png/mission.png"
+							src="${pageContext.request.contextPath}/resources/icons/color_person_female.png"
 							style="width: 100%; height: 100%;" />
 					</div>
 				</div>
@@ -231,10 +262,7 @@ location.reload();
 				</div>
 				<hr class="d-sm" style="width:50%">
 			
-<button onclick="document.getElementById('id09').style.display='block'" class="nav-item nav nav-pills flex-colmn nav-link active" >
-Post An Event
 
-</button>
 				<div class="nav-item nav nav-pills" >
 									<button onclick="document.getElementById('id01').style.display='block'" class="nav-link active">Discharge Summary</button>
 								</div>
@@ -265,7 +293,12 @@ Post An Event
 								
 								
 													
-				<hr class="d-sm-none">
+				<hr class="d-sm" style="width: 50%">
+				
+				<button onclick="document.getElementById('id09').style.display='block'" class="nav-item nav nav-pills flex-colmn nav-link active" >
+Post An Event
+
+</button>
 				
 			</div>
 			
@@ -275,10 +308,11 @@ Post An Event
 			
 			<div class="col-xl">
 
+		
 				<!-- card starts here -->
 				<div class="w3-container w3-padding w3-center"
 					style="margin: 10px; position: relative; left: 4em;">
-					<div class="row w3-padding " style="width: 200%;">
+					<div class="row w3-padding " style="width: 150%;">
 
 						<div class="w3-card-2 w3-yellow w3-margin"
 							style="height: 12em; width: 20%">
@@ -523,43 +557,55 @@ Post An Event
 				<!-- card ends here -->
 
 
-
+			
+		
 
 
 			
 			</div>
-		</div>
-
-		<div class="row" style="margin-left: 40%;">
 			
-			<div class="col" style="width: 100%;">
+			<div class="w3-container w3-padding w3-center"
+					style="margin: 10px; position: relative; left: 0em; bottom:em">
+			<div class="w3-card w3-padding w3-margin" style="width:80%; display:flex; float:left;">
 
 			
-			</div>
-			<div class="container" style="width: 150%">
+			
+			<div class="" style="width: 100%">
 				<div id="curve_chart"
 					style="width: 100%; height: 300px; margin-top: 1em;"></div>
 			</div>
+			</div>
+
 			
-
-			<br>
 			
-		</div>
+		
 
-		<br>
-
-
-		<div class="row" style="margin-left: 40%;">
-
-			<div class="col" style="width: 100%;"></div>
-			<div class="container" style="width: 150%">
+			<div class="w3-card w3-padding w3-margin w3-middle" style="width:80%;display:flex; float:left; ">
+			<div class="" style="width: 100%; border: solid green">
 				<div id="delivery_chart"
 					style="width: 100%; height: 300px; margin-top: 1em;"></div>
 			</div>
+			</div>
+			
 
-			<br>
-
+		
+			
+			</div>
+			
+			
+			
+			
+			
+			
+			
 		</div>
+
+		
+
+		
+
+
+		
 
 	</div>
 
@@ -596,7 +642,7 @@ Post An Event
 	<div class="modal fade" id="modal-id">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Leave Application</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -604,7 +650,7 @@ Post An Event
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/leaveFront/saveLeave">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -832,7 +878,7 @@ Post An Event
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Apply</button>
 					</div>
@@ -854,15 +900,15 @@ Post An Event
 		<div class="modal fade" id="modal-id4">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Admission Form2</h4>
+				<div class="modal-header" id="modalHeader">
+					<h4 class="modal-title">Admission Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/admissionFront/saveAdmission_Discharge">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -1095,7 +1141,7 @@ Post An Event
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Admit</button>
 					</div>
@@ -1375,15 +1421,15 @@ Post An Event
 	<div ng-app="" class="modal fade" id="modal-id2">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Ward/Bed State Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 
 				</div>
 
-				<form action="">
-					<div class="modal-body">
+				<form action="${pageContext.request.contextPath}/bedStateFront/saveWard_Bed_State" method="post">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -1577,7 +1623,7 @@ Post An Event
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Save Record</button>
 					</div>
@@ -1596,7 +1642,7 @@ Post An Event
 	<div class="modal fade" id="modal-id5">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Delivery Entry Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -1604,7 +1650,7 @@ Post An Event
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/deliveryFront/saveDelivery_table">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -1846,7 +1892,7 @@ Post An Event
 						</div>
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Save Record</button>
 					</div>
@@ -1864,10 +1910,10 @@ Post An Event
 
 
 	<!-- <a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Trigger modal</a> -->
-	<div class="modal fade" id="modal-id4">
+	<div class="modal fade" id="modal-id6">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Newborn Entry Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -1876,7 +1922,7 @@ Post An Event
 
 				<form
 					action="${pageContext.request.contextPath}/newbornFront/saveNewborn_table">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -2105,7 +2151,7 @@ Post An Event
 						</div>
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Register</button>
 					</div>

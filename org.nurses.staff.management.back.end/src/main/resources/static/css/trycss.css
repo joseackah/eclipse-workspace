@@ -14,9 +14,10 @@
 }
 
 .text {
-	margin-left:10%;
+	margin-top:10px;
+	margin-left:20%;
   width: 100%;
-  height: 50px;
+  height: 100px;
   position: relative;
   /* display: flex; */
   justify-content: center;
@@ -37,9 +38,10 @@
 @keyframes change-text {
   40% {
     opacity: 3;
-   content: "ST. JOSEPH'S HOSPITAL, CENTER OF EXCELLENCE";
+   content: " CENTER OF EXCELLENCE HOSPITAL";
     color: #9a4295;
-    letter-spacing: 10px;
+    letter-spacing: 20px;
+    margin-top: 2%;
   }
 
  /*  35% {
@@ -112,7 +114,7 @@
   height: calc(100% + 4px);
   border-top: 2px solid #fff;
   border-bottom: 2px solid #fff;
-  animation: moveLeft 3s linear infinite alternate;
+  animation: moveLeft 6s linear infinite alternate;
 }
 
 .try--content {
@@ -123,11 +125,11 @@
   width: 50px;
   overflow: hidden;
   background-color: crimson;
-  animation: moveLeft 3s linear infinite alternate;
+  animation: moveLeft 6s linear infinite alternate;
 }
 
 .try--data {
-  animation: moveRight 3s linear infinite alternate;
+  animation: moveRight 6s linear infinite alternate;
 }
 
 @keyframes moveLeft {

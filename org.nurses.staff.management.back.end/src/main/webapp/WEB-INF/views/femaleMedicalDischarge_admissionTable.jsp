@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@include file="forms.jsp" %>
 <%@include file="links.jsp" %>
 
 <!DOCTYPE html>
@@ -209,7 +209,7 @@
  <h2> Admission and Discharge Table</h2>
     </div>
     <hr style="width:90%; margin:auto;">
-    <div class="container mt-3" style=" float:left; with:100; margin-left: 5%;" id="print">
+    <div class="container mt-3" style=" float:left; with:100%; margin-left: 40px;" id="print">
     
        <div> </div> <br> <br>
         

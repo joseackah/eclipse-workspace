@@ -80,7 +80,7 @@
 
                 </div>
 
-                <form action="">
+                <form action="${pageContext.request.contextPath}/">
                     <div class="modal-body">
 
 

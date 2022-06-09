@@ -13,3 +13,51 @@
 .hero{
 	margin:auto;
 }
+
+.modal {
+    overflow-y: auto;
+}
+
+.modal-open {
+    overflow: auto;
+}
+
+.modal-open[style] {
+    padding-right: 0px !important;
+}
+
+body.modal-open-noscroll 
+{
+  padding-right: 0!important;
+  overflow: hidden;
+}
+.modal-open-noscroll .navbar-default, .modal-open .navbar-default 
+{
+  padding-right: 0!important;
+}
+
+body {
+padding-right:0px !important;
+margin-right:0px !important;
+}
+
+#leaveThirdContainer, #leave2C3R, #leave2C2R, #leave2C1R2C{
+	
+	display: none;
+}
+
+.body1{
+	background-color: aqua;
+}
+
+#modalHeader{
+	
+	background-color: blue;
+}
+
+#modalFooter{
+	background-color: crimson;
+}
+#modalBody{
+	background-color: moccasin;
+}

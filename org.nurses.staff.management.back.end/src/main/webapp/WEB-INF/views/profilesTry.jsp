@@ -77,6 +77,21 @@
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
 <script
 	src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+
+
+
+<script type="text/javascript">
+	
+window.history.forward();
+function noBack() {
+    window.history.forward();
+}
+	</script>
+
+
+
+
+
 <style type="text/css">
 
 
@@ -98,6 +113,33 @@ display: block;
 
 
 }
+
+.modal {
+    overflow-y: auto;
+}
+
+.modal-open {
+    overflow: auto;
+}
+
+.modal-open[style] {
+    padding-right: 0px !important;
+}
+
+body.modal-open-noscroll 
+{
+  padding-right: 0!important;
+  overflow: hidden;
+}
+.modal-open-noscroll .navbar-default, .modal-open .navbar-default 
+{
+  padding-right: 0!important;
+}
+
+body {
+padding-right:0px !important;
+margin-right:0px !important;
+}
 </style>
 
 
@@ -108,7 +150,7 @@ display: block;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>profiles</title>
 </head>
-<body class="">
+<body style="padding:0px; margin:0px;">
 	<!-- body class = "cont" -->
 	<div id='firstHeade' class='firstHeade' name='firstHeader' style="margin-top: 1%; height: 5%;">
 
@@ -156,17 +198,17 @@ display: block;
 			</div>
 			<div style="float: lef;">
 		<a href="${pageContext.request.contextPath}/leaveFront/profile"
-			class="w3-bar-item w3-button">Home</a> <a href="#modal-id"
+			class="w3-bar-item w3-button">Home</a> <a href="#modal-id10"
 			data-toggle="modal" class="w3-bar-item w3-button w3-hide-small">Add
-			User</a> <a href="#modal-id1" data-toggle="modal"
+			User</a> <a href="#modal-id11" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Add Ward</a> <a
-			href="#modal-id2" data-toggle="modal"
+			href="#modal-id12" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Add Nurse</a> <a
-			href="#modal-id3" data-toggle="modal"
+			href="#modal-id13" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">PIN/AIN</a> <a
-			href="#modal-id4" data-toggle="modal"
+			href="#modal-id14" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Schedule Nurse</a> <a
-			href="#modal-id5" data-toggle="modal" data-toggle="modal"
+			href="#modal-id15" data-toggle="modal" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Apply for Leave </a> <a
 			href="${pageContext.request.contextPath}/scheduleFront/displayAll"
 			class="w3-bar-item w3-button w3-hide-small">schedule </a> <a
@@ -334,7 +376,7 @@ display: block;
 							</ul>
 					<hr class="d-sm">	
 					<div>
-					<button onclick="document.getElementById('modal-id9').style.display='block'" data-toggle="modal"
+					<button onclick="document.getElementById('modal-id16').style.display='block'" data-toggle="modal"
 			class="nav-item nav nav-pills flex-colmn nav-link active">Post An Event</button>	
 				</div>			
 <hr class="d-sm">
@@ -435,8 +477,8 @@ display: block;
 						
 						
 						
-						<div class="w3-card-2 w3-red w3-margin col" id="card"
-							style="height: 12em; width: 20%">
+						<div onclick="window.location.href='${pageContext.request.contextPath}/'" class="w3-card-2 w3-red w3-margin col" id="card"
+							style="height: 12em; width: 20%; onmouseover:cursor;">
 							<strong> <ins> Total Admission to date</ins></strong>
 							<p style="text-align: left;">total Admission: ${countAdmissionToDate}</p>
 							<p style="text-align: left;">total Discharge: ${countDischarge}</p>
@@ -521,12 +563,12 @@ display: block;
 				
 				<!-- pie chart starts here -->
 				<div class="row" style="display: flex;content:space-between;">
-					<div class="col" id="piechart" style="margin-right:; width: 500; height: 300; "></div>
+					<div class="col w3-card-2" id="piechart" style="margin-right:; width: 500; height: 300; "></div>
 					<!-- pie chart ends here -->
 
 					<!-- trend chart starts here -->
 
-					<div class="col" id="trendchart"
+					<div class="col w3-card-2" id="trendchart"
 						style="margin-left:-2%; background-color:; width: 15%;"></div>
 					<!-- trend chart ends here -->
 					
@@ -537,7 +579,7 @@ display: block;
 					<!-- comparison line chart ends here -->
 					
 					<!-- event table -->
-					<div class="col" style=" width:9%;">
+					<div class="col w3-card-2" style=" width:9%;">
 						<h2>NOTICE</h2>
 				<h5>Upcoming Events</h5>
 				<div class="fake">
@@ -597,10 +639,10 @@ display: block;
 				
 	<div class="row">		
 <div  style="display: flex;">
-	<div class="col" id="curve_chart" style="width:60%; height: 400px; margin-top: 1em;"></div>
+	<div class="col w3-card-2" id="curve_chart" style="width:60%; height: 400px; margin-top: 1em;"></div>
 	
 	
-	<div class="col" id="mat_chart" style="width:60%; float:; height: 400px; margin-top: 1em;"></div>
+	<div class="col w3-card-2" id="mat_chart" style="width:60%; float:; height: 400px; margin-top: 1em;"></div>
 	</div>
 	
 	</div>	
@@ -886,7 +928,7 @@ chart.render();
 
 
 	<!-- <a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Users</a> -->
-	<div class="modal fade" id="modal-id">
+	<div class="modal fade" id="modal-id10">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -1035,7 +1077,7 @@ chart.render();
 
 
 	<!--  <a class="btn btn-primary" data-toggle="modal" href='#modal-id2'>Nurse Staff</a> -->
-	<div class="modal fade" id="modal-id2">
+	<div class="modal fade" id="modal-id12">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -1254,7 +1296,7 @@ chart.render();
 
 
 	<!--  <a class="btn btn-primary" data-toggle="modal" href='#modal-id5'>Leave Application</a> -->
-	<div class="modal fade" id="modal-id5">
+	<div class="modal fade" id="modal-id15">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -1493,7 +1535,7 @@ chart.render();
 
 
 	<!--  <a class="btn btn-primary" data-toggle="modal" href='#modal-id3'>PIN/AIN </a> -->
-	<div class="modal fade" id="modal-id3">
+	<div class="modal fade" id="modal-id13">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -1590,7 +1632,7 @@ chart.render();
 
 
 	<!-- <a class="btn btn-primary" data-toggle="modal" href='#modal-id1'>Ward form</a> -->
-	<div class="modal fade" id="modal-id1">
+	<div class="modal fade" id="modal-id11">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -1696,7 +1738,7 @@ chart.render();
 
 
 	<!--  <a class="btn btn-primary" data-toggle="modal" href='#modal-id4'>Ward Schedule</a> -->
-	<div class="modal fade" id="modal-id4">
+	<div class="modal fade" id="modal-id14">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -1713,8 +1755,8 @@ chart.render();
 						<div class="row">
 							<div class="col">
 								<div class="form-group">
-									<label for="ward_name">Ward Name</label> <input type="text"
-										class="form-control" name="ward_name" id="">
+									<label for="staff_id">Staff Id</label> <input type="text"
+										class="form-control" name="staff_id" id="">
 
 									<%--  <select name="ward_name" id="" class="form-control">
                                        <option value="">select</option>
@@ -1731,8 +1773,18 @@ chart.render();
 							</div>
 							<div class="col">
 								<div class="form-group">
-									<label for="staff_id">Staff Id</label> <input type="text"
-										class="form-control" name="staff_id" id="" required>
+									<label for="staff_name">Staff Name</label> <%-- <input type="text"
+										class="form-control" name="staff_name" id="" value="${nurse.name }" required> --%>
+										<select class="form-control">
+										<option>select</option>
+										
+										<c:forEach items="${nurse}" var="nurse">
+										
+										<option value="${nurse.name}">${nurse.name }</option>
+										
+										</c:forEach>
+										
+										</select>
 								</div>
 							</div>
 						</div>
@@ -1742,7 +1794,7 @@ chart.render();
 								<div class="form-group">
 									<label for="nurse_cate">Nurse Category</label> <select
 										name="nurse_cate" id="" class="form-control">
-										<option value="selected">select</option>
+										<option value="">select</option>
 										<option value="RGN">RGN</option>
 										<option value="MIDWIFE">MIDWIFE</option>
 										<option value="NAP">NAP</option>
@@ -1768,8 +1820,8 @@ chart.render();
 						<div class="row">
 							<div class="col">
 								<div class="form-group">
-									<label for="wardIncharge">Ward Incharge</label> <input
-										type="text" class="form-control" name="" id="myInput" hidden=true>
+									<label for="ward_name">Ward Name</label> <input
+										type="text" class="form-control" name="ward_name" id="myInput">
 
 								</div>
 							</div>
@@ -1821,12 +1873,12 @@ chart.render();
 <!-- events form starts here -->
 
 <!-- <a class="btn btn-primary" data-toggle="modal" href='#modal-id1'>Ward form</a> -->
-	<div class="modal" id="modal-id9">
+	<div class="modal" id="modal-id16">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h4 class="modal-title">Events</h4>
-					<button type="button" onclick="document.getElementById('modal-id9').style.display='none'" class="close" data-dismiss="modal"
+					<button type="button" onclick="document.getElementById('modal-id16').style.display='none'" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 
 				</div>
@@ -1899,7 +1951,7 @@ chart.render();
 
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" onclick="document.getElementById('modal-id9').style.display='none'" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-default" onclick="document.getElementById('modal-id16').style.display='none'" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Post</button>
 					</div>
 				</form>
@@ -2052,7 +2104,29 @@ google.charts.load('current', {'packages':['line']});
 		}
 		
 		
+		
+		  $(document).ready(function () {
+			    $('.modal').on('show.bs.modal', function () {
+			        if ($(document).height() > $(window).height()) {
+			            // no-scroll
+			            $('body').addClass("modal-open-noscroll");
+			        }
+			        else {
+			            $('body').removeClass("modal-open-noscroll");
+			        }
+			    });
+			    $('.modal').on('hide.bs.modal', function () {
+			        $('body').removeClass("modal-open-noscroll");
+			    });
+			})
+			
+			
+			
+
+		
 	</script>
+	
+	
 
 </body>
 </html>

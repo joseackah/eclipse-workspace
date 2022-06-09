@@ -95,7 +95,8 @@
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
 	
-	
+	<link href="${pageContext.request.contextPath}/resources/css/projectCss.css"
+	rel="stylesheet">
 	
 <style>
 
@@ -103,7 +104,37 @@
 	height: 200px;
 	background: #aaa;
 }
+
+.modal {
+    overflow-y: auto;
+}
+
+.modal-open {
+    overflow: auto;
+}
+
+.modal-open[style] {
+    padding-right: 0px !important;
+}
+
+body.modal-open-noscroll 
+{
+  padding-right: 0!important;
+  overflow: hidden;
+}
+.modal-open-noscroll .navbar-default, .modal-open .navbar-default 
+{
+  padding-right: 0!important;
+}
+
+body {
+padding-right:0px !important;
+margin-right:0px !important;
+}
 </style>
+
+<link href="${pageContext.request.contextPath}/resources/css/projectCss.css"
+	rel="stylesheet">
 </head>
 <body>
 	<div class="jumbotron text-center" style="margin-bottom: 0">
@@ -548,7 +579,7 @@
 	<div class="modal fade" id="modal-id">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Leave Application</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -556,7 +587,7 @@
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/leaveFront/saveLeave">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -704,7 +735,7 @@
 								</div>
 
 
-								<div class="col">
+								<div class="col" id="leave2C1R2C">
 									<div class="form-group">
 										<label for="incharge_recom">Incharge Recommendation</label> <select
 											name="incharge_recom" class="form-control" id="" disabled>
@@ -720,7 +751,7 @@
 							</div>
 
 
-							<div class="row">
+							<div class="row" id="leave2C2R">
 								<div class="col">
 									<div class="form-group">
 										<label for="incharge_name">Incharge Name</label> <input
@@ -740,7 +771,7 @@
 
 
 
-							<div class="row">
+							<div class="row" id="leave2C3R">
 								<div class="col">
 									<div class="form-group">
 										<label for="leave_end_date">Leave End Date</label> <input
@@ -767,7 +798,7 @@
 
 
 						<div class="thirdContainer">
-							<div class="row">
+							<div class="row" id="leaveThirdContainer">
 								<div class="col">
 									<div class="form-group">
 										<label for="approved_by">Approved By</label> <input
@@ -788,7 +819,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Apply</button>
 					</div>
@@ -809,7 +840,7 @@
 		modal</a> --><div class="modal fade" id="modal-id4">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Admission Form2</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -817,7 +848,7 @@
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/admissionFront/saveAdmission_Discharge">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -1050,7 +1081,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Admit</button>
 					</div>
@@ -1339,15 +1370,15 @@
 	<div class="modal fade" id="modal-id2">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Ward/Bed State Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 
 				</div>
 
-				<form action="">
-					<div class="modal-body">
+				<form action="${pageContext.request.contextPath}/bedStateFront/saveWard_Bed_State" method="post">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -1404,7 +1435,7 @@
 								<div class="col">
 									<div class="form-group">
 										<label for="total_admission">Total Admission</label> <input
-											type="number" name="total_admission" id="">
+										class="form-control"	type="number" name="total_admission" id="">
 
 									</div>
 								</div>
@@ -1527,7 +1558,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Save Record</button>
 					</div>

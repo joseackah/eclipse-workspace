@@ -3,6 +3,7 @@
     
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="forms.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,7 +96,7 @@
 <meta charset="ISO-8859-1">
 <title>Ward Schedule Table</title>
 </head>
-<body>
+<body style="background-color: #eee;">
 
 
 
@@ -110,17 +111,17 @@
 			</div>
 			<div style="float: lef;">
 		<a href="${pageContext.request.contextPath}/leaveFront/profile"
-			class="w3-bar-item w3-button">Home</a> <a href="#modal-id"
+			class="w3-bar-item w3-button">Home</a> <a href="#modal-id10"
 			data-toggle="modal" class="w3-bar-item w3-button w3-hide-small">Add
-			User</a> <a href="#modal-id1" data-toggle="modal"
+			User</a> <a href="#modal-id11" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Add Ward</a> <a
-			href="#modal-id2" data-toggle="modal"
+			href="#modal-id12" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Add Nurse</a> <a
-			href="#modal-id3" data-toggle="modal"
+			href="#modal-id13" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">PIN/AIN</a> <a
-			href="#modal-id4" data-toggle="modal"
+			href="#modal-id14" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Schedule Nurse</a> <a
-			href="#modal-id5" data-toggle="modal" data-toggle="modal"
+			href="#modal-id15" data-toggle="modal" data-toggle="modal"
 			class="w3-bar-item w3-button w3-hide-small">Apply for Leave </a> <a
 			href="${pageContext.request.contextPath}/scheduleFront/displayAll"
 			class="w3-bar-item w3-button w3-hide-small">schedule </a> <a
@@ -136,7 +137,7 @@
 			class="w3-bar-item w3-button w3-hide-small">Staff Profile</a> 
 			
 			
-			<button id="b1" style="float:right; border-radius: 5em; position: absolut; right: 2%; top: 10%; display:flex; flex-direction:row-reverse;margin-top:0.5%; margin-left: 25em;" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/'">log out</button>
+			<button id="b1" style="float:right; border-radius: 5em; position: absolut; right: 2%; top: 10%; display:flex; flex-direction:row-reverse;margin-top:0.5%; margin-left: 15em;" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/'">log out</button>
 			
 			<a
 			href="javascript:void(0)"
@@ -285,7 +286,7 @@
 							</ul>
 					<hr class="d-sm">	
 					<div>
-					<button onclick="document.getElementById('modal-id9').style.display='block'" data-toggle="modal"
+					<button onclick="document.getElementById('modal-id16').style.display='block'" data-toggle="modal"
 			class="nav-item nav nav-pills flex-colmn nav-link active">Post An Event</button>	
 				</div>			
 <hr class="d-sm">
@@ -320,8 +321,7 @@
     </div>
 
     <div class="container mt-3" id="print">
-    <button id="b1" style="float: left; border-radius: 5em; " class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/leaveFront/profile'">back</button>
-        <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print"></i> </button>
+         <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print"></i> </button>
 
        
 <!-- <div style=" display:flex; flex-direction:row-reverse;"> <input class="form-control" id="myInput" type="text" placeholder="Search.." style="padding: .5em 2em; border-radius: 5em; width:20%; display:flex; flex-direction: flex-end;"> </div>
@@ -380,8 +380,8 @@
                     <td>${scheduleTable.ward_name}</td>
                     <td>${scheduleTable.nurse_cate}</td>
                     <td>${scheduleTable.effective_date}</td>
-                    <td id="action">
-                    <a id="action" href="${delete}" onclick="if (!confirm('Are you sure you want to delete this record?')) return false"> <i id="action" class="fa fa-trash"></i> </a> |-|
+                    <td class="w3-center" id="action">
+                    <a id="action" href="${delete}" onclick="if (!confirm('Are you sure you want to delete this record?')) return false"> <i style="margin-right: 10px;" id="action" class="fa fa-trash"></i></a> |
                     <a id="action" href="${update}"> <i id="action" class="fa fa-pen"> </i></a>
                     
                     

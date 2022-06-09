@@ -22,7 +22,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">User Enrollment</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="window.location.href='${pageContext.request.contextPath}index'">&times;</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="window.location.href='${pageContext.request.contextPath}/'">&times;</button>
 
                 </div>
                 <form action="${pageContext.request.contextPath}/userFront/saveUsers">
@@ -128,7 +128,7 @@
                    
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.href='${pageContext.request.contextPath}/'">Close</button>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </div>
                 </form>

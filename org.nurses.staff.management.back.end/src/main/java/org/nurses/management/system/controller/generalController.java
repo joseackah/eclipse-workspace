@@ -14,11 +14,13 @@ import org.nurses.management.system.integration.EventsRestClient;
 import org.nurses.management.system.integration.LeaveRestClient;
 import org.nurses.management.system.integration.Newborn_tableRestClient;
 import org.nurses.management.system.integration.Nurses_staff_RestClient;
+import org.nurses.management.system.integration.UsersRestClient;
 import org.nurses.management.system.integration.WardRestClient;
 import org.nurses.management.system.integration.Ward_Bed_StateRestClient;
 import org.nurses.management.system.integration.Ward_schedule_RestClient;
 import org.nurses.management.system.integration.dto.Events;
 import org.nurses.management.system.integration.dto.Leave;
+import org.nurses.management.system.integration.dto.Users;
 import org.nurses.management.system.integration.dto.Ward;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,13 +39,13 @@ public class generalController {
 
 	@Autowired
 	LeaveRestClient leaveRest;
-	
+
 	@Autowired
 	EventsRestClient eventsRest;
-	
+
 	@Autowired
 	Ward_schedule_RestClient scheduleRest;
-	
+
 	@Autowired
 	Newborn_tableRestClient newbornRest;
 
@@ -58,40 +60,39 @@ public class generalController {
 
 	@Autowired
 	Ward_Bed_StateRestClient bedRest;
-	
+
 	@Autowired
 	Delivery_tableRestClient deliveryRest;
-	
-	
-	
-	
-	
-	@RequestMapping(value="/displayAllEvents", method = RequestMethod.GET)
+
+	@Autowired
+	UsersRestClient userRest;
+
+	@RequestMapping(value = "/displayAllEvents", method = RequestMethod.GET)
 	public String displayEvents(Events events, ModelMap model) {
 		Events[] event = eventsRest.getAllEvents(events);
 		model.addAttribute("event", event);
 
 		return "eventsTable";
 	}
-	
-	
-	@RequestMapping(value="/AllEvents", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/AllEvents", method = RequestMethod.GET)
 	public String Events(Events events, ModelMap model) {
 		Events[] even = eventsRest.all();
 		model.addAttribute("even", even);
 
 		return "";
 	}
-	
+
 	@RequestMapping("/wardTopTen")
-	public String wardTopTen(){
-	
+	public String wardTopTen() {
+
 		return "topTenWard";
 	}
-	//@ModelAttribute("wardSummary")
+
+	// @ModelAttribute("wardSummary")
 	@RequestMapping("/wardSummary")
-	public String admissionSummary(){
-		
+	public String admissionSummary() {
+
 		/*
 		 * List<String> sids = new ArrayList<String>(); List<String> lids = new
 		 * ArrayList<String>(); //String ward = wardName; Connection conn =
@@ -115,12 +116,10 @@ public class generalController {
 		 * 
 		 * }
 		 */
-		
-		return  "wardSummary";
+
+		return "wardSummary";
 	}
-	
-	
-	
+
 	@RequestMapping(value = "/displayAllWard", method = RequestMethod.GET)
 	public String displayWard(Ward ward, ModelMap model) {
 		Ward[] wardD = wardRest.getAllWard(ward);
@@ -129,7 +128,6 @@ public class generalController {
 		return "wardTable";
 
 	}
-	
 
 	@RequestMapping("displayAllPin")
 	public String multipleaddf() {
@@ -230,14 +228,12 @@ public class generalController {
 
 	@RequestMapping("/validate")
 	public String validate(@RequestParam("userId") String userId, @RequestParam("ward_name") String ward_name,
-			@RequestParam("userPassword") String userPassword, @RequestParam("userType") String userType)
-			throws SQLException {
-
-		
+			@RequestParam("userPassword") String userPassword, @RequestParam("userType") String userType,
+			ModelMap model) throws SQLException {
 
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root", "Physics1//,");
 		PreparedStatement ps = conn.prepareStatement(
-				"select ward_name, user_password, user_id, user_type from users where ward_name = ? and user_id = ? and user_password = ? and user_type = ?");
+				"select ward_name, user_password, user_id, user_type, name from users where ward_name = ? and user_id = ? and user_password = ? and user_type = ?");
 		ps.setString(1, ward_name);
 		ps.setString(2, userId);
 		ps.setString(3, userPassword);
@@ -246,6 +242,7 @@ public class generalController {
 		ResultSet rs = ps.executeQuery();
 
 		while (rs.next()) {
+
 			ward_name = rs.getString(1);
 			userId = rs.getString(2);
 			userPassword = rs.getString(3);
@@ -329,6 +326,8 @@ public class generalController {
 
 			else if (userId.equals(userId) && userPassword.equals(userPassword) && userType.equals("Staff")) {
 
+				// Users userrs = userRest.findUser(id);
+				// model.addAttribute("users", user.get);
 				return "redirect:/generalFront/nurseStaffProfile";
 			}
 
@@ -337,9 +336,90 @@ public class generalController {
 			}
 		}
 
+		/*
+		 * int id = rs.getInt(1);
+		 * 
+		 * model.addAttribute("users", userRest.findUser(24));
+		 */
+
 		return "index";
 
 	}
+
+	
+	  //@ModelAttribute("name") 
+	  public List<Users> vali(@ModelAttribute("fere") @RequestParam("userId") String userId, ModelMap
+	  modal) throws SQLException {
+	  
+	  List<Users> user = new ArrayList<>(); 
+	  //Users users = userRest.findUser(Integer.parseInt(userId)); 
+	  //modal.addAttribute("users",users);
+	  
+	  
+	  Connection conn =
+	  DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root",
+	  "Physics1//,"); PreparedStatement ps = conn.prepareStatement(
+	  "select ward_name, user_password, user_id, user_type, name from users where user_id = ?"
+	  );
+	  
+	  ps.setString(1, userId);
+	  
+	  
+	  
+	  
+	  ResultSet rs = ps.executeQuery();
+	  
+	  
+	  
+	  while (rs.next()) { Users users = new Users();
+	  users.setName(rs.getString(1));
+	  
+	  user.add(users);
+	  
+	  userId = rs.getString(1);
+	  
+	  
+	  //modal.addAttribute("name", user); return user;
+	  
+	  if (userId.equals(userId) ) {
+	  
+	  } else {
+	  
+	  } }
+	  
+	  return user;
+	  
+	  }
+	 
+
+	/* User name method */
+	@RequestMapping("userTry")
+	//@ModelAttribute("use")
+	public List<Users> userName( String id, ModelMap model) throws SQLException {
+
+		List<Users> user = new ArrayList<>();
+		// userss= "A4587";
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root", "Physics1//,");
+		PreparedStatement ps = conn.prepareStatement("select name from users where user_id = ? ");
+		ps.setString(1, id);
+
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			Users users = new Users();
+			users.setName(rs.getString(1));
+
+			user.add(users);
+
+			// model.addAttribute("eventsT", events);
+
+		}
+		// model.addAttribute("user", user);
+		return user;
+
+	}
+
+	/* User name method ends here */
 
 	@RequestMapping("/administrationManager")
 	public String adminiManager(ModelMap model) {
@@ -3604,26 +3684,33 @@ public class generalController {
 
 	}
 
-	
-	  @ModelAttribute("countCs") public String countCs() { return
-	  deliveryRest.countCs();
-	  
-	  }
-	  
-	  @ModelAttribute("countSVDWithEpis") public String countSVDWithEpis() { return
-	  deliveryRest.countSVDWithEpis();
-	  
-	  }
-	  
-	  @ModelAttribute("countVacuumExtraction") public String
-	  countVacuumExtraction() { return deliveryRest.countVacuumExtraction(); }
-	  
-	  @ModelAttribute("countSVDAugument") public String countSVDAugument() { return
-	  deliveryRest.SVDAugument(); }
-	  
-	  @ModelAttribute("countSVDInduce") public String countSVDInduce() { return
-	  deliveryRest.countSVDInduce(); }
-	 
+	@ModelAttribute("countCs")
+	public String countCs() {
+		return deliveryRest.countCs();
+
+	}
+
+	@ModelAttribute("countSVDWithEpis")
+	public String countSVDWithEpis() {
+		return deliveryRest.countSVDWithEpis();
+
+	}
+
+	@ModelAttribute("countVacuumExtraction")
+	public String countVacuumExtraction() {
+		return deliveryRest.countVacuumExtraction();
+	}
+
+	@ModelAttribute("countSVDAugument")
+	public String countSVDAugument() {
+		return deliveryRest.SVDAugument();
+	}
+
+	@ModelAttribute("countSVDInduce")
+	public String countSVDInduce() {
+		return deliveryRest.countSVDInduce();
+	}
+
 	@ModelAttribute("countDelivery")
 	public String countDelivery() {
 		return deliveryRest.countDelivery();
@@ -3690,324 +3777,284 @@ public class generalController {
 	public String countDeliveryDecember() {
 		return deliveryRest.countDeliveryDecember();
 	}
-	
-	
-	
+
 	/* Count newborns */
-	
+
 	@ModelAttribute("countTotalNumberOfBabies")
 	public String countTotalNumberOfBabie() {
 		return newbornRest.countTotalNumberOfBabies();
-		
+
 	}
-	
-/* Counting Newborn from january to december */
-	
+
+	/* Counting Newborn from january to december */
+
 	@ModelAttribute("countNewbornJanuary")
 	public String countNewbornJanuary() {
 		return newbornRest.countNewbornJanuary();
 	}
-	
-	
-	
+
 	@ModelAttribute("countNewbornFebruary")
 	public String countNewbornFebruary() {
 		return newbornRest.countNewbornFebruary();
 	}
-	
-	
+
 	@ModelAttribute("countNewbornMarch")
 	public String countNewbornMarch() {
 		return newbornRest.countNewbornMarch();
 	}
-	
-	
+
 	@ModelAttribute("countNewbornApril")
 	public String countNewbornApril() {
 		return newbornRest.countNewbornApril();
 	}
-	
-	
+
 	@ModelAttribute("countNewbornMay")
 	public String countNewbornMay() {
 		return newbornRest.countNewbornMay();
 	}
-	
-	
+
 	@ModelAttribute("countNewbornJune")
 	public String countNewbornJune() {
 		return newbornRest.countNewbornJune();
 	}
-	
-	
+
 	@ModelAttribute("countNewbornJuly")
 	public String countNewbornJuly() {
 		return newbornRest.countNewbornJuly();
 	}
-	
-	
+
 	@ModelAttribute("countNewbornAugust")
 	public String countNewbornAugust() {
 		return newbornRest.countNewbornAugust();
 	}
-	
-	
+
 	@ModelAttribute("countNewbornSeptember")
 	public String countNewbornSeptember() {
 		return newbornRest.countNewbornSeptember();
 	}
-	
-	
+
 	@ModelAttribute("countNewbornOctober")
 	public String countNewbornOctober() {
 		return newbornRest.countNewbornOctober();
 	}
-	
-	
+
 	@ModelAttribute("countNewbornNovember")
 	public String countNewbornNovember() {
 		return newbornRest.countNewbornNovember();
 	}
-	
-	
+
 	@ModelAttribute("countNewbornDecember")
 	public String countNewbornDecember() {
 		return newbornRest.countNewbornDecember();
 	}
-	
-	
-	
-	
-	
-	/* counting nurse in particular ward */
-	  
-	  @ModelAttribute("nurseInMaleMedical")
-		public String  countNurseInMaleMedical() {
-			return scheduleRest.countNurseInMaleMedical();
-			
-		}
-		
-		@ModelAttribute("nurseInMaleSurgical")
-		public String  countNurseInMaleSurgical() {
-			return scheduleRest.countNurseInMaleSurgical();
-			
-		}
-		
-		@ModelAttribute("nurseInFemaleMedical")
-		public String  countNurseInFemaleMedical() {
-			return scheduleRest.countNurseInFemaleMedical();
-			
-		}
-		
-		@ModelAttribute("nurseInFemaleSurgical")
-		public String  countNurseInFemaleSurgical() {
-			return scheduleRest.countNurseInFemaleSurgical();
-			
-		}
-		
-		@ModelAttribute("nurseInMaternity")
-		public String  countNurseInMaternity() {
-			return scheduleRest.countNurseInMaternity();
-			
-		}
-		@ModelAttribute("nurseInNICU")
-		public String  countNurseInNICU() {
-			return scheduleRest.countNurseInNICU();
-			
-		}
-		
-		@ModelAttribute("nurseInReligiousWard")
-		public String  countNurseInReligiousWard() {
-			return scheduleRest.countNurseInReligiousWard();
-			
-		}
-		
-		@ModelAttribute("nurseInGeneralWard")
-		public String  countNurseInGeneralWard() {
-			return scheduleRest.countNurseInGeneralWard();
-			
-		}
-		
-		@ModelAttribute("nurseInOpd")
-		public String  countNurseInOpd() {
-			return scheduleRest.countNurseInOpd();
-			
-		}
-		
-		@ModelAttribute("nurseInAccidentEmergency")
-		public String  countNurseInAccidentEmergency() {
-			return scheduleRest.countNurseInAccidentEmergency();
-			
-		}
-		
-		
-		
-		/*
-		 * >>>>>>>>>>>>>>>>>>=========================================<<<<<<<<<<<<<<<<<<
-		 * <<<<<<<<
-		 */
-	/* Counting Newborn death from january to december */
-		
-		@ModelAttribute("countNewbornDeathJanuary")
-		public String countNewbornDeathJanuary() {
-			return newbornRest.countNewbornDeathJanuary();
-		}
-		
-		
-		
-		@ModelAttribute("countNewbornDeathFebruary")
-		public String countNewbornDeathFebruary() {
-			return newbornRest.countNewbornDeathFebruary();
-		}
-		
-		
-		@ModelAttribute("countNewbornDeathMarch")
-		public String countNewbornDeathMarch() {
-			return newbornRest.countNewbornDeathMarch();
-		}
-		
-		
-		@ModelAttribute("countNewbornDeathApril")
-		public String countNewbornDeathApril() {
-			return newbornRest.countNewbornDeathApril();
-		}
-		
-		
-		@ModelAttribute("countNewbornDeathMay")
-		public String countNewbornDeathMay() {
-			return newbornRest.countNewbornDeathMay();
-		}
-		
-		
-		@ModelAttribute("countNewbornDeathJune")
-		public String countNewbornDeathJune() {
-			return newbornRest.countNewbornDeathJune();
-		}
-		
-		
-		@ModelAttribute("countNewbornDeathJuly")
-		public String countNewbornDeathJuly() {
-			return newbornRest.countNewbornDeathJuly();
-		}
-		
-		
-		@ModelAttribute("countNewbornDeathAugust")
-		public String countNewbornDeathAugust() {
-			return newbornRest.countNewbornDeathAugust();
-		}
-		
-		
-		@ModelAttribute("countNewbornDeathSeptember")
-		public String countNewbornDeathSeptember() {
-			return newbornRest.countNewbornDeathSeptember();
-		}
-		
-		
-		@ModelAttribute("countNewbornDeathOctober")
-		public String countNewbornDeathOctober() {
-			return newbornRest.countNewbornDeathOctober();
-		}
-		
-		
-		@ModelAttribute("countNewbornDeathNovember")
-		public String countNewbornDeathNovember() {
-			return newbornRest.countNewbornDeathNovember();
-		}
-		
-		
-		@ModelAttribute("countNewbornDeathDecember")
-		public String countNewbornDeathDecember() {
-			return newbornRest.countNewbornDeathDecember();
-		}
-		
-		
-		
-		
-		
-		@ModelAttribute("events")
-		public String event( ModelMap model) throws SQLException {
-			
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root", "Physics1//,");
-			PreparedStatement ps = conn.prepareStatement(
-					"select * from events");
-			
-			ResultSet rs = ps.executeQuery();
 
-			while (rs.next()) {
-			 rs.getString(1);
-				rs.getString(2);
-				rs.getString(3);
-				rs.getString(4);
-				
-				model.addAttribute("rs",rs);
-				
+	/* counting nurse in particular ward */
+
+	@ModelAttribute("nurseInMaleMedical")
+	public String countNurseInMaleMedical() {
+		return scheduleRest.countNurseInMaleMedical();
+
+	}
+
+	@ModelAttribute("nurseInMaleSurgical")
+	public String countNurseInMaleSurgical() {
+		return scheduleRest.countNurseInMaleSurgical();
+
+	}
+
+	@ModelAttribute("nurseInFemaleMedical")
+	public String countNurseInFemaleMedical() {
+		return scheduleRest.countNurseInFemaleMedical();
+
+	}
+
+	@ModelAttribute("nurseInFemaleSurgical")
+	public String countNurseInFemaleSurgical() {
+		return scheduleRest.countNurseInFemaleSurgical();
+
+	}
+
+	@ModelAttribute("nurseInMaternity")
+	public String countNurseInMaternity() {
+		return scheduleRest.countNurseInMaternity();
+
+	}
+
+	@ModelAttribute("nurseInNICU")
+	public String countNurseInNICU() {
+		return scheduleRest.countNurseInNICU();
+
+	}
+
+	@ModelAttribute("nurseInReligiousWard")
+	public String countNurseInReligiousWard() {
+		return scheduleRest.countNurseInReligiousWard();
+
+	}
+
+	@ModelAttribute("nurseInGeneralWard")
+	public String countNurseInGeneralWard() {
+		return scheduleRest.countNurseInGeneralWard();
+
+	}
+
+	@ModelAttribute("nurseInOpd")
+	public String countNurseInOpd() {
+		return scheduleRest.countNurseInOpd();
+
+	}
+
+	@ModelAttribute("nurseInAccidentEmergency")
+	public String countNurseInAccidentEmergency() {
+		return scheduleRest.countNurseInAccidentEmergency();
+
+	}
+
+	/*
+	 * >>>>>>>>>>>>>>>>>>=========================================<<<<<<<<<<<<<<<<<<
+	 * <<<<<<<<
+	 */
+	/* Counting Newborn death from january to december */
+
+	@ModelAttribute("countNewbornDeathJanuary")
+	public String countNewbornDeathJanuary() {
+		return newbornRest.countNewbornDeathJanuary();
+	}
+
+	@ModelAttribute("countNewbornDeathFebruary")
+	public String countNewbornDeathFebruary() {
+		return newbornRest.countNewbornDeathFebruary();
+	}
+
+	@ModelAttribute("countNewbornDeathMarch")
+	public String countNewbornDeathMarch() {
+		return newbornRest.countNewbornDeathMarch();
+	}
+
+	@ModelAttribute("countNewbornDeathApril")
+	public String countNewbornDeathApril() {
+		return newbornRest.countNewbornDeathApril();
+	}
+
+	@ModelAttribute("countNewbornDeathMay")
+	public String countNewbornDeathMay() {
+		return newbornRest.countNewbornDeathMay();
+	}
+
+	@ModelAttribute("countNewbornDeathJune")
+	public String countNewbornDeathJune() {
+		return newbornRest.countNewbornDeathJune();
+	}
+
+	@ModelAttribute("countNewbornDeathJuly")
+	public String countNewbornDeathJuly() {
+		return newbornRest.countNewbornDeathJuly();
+	}
+
+	@ModelAttribute("countNewbornDeathAugust")
+	public String countNewbornDeathAugust() {
+		return newbornRest.countNewbornDeathAugust();
+	}
+
+	@ModelAttribute("countNewbornDeathSeptember")
+	public String countNewbornDeathSeptember() {
+		return newbornRest.countNewbornDeathSeptember();
+	}
+
+	@ModelAttribute("countNewbornDeathOctober")
+	public String countNewbornDeathOctober() {
+		return newbornRest.countNewbornDeathOctober();
+	}
+
+	@ModelAttribute("countNewbornDeathNovember")
+	public String countNewbornDeathNovember() {
+		return newbornRest.countNewbornDeathNovember();
+	}
+
+	@ModelAttribute("countNewbornDeathDecember")
+	public String countNewbornDeathDecember() {
+		return newbornRest.countNewbornDeathDecember();
+	}
+
+	@ModelAttribute("events")
+	public String event(ModelMap model) throws SQLException {
+
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root", "Physics1//,");
+		PreparedStatement ps = conn.prepareStatement("select * from events");
+
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			rs.getString(1);
+			rs.getString(2);
+			rs.getString(3);
+			rs.getString(4);
+
+			model.addAttribute("rs", rs);
+
 		}
-			
-			return "";
+
+		return "";
+	}
+
+	// @RequestMapping("/eventTry")
+	@ModelAttribute("eventsT")
+	public List<Events> eventTry(ModelMap model) throws SQLException {
+
+		List<Events> events = new ArrayList<>();
+
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root", "Physics1//,");
+		PreparedStatement ps = conn.prepareStatement(
+				"select event_id, event_name, venue, event_date, participant from events order by event_date desc limit 3 ");
+
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			Events event = new Events();
+			event.setEvent_id(rs.getLong(1));
+			event.setEvent_name(rs.getString(2));
+			event.setVenue(rs.getString(3));
+			event.setEvent_date(rs.getDate(4));
+			event.setParticipant(rs.getString(5));
+
+			events.add(event);
+
+			// model.addAttribute("eventsT", events);
+
 		}
-		
-		
-		
-		  //@RequestMapping("/eventTry")
-		  @ModelAttribute("eventsT") 
-		  public List<Events> eventTry(ModelMap model) throws  SQLException {
-		  
-		  List<Events> events = new ArrayList<>();
-		  
-		  Connection conn =
-		  DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root",
-		  "Physics1//,"); PreparedStatement ps = conn.prepareStatement(
-		  "select event_id, event_name, venue, event_date, participant from events order by event_date desc limit 3 ");
-		  
-		  
-		  ResultSet rs = ps.executeQuery();
-		  
-		  while (rs.next()) { Events event = new Events();
-		  event.setEvent_id(rs.getLong(1)); event.setEvent_name(rs.getString(2));
-		  event.setVenue(rs.getString(3)); event.setEvent_date(rs.getDate(4));
-		  event.setParticipant(rs.getString(5));
-		  
-		  events.add(event);
-		  
-		  //model.addAttribute("eventsT", events);
-		  
-		  }
-		  
-		  return events;
-		  
-		  }
-		  
-		  
-		  
-			/*
-			 * @ModelAttribute("eventsT") public List<String> Try(ModelMap model) throws
-			 * SQLException {
-			 * 
-			 * List<String> cate = new ArrayList<>();
-			 * 
-			 * Connection conn =
-			 * DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root",
-			 * "Physics1//,"); PreparedStatement ps = conn.prepareStatement(
-			 * "select category, count(*) as number from nurses_staff group by category; ");
-			 * 
-			 * 
-			 * ResultSet rs = ps.executeQuery();
-			 * 
-			 * while (rs.next()) { String event = new String();
-			 * event.setNumber(rs.getLong(1)); event.setEvent_name(rs.getString(2));
-			 * event.setVenue(rs.getString(3)); event.setEvent_date(rs.getDate(4));
-			 * event.setParticipant(rs.getString(5));
-			 * 
-			 * cate.add(event);
-			 * 
-			 * //model.addAttribute("eventsT", events);
-			 * 
-			 * }
-			 * 
-			 * return events;
-			 * 
-			 * }
-			 */
-		 
+
+		return events;
+
+	}
+
+	/*
+	 * @ModelAttribute("eventsT") public List<String> Try(ModelMap model) throws
+	 * SQLException {
+	 * 
+	 * List<String> cate = new ArrayList<>();
+	 * 
+	 * Connection conn =
+	 * DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root",
+	 * "Physics1//,"); PreparedStatement ps = conn.prepareStatement(
+	 * "select category, count(*) as number from nurses_staff group by category; ");
+	 * 
+	 * 
+	 * ResultSet rs = ps.executeQuery();
+	 * 
+	 * while (rs.next()) { String event = new String();
+	 * event.setNumber(rs.getLong(1)); event.setEvent_name(rs.getString(2));
+	 * event.setVenue(rs.getString(3)); event.setEvent_date(rs.getDate(4));
+	 * event.setParticipant(rs.getString(5));
+	 * 
+	 * cate.add(event);
+	 * 
+	 * //model.addAttribute("eventsT", events);
+	 * 
+	 * }
+	 * 
+	 * return events;
+	 * 
+	 * }
+	 */
 
 }

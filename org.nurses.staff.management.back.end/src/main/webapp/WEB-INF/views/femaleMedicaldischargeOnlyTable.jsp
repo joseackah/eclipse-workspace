@@ -3,6 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@include file="links.jsp" %>
+<%@include file="forms.jsp" %>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -216,7 +217,7 @@
         <button id="b2" style="float: left; border-radius: .5em; font-size:1em; margin-left: 2em;" class="btn btn-primary" onclick="window.print('table')" > <i class="fa fa-print"></i> </button>
         
 <div id="s1" style=" display:flex; flex-direction:row-reverse;"> <input class="form-control" id="myInput" type="text" placeholder="Search.." style="padding: .5em 2em; border-radius: 5em; width:20%; display:flex; flex-direction: flex-end;"> </div>
-        <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:100" id="name">
+        <table class="table table-bordered table-hover" style="background-color: antiquewhite; width:100%" id="name">
             <thead class="table-danger">
                 <tr>
                     <th style="display:none;">ID</th>

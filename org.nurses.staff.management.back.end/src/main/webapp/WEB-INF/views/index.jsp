@@ -1,10 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	
+	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
+	
+	
 <!DOCTYPE html>
 <html>
 <head>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+<script type="text/javascript">
+	
+window.history.forward();
+function noBack() {
+    window.history.forward();
+}
+	</script>
+
+
+
+<!-- <script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
+	
+	<script>
+
+	 var app = angular.module('myTry', []);
+	 app.controller('myTryCtrl', function($scope, $http) {
+  	$http.get("http://localhost:8084/users/getAllUsers").then(function (response) {
+      $scope.Users = response.data.users;
+  	});
+	});  
+
+	 /* app.controller('myTryCtrl', function($scope, $http) {
+		  $http({
+		    method : "GET",
+		      url : "http://localhost:8084/users/getAllUsers"
+		  }).then(function mySuccess(response) {
+		    $scope.Users = response.data;
+		  }, function myError(response) {
+		    $scope.Users = response.statusText;
+		  });
+		});  */
+
+</script>
+	
+	<script
+	src="${pageContext.request.contextPath}/resources/js/angular.min.js"></script>
+	
+	
+	<script
+	src="${pageContext.request.contextPath}/resources/js/time.js"></script>
+	
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -19,143 +66,36 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-	crossorigin="anonymous"></script>
+	crossorigin="anonymous"></script> -->
 
-<link rel="stylesheet"
+<!-- <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<!-- <style type="text/css">
-a:link {
-	color: red;
-}
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 
-a:visited {
-	color: green;
-}
-/* li:hover{
-background-color: green;
-transition: 5s;
-color: red;
-} */
-.card {
-	padding: 2em;
-	color: white;
-	animation: mymove 5s infinite;
-	position: relative;
-}
 
-@
-keyframes mymove {
-	from {background-color: green;
-}
 
-to {
-	background-color: brown;
-}
 
-}
-h3:before {
-	content: '\260E';
-}
 
-.aside {
-	padding: 2em;
-	color: white;
-	position: relative;
-	animation-name: myaside;
-	animation: myaside 6s infinite;
-}
-
-@
-keyframes myaside {
-	from {background-color: green;
-}
-
-to {
-	background-color: rgb(145, 74, 152);
-}
-
-}
-.footer {
-	background-color: rgb(23, 24, 26);
-	height: 100px;
-	padding: 10px;
-	/* padding-top: 4em; */
-	color: white;
-	align-content: center;
-}
-
-input[type=text], select {
-	width: 100%;
-	height: 3em;
-	border: 3px solid green;
-	border-radius: 10px;
-}
-
-input[type=password] {
-	width: 100%;
-	height: 3em;
-	border: 3px solid green;
-	border-radius: 10px;
-}
-
-input[type=checkbox] {
-	color: white;
-	height: 1em;
-	width: 1em;
-}
-
-.submit {
-	width: 100%;
-	padding: 1em;
-	margin-top: 1em;
-	border-radius: 10px;
-	background: green;
-	color: white;
-	font-size: 1.2em;
-}
-
-form {
-	padding: 2em;
-	text-align: left;
-	font-size: 1.5em;
-	border-radius: 20px;
-	background-color: brown;
-	height: 50%;
-	/* color: white; */
-}
-
-label {
-	margin-top: 1em;
-	color: white;
-}
-
-.nav {
-	background: blue;
-	color: white;
-}
-</style>
- -->
-<link href="${pageContext.request.contextPath}/resources/css/index.css"
-	rel="stylesheet">
+<%-- <link href="${pageContext.request.contextPath}/resources/css/index.css"
+	rel="stylesheet"> --%>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<link rel="stylesheet"
+ <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/trycss.css">
 
-
+<%--
 
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/w3.css">
+	href="${pageContext.request.contextPath}/resources/css/w3.css"> --%>
 <!-- https://www.w3schools.com/w3css/4/w3.css -->
 
 
-<link
+<%-- <link
 	href="${pageContext.request.contextPath}/resources/css/profile.css"
 	rel="stylesheet">
 
@@ -170,12 +110,12 @@ label {
 
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/js/profile.js"></script>
+ --%>
 
 
-<%-- 
 	<link href="${pageContext.request.contextPath}/resources/css/index.css"
 	rel="stylesheet">
- --%>
+
 
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
@@ -197,24 +137,24 @@ label {
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/w3.css">
 <!-- https://www.w3schools.com/w3css/4/w3.css -->
-<link
+<%-- <link
 	href="${pageContext.request.contextPath}/resources/css/profile.css"
 	rel="stylesheet">
 
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/js/profile.js"></script>
-
-
+ --%>
+<%-- 
 <link href="${pageContext.request.contextPath}/resources/css/textAnimation.css"
 	rel="stylesheet">
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/js/textAnimation.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 <script type="text/javascript"
-	src="${pageContext.request.contextPath}/resources/js/anime.min.js"></script>
+	src="${pageContext.request.contextPath}/resources/js/anime.min.js"></script> --%>
 <title>HOME</title>
 </head>
-<body class="body" style="background-color: gold;">
+<body class="body" style="background-color: gold;" ng-app="myApp" ng-controller="myCtrl">
 
 	<div class="nav">
 	<div class="container1">
@@ -223,16 +163,16 @@ label {
 			</div>
 		<div style="text-align: center; width: 100%; margin: 2px 0 2em;">
 
-			<h1 class="" style="text-align: center; font-size: 40px;">
+		<!-- 	<h1 class="" style="text-align: center; font-size: 40px;">
 			
 			
 			<ins>
-					<!-- ST. JOSEPH'S HOSPITAL, JIRAPA -->
-					<!-- <p>(<abbr title="Bernice's International Preparatory School"></abbr>)</p> -->
+					ST. JOSEPH'S HOSPITAL, JIRAPA
+					<p>(<abbr title="Bernice's International Preparatory School"></abbr>)</p>
 				</ins>
 				
 				
-			</h1>
+			</h1> -->
 			
 			<br /> 
 			
@@ -250,7 +190,7 @@ label {
 		<br /> <br />
 		
 	
-
+ 
 		<!-- carousal begins here -->
 		<%-- <div style="width: 80%; height: 50%; position: relative; left:10%;">
  <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -291,10 +231,13 @@ label {
 	</div>
 	<hr style="height: 0.51em; background-color: black;">
 
+<div > 
+<h1 style="text-align:center;">{{theTime}}</h1>
+
+</div>
 
 
-
-	<div >
+	<div ng-app="">
 		<div class="mod" style="padding:2%;">
 		<div class="modal-dialog">
 		<div class="modal-content " style="padding:4%; border-radius: 15px;">
@@ -306,14 +249,14 @@ label {
 
 			</div>
 			<form style=""
-				action="${pageContext.request.contextPath}/generalFront/validate"
-				method="post">
+				action="${pageContext.request.contextPath}/generalFront/validate" 
+				method="POST" id="form" >
 
 				<div class="row">
 					<div class="col">
 					<div class="form-group">
 						<label for="userId">Username/Id</label> <input type="text" name="userId"
-							class="form-control" placeholder="provide your staff Id" required><br>
+						ng-model="user_id"	class="form-control" placeholder="provide your staff Id" required><br>
 					</div></div>
 				</div>
 				<div class="row">
@@ -360,15 +303,26 @@ label {
 				<!-- <button class="submit" type="submit">Log In</button> -->
 
 				<div class="modal-footer">
-					<button type="submit" class="btn btn-secondary"
-						data-dismiss="modal">Log In</button>
-					<button type="button"
-						onclick="window.location.href='${pageContext.request.contextPath}/generalFront/userForm'"
-						class="btn btn-primary">Register</button>
+					<button type="submit" onclick="submitForms" class="btn btn-secondary"
+					style="width:50%;"	data-dismiss="modal">Log In</button>
+					
 				</div>
 
 
 			</form>
+			<hr>
+			<button type="button"
+						onclick="window.location.href='${pageContext.request.contextPath}/generalFront/userForm'"
+						class="btn btn-primary">Register</button>
+			
+	<%-- 		<form:form action="${pageContext.request.contextPath}/generalFront/vali" id="form1" method="POST" modelAttribute="fere">
+			
+			<input  class="form-control" type="text" name="userId" value="{{user_id}}" >
+			
+			
+			</form:form> --%>
+			
+			
 			<%-- <a 
 			href="${pageContext.request.contextPath}/generalFront/userForm">
 			<button class="submit" style="background-color: blue;">Register</button>
@@ -398,6 +352,10 @@ label {
 		<h3 style="text-align: center;">Contact Us: 0207173313</h3>
 
 	</footer>
+
+
+
+
 
 
 	<!-- register form start here -->
@@ -463,7 +421,64 @@ label {
 				x.type = "password";
 			}
 		}
+		
+		
+		
+		 /* const sendData = e => {
+		      e.preventDefault();
+		      const formData = new FormData(document.getElementById("form"));
+
+		      fetch("${pageContext.request.contextPath}/generalFront/validate", { method: "POST"});
+		      fetch("${pageContext.request.contextPath}/generalFront/userTry", { method: "POST"});
+		    }; */
+		    
+		    
+		    
+		   /*  function SubmitForm()
+		    {
+		        //showResultDiv();
+		        document.forms['form'].action='${pageContext.request.contextPath}/generalFront/validate ';
+		        //document.forms['form'].target='frame_result1';
+		        document.forms['form'].submit();
+
+		       document.forms['form'].action='${pageContext.request.contextPath}/generalFront/userTry';
+		        document.forms['form'].target='use';
+		       document.forms['form'].submit();
+		        return true;
+		    } */
+		    
+		    
+		   /*   submitForms = function(){
+		    	document.getElementById("form").submit();
+		        document.getElementById("form1").submit();
+		        
+		        
+		    } */  
+		    
+		    
+		     /*  function submitForms() {
+		    	setTimeout(function(){ document.getElementById("form").submit();}, 3000);   
+		    	//setTimeout(function(){ document.getElementById("form1").submit();}, 6000);   
+		    	}   
+		     */
+		    
 	</script>
+
+
+<!-- <script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $interval) {
+  $scope.theTime = new Date().toLocaleTimeString();
+  $interval(function () {
+      $scope.theTime = new Date().toLocaleTimeString();
+  }, 1000);
+});
+
+
+</script> -->
+
+
+
 
 
 

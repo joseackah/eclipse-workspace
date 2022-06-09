@@ -3,6 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@include file="links.jsp" %>
+<%@include file="forms.jsp" %>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -106,7 +107,7 @@
 
 <div class="wrapper">
 
-<aside class="aside_body w3-padding" style="width:30%; height:800px; ">
+<aside class="aside_body w3-padding" style="width:30%; height:1000px; ">
 
 <div class="" style="">
 				<h2>Administrator</h2>

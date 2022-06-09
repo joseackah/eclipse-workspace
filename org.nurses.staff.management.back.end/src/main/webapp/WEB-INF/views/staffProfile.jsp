@@ -70,6 +70,34 @@
 	height: 200px;
 	background: #aaa;
 }
+
+
+.modal {
+    overflow-y: auto;
+}
+
+.modal-open {
+    overflow: auto;
+}
+
+.modal-open[style] {
+    padding-right: 0px !important;
+}
+
+body.modal-open-noscroll 
+{
+  padding-right: 0!important;
+  overflow: hidden;
+}
+.modal-open-noscroll .navbar-default, .modal-open .navbar-default 
+{
+  padding-right: 0!important;
+}
+
+body {
+padding-right:0px !important;
+margin-right:0px !important;
+}
 </style>
 </head>
 <body>
@@ -117,7 +145,7 @@
 			</ul>
 		</div>
 		<button id="b1"
-			style="float: right; border-radius: 5em; display: flex; flex-direction: row-reverse; margin-left: 35em;"
+			style="float: right; border-radius: 5em; display: flex; flex-direction: row-reverse; margin-left: 5em;"
 			class="btn btn-primary"
 			onclick="window.location.href='${pageContext.request.contextPath}/'">log
 			out</button>
@@ -235,7 +263,7 @@
 							<li class="nav-item"><a class="nav-link" target="iframe_b"
 								href="${pageContext.request.contextPath}/generalFront/femaleMedical">Female
 									Medical</a></li>
-							<li class="nav-item"><a class="nav-link" target="iframe_b"
+							<li class="nav-item"><a class="nav-link" target="iframe_l"
 								href="${pageContext.request.contextPath}/generalFront/maleSurgical">Male
 									Surgical</a></li>
 							<li class="nav-item"><a class="nav-link" target="iframe_d"

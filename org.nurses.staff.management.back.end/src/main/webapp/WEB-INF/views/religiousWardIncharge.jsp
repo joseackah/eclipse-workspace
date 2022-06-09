@@ -90,7 +90,16 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
+	
+	
+	<link
+	href="${pageContext.request.contextPath}/resources/css/projectCss.css"
+	rel="stylesheet">
+	
+	
 <style>
+
+
 
 .fakeimg {
 	height: 200px;
@@ -100,7 +109,7 @@
 </head>
 <body>
 	<div class="jumbotron text-center" style="margin-bottom: 0">
-		<h1>St. Joseph's Hospital, Jirapa</h1> <h2>Religious/Special Ward</h2>
+		<h1></h1> <h2>Religious/Special Ward</h2>
 		<p></p>
 	</div>
 
@@ -116,10 +125,10 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/general/homePage">Home</a>
+					href="${pageContext.request.contextPath}/generalFront/religiousWard">Home</a>
 					</li>
-				<li class="nav-item"><a class="nav-link" data-toggle="modal"
-					href='#modal-id'>Apply for Leave</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="modal" href='#modal-id'>
+				Apply for Leave</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/leaveFront/displayAllReligiousWardRecom">Recommend
 						Leave</a></li>
@@ -133,33 +142,28 @@
 					href='#modal-id4'>Admission</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id2'>Ward/Bed State</a></li>
-				<%-- <li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/admissionFront/form">form</a>
-				</li>
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/leaveFront/displayAllMaleMedicalLeave">leave check</a>
-				</li> --%>
+			 
 			</ul>
 						        <button id="b1" style="float:right; border-radius: 5em; display:flex; flex-direction:row-reverse; margin-left: 35em;" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/'">log out</button>
 			
 		</div>
 	</nav>
 
-	<div class="container" style="margin: 30px">
+	<div class="container" style="margin: 0px">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-3 table-secondary" style="height:1000px;">
 				<h2>Administrator</h2>
 				<h5>Photo of me:</h5>
 				<div class="w3-circle" style="width: 200px; height: 200px;">
-					<div class="fakeimg">
+					<div class="fakeim">
 						<img class="w3-circle" alt="our mision"
-							src="${pageContext.request.contextPath}/resources/png/mission.png"
+							src="${pageContext.request.contextPath}/resources/icons/sp4.jpg"
 							style="width: 100%; height: 100%;" />
 					</div>
 				</div>
 				<p>Administrator</p>
 
-				<!--   academic record start here -->
+				
 <div class="dropdown">
 				<h3>Hospital/Ward Records</h3>
 				<p></p>
@@ -234,7 +238,7 @@
 			<div class="col-xl">
 			<!-- card starts here -->
 			<div class="w3-container w3-padding w3-center"
-				style="margin: 10px; position: relative; left: 4em;">
+				style="margin: 10px; position: relative; left: 0.2em;">
 				<div class="row w3-padding " style="width:200%;">
 
 					<div class="w3-card-2 w3-yellow w3-margin"
@@ -483,22 +487,13 @@
 
 			<!-- card ends here -->
 
+<div class="row " style="margin-left: 40%;">
+				 
+				<div class="col " style="width: 100%;">
 
-
-
-
-			</div>
-		</div>
-		
-		<div class="row" style="margin-left: 40%;">
-				<!-- <h2>OUR VISION</h2>
-				<h5>Title description, Dec 7, 2017</h5> -->
-				<div class="col" style="width: 100%;">
-
-					<!-- <div id="curve_chart"
-						style="width: 100%; height: 300px; margin-top: 1em;"></div> -->
+					 
 				</div>
-				<div class="container" style="width: 150%">	
+				<div class="container w3-card" style="width: 150%">	
 	<div  id="curve_chart"
 						style="width: 100%; height: 300px; margin-top: 1em;"></div>
 </div>
@@ -507,6 +502,13 @@
 				<br>
 				
 			</div>
+
+
+
+			</div>
+		</div>
+		
+		
 	</div>
 
 	<div class="jumbotron text-center"
@@ -542,7 +544,7 @@
 	<div class="modal fade" id="modal-id">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Leave Application</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -550,7 +552,7 @@
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/leaveFront/saveLeave">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -698,7 +700,7 @@
 								</div>
 
 
-								<div class="col">
+								<div class="col" id="leave2C1R2C">
 									<div class="form-group">
 										<label for="incharge_recom">Incharge Recommendation</label> <select
 											name="incharge_recom" class="form-control" id="" disabled>
@@ -714,7 +716,7 @@
 							</div>
 
 
-							<div class="row">
+							<div class="row" id="leave2C2R">
 								<div class="col">
 									<div class="form-group">
 										<label for="incharge_name">Incharge Name</label> <input
@@ -734,7 +736,7 @@
 
 
 
-							<div class="row">
+							<div class="row" id="leave2C3R">
 								<div class="col">
 									<div class="form-group">
 										<label for="leave_end_date">Leave End Date</label> <input
@@ -761,7 +763,7 @@
 
 
 						<div class="thirdContainer">
-							<div class="row">
+							<div class="row" id="leaveThirdContainer">
 								<div class="col">
 									<div class="form-group">
 										<label for="approved_by">Approved By</label> <input
@@ -782,7 +784,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Apply</button>
 					</div>
@@ -805,15 +807,15 @@
 		<div class="modal fade" id="modal-id4">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Admission Form2</h4>
+				<div class="modal-header" id="modalHeader">
+					<h4 class="modal-title">Admission Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/admissionFront/saveAdmission_Discharge">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -1046,7 +1048,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Admit</button>
 					</div>
@@ -1332,7 +1334,7 @@
 	<div class="modal fade" id="modal-id2">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Ward/Bed State Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -1340,7 +1342,7 @@
 				</div>
 
 				<form action="">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -1520,7 +1522,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Save Record</button>
 					</div>

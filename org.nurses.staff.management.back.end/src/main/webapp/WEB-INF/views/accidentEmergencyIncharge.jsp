@@ -75,6 +75,10 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
+	
+	<link href="${pageContext.request.contextPath}/resources/css/projectCss.css"
+	rel="stylesheet">
+	
 <style>
 
 .fakeimg {
@@ -85,7 +89,7 @@
 </head>
 <body>
 	<div class="jumbotron text-center" style="margin-bottom: 0">
-		<h1>St. Joseph's Hospital, Jirapa</h1> <h2>Accident/Emergency Ward</h2>
+		<h1> </h1> <h2>Accident/Emergency Ward</h2>
 		<p></p>
 	</div>
 
@@ -101,7 +105,7 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/general/homePage">Home</a>
+					href="${pageContext.request.contextPath}/generalFront/accidentEmergency">Home</a>
 					</li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id'>Apply for Leave</a></li>
@@ -118,27 +122,22 @@
 					href='#modal-id4'>Admission</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href='#modal-id2'>Ward/Bed State</a></li>
-			<%-- 	<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/admissionFront/form">form</a>
-				</li>
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/leaveFront/displayAllMaleMedicalLeave">leave check</a>
-				</li> --%>
+			 
 			</ul>
 						        <button id="b1" style="float:right; border-radius: 5em; display:flex; flex-direction:row-reverse; margin-left: 35em;" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/'">log out</button>
 			
 		</div>
 	</nav>
 
-	<div class="container" style="margin: 30px">
+	<div class="container" style="margin: 0px">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-3 table-danger" style="width:30%; height:1000px;">
 				<h2>Administrator</h2>
 				<h5>Photo of me:</h5>
 				<div class="w3-circle" style="width: 200px; height: 200px;">
-					<div class="fakeimg">
+					<div class="fakeim">
 						<img class="w3-circle" alt="our mision"
-							src="${pageContext.request.contextPath}/resources/png/mission.png"
+							src="${pageContext.request.contextPath}/resources/icons/sp4.jpg"
 							style="width: 100%; height: 100%;" />
 					</div>
 				</div>
@@ -218,7 +217,7 @@
 			<div class="col-xl">
 				<!-- card starts here -->
 			<div class="w3-container w3-padding w3-center"
-				style="margin: 10px; position: relative; left: 4em;">
+				style="margin: 10px; position: relative; left: 0.1em;">
 				<div class="row w3-padding " style="width:200%;">
 
 					<div class="w3-card-2 w3-yellow w3-margin"
@@ -467,15 +466,7 @@
 
 			<!-- card ends here -->
 
-
-
-
-
-			
-			</div>
-		</div>
-		
-		<div class="row" style="margin-left: 40%;">
+<div class="row" style="margin-left: 40%;">
 				
 				<div class="col" style="width: 100%;">
 
@@ -490,6 +481,14 @@
 				<br>
 				
 			</div>
+
+
+
+			
+			</div>
+		</div>
+		
+		
 	</div>
 
 	<div class="jumbotron text-center"
@@ -525,7 +524,7 @@
 	<div class="modal fade" id="modal-id">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Leave Application</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
@@ -533,7 +532,7 @@
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/leaveFront/saveLeave">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -766,7 +765,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Apply</button>
 					</div>
@@ -789,15 +788,15 @@
 		<div class="modal fade" id="modal-id4">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Admission Form2</h4>
+				<div class="modal-header" id="modalHeader">
+					<h4 class="modal-title">Admission Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 
 				</div>
 				<form
 					action="${pageContext.request.contextPath}/admissionFront/saveAdmission_Discharge">
-					<div class="modal-body">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -1030,7 +1029,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Admit</button>
 					</div>
@@ -1038,268 +1037,7 @@
 			</div>
 		</div>
 	</div>
-	<%-- <div class="modal fade" id="modal-id1">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Admission/Discharge Form</h4>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
-
-				</div>
-
-				<form
-					action="${pageContext.request.contextPath}/admissionFront/saveAdmission_Discharge">
-					<div class="modal-body">
-
-
-
-						<div class="firstContainer">
-
-							<div class="row">
-								<div class="col">
-									<div class="form-group">
-										<label for="patien_number">Folder Number</label> <input
-											type="text" class="form-control" name="patient_number" id="">
-									</div>
-								</div>
-								<div class="col">
-									<div class="form-group">
-										<label for="patient_name">Patient Name</label> <input
-											type="text" class="form-control" name="patient_name" id="">
-									</div>
-								</div>
-							</div>
-
-
-							<div class="row">
-								<div class="col">
-									<div class="form-group">
-										<label for="sex">Sex/Gender</label> <select name="sex"
-											class="form-control" id="">
-											<option value="">select</option>
-											<option value="Male">Male</option>
-											<option value="Female">Female</option>
-
-
-										</select>
-									</div>
-
-								</div>
-								<div class="col" id="">
-
-									<div class="form-group" >
-										<label for="age">Age</label> <input type="number" name="age"
-											class="form-control" min="0"
-											>
-									</div>
-								</div>
-
-							</div>
-
-						</div>
-
-
-						<div class="secondContainer">
-							<div class="row">
-								<div class="col">
-									<div class="form-group">
-										<label for="address">Address</label> <input type="text"
-											class="form-control" name="address" id="">
-									</div>
-								</div>
-								<div class="col">
-									<div class="form-group">
-										<label for="phone_number">Phone Number</label> <input
-											type="number" class="form-control" name="phone_number"
-											placeholder="" id="" min="0"
-											onKeyPress="if(this.value.length==10) return false;">
-									</div>
-								</div>
-
-
-
-							</div>
-
-
-
-							<div class="row">
-
-								<div class="col">
-									<div class="form-group">
-										<label for="date_admitted">Date Admitted</label> <input
-											type="date" class="form-control" name="date_admitted" id=""
-											>
-									</div>
-								</div>
-
-								<div class="col">
-									<div class="form-group">
-										<label for="createdBy">Provisional Diagnosis</label> <input
-											type="text" class="form-control" name="diagnosis" id="">
-
-									</div>
-								</div>
-
-
-							</div>
-
-						</div>
-
-
-
-						<div class="thirdContainer">
-							<div class="row" hidden=true>
-								<div class="col">
-									<div class="form-group">
-										<label for="final_diagnosis">Final Diagnosis</label> <input
-											type="text" class="form-control" name="final_diagnosis" id=""
-											disabled>
-									</div>
-								</div>
-
-								<div class="col">
-									<div class="form-group">
-										<label for="outcome_of_admission">Outcome of Admission</label>
-
-										<select name="outcome_of_admission" class="form-control" id=""
-											disabled>
-											<option value="">select</option>
-											<option value="Discharge">Discharge</option>
-											<option value="Referred">Referred</option>
-											<option value="Trans-out">Trans-out</option>
-											<option value="Absconded">Absconded</option>
-											<option value="Death">Death</option>
-										</select>
-									</div>
-
-
-								</div>
-
-
-
-							</div>
-
-							<div class="row">
-
-								<div class="col">
-									<div class="form-group">
-										<label for="next_of_kin">Next of Kin</label> <input
-											type="text" class="form-control" oninput="nextOfKin()" name="next_of_kin" id="next">
-									</div>
-								</div>
-
-								<div class="col" id="nextNumber" style="display:none;">
-									<div class="form-group">
-										<label for="next_of_kin_number">Next of Kin Number</label> <input
-											type="text" class="form-control" name="next_of_kin_number"
-											id="">
-									</div>
-								</div>
-
-							</div>
-
-							<div class="row">
-
-
-								<div class="col">
-									<div class="form-group">
-										<label for="insured">Insured</label> <select name="insured"
-											class="form-control" id="" onchange="displayH(this.value)">
-											<option value="">Select</option>
-											<option value="Yes" id="yes" >Yes</option>
-											<option value="No" id="no" >No</option>
-										</select>
-									</div>
-								</div>
-
-								<div class="col" id="hid" style="display:none;">
-
-									<div class="form-group" id="">
-										<label for="insurance_number">Insurance Number</label> <input
-											type="number" name="insurance_number" class="form-control"
-											min="0" onKeyPress="if(this.value.length==8) return false;">
-									</div>
-								</div>
-
-
-
-							</div>
-
-							<div class="row">
-								<div class="col" hidden=true>
-									<div class="form-group">
-										<label for="date_discharge">Date Discharge</label> <input
-											type="date" class="form-control" name="ward_name" id=""
-											disabled>
-									</div>
-								</div>
-								<div class="col">
-									<div class="form-group">
-										<label for="ward_name">ward Name</label> 
-										
-										
-										<select
-											name="ward_name" class="form-control">
-											
-											
-											
-						 
-						 <option>select</option>
-						 
-						 <%
-									try {
-
-										Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nursesdb", "root", "Physics1//,");
-										//Statement statement = connection.createStatement();
-
-										PreparedStatement ps = conn.prepareStatement(
-										"select ward_name from ward;");
-
-										ResultSet resultSet = ps.executeQuery();
-
-										while (resultSet.next()) {
-											resultSet.getString(1);
-											//resultSet.getString(2);
-									%>
-									
-									<option value="<%=resultSet.getString(1)%>"> <%=resultSet.getString(1)%></option>
-									<%
-									}
-									} catch (Exception e) {
-
-									}
-									%>
-						 						
-						 
-											<!-- <option value="">Select</option>
-											<option value="Male Medical">Male Medical</option>
-											<option value="Female Medical">Female Medical</option>
-											<option value="Female Surgical">Female Surgical</option>
-											<option value="Male Surgical">Male Surgical</option>
-											<option value="Childrens ward">Children's Ward</option>
-											<option value="Maternity">Maternity</option>
-											<option value="General Ward">General Ward</option>
-											<option value="NICU">NICU</option>
-											<option value="Religious Ward">Religious Ward</option>
-											<option value="Accident/Emergency">Accident/Emergency</option>
- -->										</select>
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="submit" class="btn btn-primary">Save Record</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div> --%>
+	 
 
 
 
@@ -1317,15 +1055,15 @@
 	<div class="modal fade" id="modal-id2">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="modalHeader">
 					<h4 class="modal-title">Ward/Bed State Form</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 
 				</div>
 
-				<form action="">
-					<div class="modal-body">
+				<form action="${pageContext.request.contextPath}/bedStateFront/saveWard_Bed_State" method="post">
+					<div class="modal-body" id="modalBody">
 
 
 
@@ -1507,7 +1245,7 @@
 
 
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="modalFooter">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Save Record</button>
 					</div>

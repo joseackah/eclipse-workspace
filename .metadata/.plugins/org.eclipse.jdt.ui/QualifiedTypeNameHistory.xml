@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.nurses.management.system.repos.Leave_Repository"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
-    <fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.WebMvcConfigurer"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.CorsRegistry"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
     <fullyQualifiedTypeName name="org.nurses.management.system.repos.Pin_Ain_Repository"/>
     <fullyQualifiedTypeName name="org.nurses.management.system.repos.Ward_Repository"/>
     <fullyQualifiedTypeName name="org.nurses.management.system.repos.Ward_schedule_Repository"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.springframework.web.client.RestTemplate"/>
     <fullyQualifiedTypeName name="org.nurses.management.system.integration.dto.Leave"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="org.nurses.management.system.entity.Users"/>
     <fullyQualifiedTypeName name="org.nurses.management.system.repos.UsersRepository"/>
-    <fullyQualifiedTypeName name="org.nurses.management.system.integration.dto.Users"/>
     <fullyQualifiedTypeName name="org.nurses.management.system.integration.UsersRestClient"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="org.nurses.management.system.integration.dto.Nurses_staff"/>
@@ -54,10 +49,15 @@
     <fullyQualifiedTypeName name="org.nurses.management.system.repos.EventsRepository"/>
     <fullyQualifiedTypeName name="org.nurses.management.system.integration.EventsRestClient"/>
     <fullyQualifiedTypeName name="org.nurses.management.system.integration.dto.Events"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="org.springframework.ui.ModelMap"/>
     <fullyQualifiedTypeName name="java.lang.TypeNotPresentException"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="org.aspectj.bridge.CountingMessageHandler"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.ModelMap"/>
+    <fullyQualifiedTypeName name="org.nurses.management.system.controller.UserController"/>
+    <fullyQualifiedTypeName name="org.nurses.management.system.integration.dto.Users"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="org.eclipse.jdt.internal.compiler.ast.AND_AND_Expression"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
